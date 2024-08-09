@@ -1,0 +1,75 @@
+{
+  "name": "jxk",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A relatively commonly used tool and function",
+  "author": "xkloveme <xkloveme@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/xkloveme/jxk#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xkloveme/jxk.git"
+  },
+  "bugs": "https://github.com/xkloveme/jxk/issues",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "jxk",
+    "git",
+    "project",
+    "version"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "play": "vite playground",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vite": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.25.0",
+    "@antfu/utils": "^0.7.10",
+    "@types/node": "^22.1.0",
+    "bumpp": "^9.4.2",
+    "eslint": "^9.8.0",
+    "esno": "^4.7.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4",
+    "unbuild": "^2.0.0",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  }
+}
