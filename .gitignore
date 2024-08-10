@@ -11,3 +11,5 @@ node_modules
 temp
 pnpm-lock.yaml
 package-lock.json
+categories.json
+docs/*

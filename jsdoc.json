@@ -1,0 +1,47 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["./src/lib", "README.md"],
+        "includePattern": "\\.js$|\\.ts$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": ["plugins/markdown", "node_modules/docdash-extended-xkloveme/categories"],
+    "opts": {
+        "template": "node_modules/docdash-extended-xkloveme",
+        "encoding": "utf8",
+        "destination": "docs/",
+        "recurse": true,
+        "verbose": true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "categoriesFile": "./categories.json",
+    "docdash": {
+        "static": true,
+        "sort": true,
+        "search": true,
+        "collapse": true,
+        "typedefs": true,
+        "removeQuotes": "none",
+        "navLevel": 5,
+        "menu": {
+            "Github": {
+                "href": "https://github.com/xkloveme/jxk",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "repository"
+            }
+        },
+        "openGraph": {
+            "title": "",
+            "type": "website",
+            "image": "https://static.yicode.tech/logo/yidash2.png",
+            "site_name": "",
+            "url": ""
+        }
+    }
+}

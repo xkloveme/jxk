@@ -46,30 +46,31 @@
     "dist"
   ],
   "scripts": {
+    "gen": "node generate.js",
+    "docs": "rimraf docs & jsdoc -c jsdoc.json",
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "play": "vite playground",
     "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "vite": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
-  },
-  "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.0",
     "@antfu/utils": "^0.7.10",
     "@types/node": "^22.1.0",
     "bumpp": "^9.4.2",
+    "docdash-extended-xkloveme": "^1.0.0",
     "eslint": "^9.8.0",
     "esno": "^4.7.0",
+    "jsdoc": "^4.0.3",
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
     "unbuild": "^2.0.0",
     "vite": "^5.4.0",
+    "vite-plugin-git-version": "^1.0.6",
     "vitest": "^2.0.5"
   }
 }
