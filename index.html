@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://static.yicode.tech/logo/yidash2.png" />
+        
+        <meta property="og:url" content="" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              background-color: #4CAF50;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#isNumber">isNumber</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+
+            
+
+
+
+
+
+
+<section class="package">
+    <h3>
+        
+        
+    </h3>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="readme usertext">
+    <article><h1 align="center">jxk 函数工具库</h1>
+<p align="center">
+A Vite plugin that focuses on generating packaging information for Git projects.
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/jxk">
+    <img src="https://img.shields.io/npm/v/jxk?color=orange&label=" alt="version" />
+  </a>
+  <a href="https://github.com/qmhc/jxk/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/jxk" alt="license" />
+  </a>
+</p>
+<p><strong>English</strong> | <a href="./README.zh-CN.md">中文</a></p>
+<h2>It is better to use with watone tools power builder</h2>
+<p><a href="https://microsoftedge.microsoft.com/addons/detail/%E5%8D%8E%E9%80%9A%E4%BA%91%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/afmbapanbkfkkpknjdepbafobedckoeg?hl=zh-CN">Microsoft Store Download</a></p>
+<p><a href="https://wt-front-end.github.io/wt-docs/wt-edge.html">Use Documentation</a></p>
+<p>Get the <code>version</code> information from <code>package.json</code>, then automatically put the version file <code>version.json</code> in your project dist folder when packaging.</p>
+<pre class="prettyprint source lang-json"><code>// package.json
+{
+  // ...
+  &quot;name&quot;: &quot;jxk&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;
+}
+</code></pre>
+<pre class="prettyprint source lang-json"><code>// dist/version.json
+{
+  &quot;name&quot;: &quot;jxk&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;branch&quot;: &quot;(HEAD -> main, origin/main, origin/HEAD)&quot;,
+  &quot;hash&quot;: &quot;3e85fdd2e0aeac7685e3d20da16ff979440cbcb8&quot;,
+  &quot;commitUser&quot;: &quot;xkloveme (xkloveme@gmail.com)&quot;,
+  &quot;commitContent&quot;: &quot;chore: 更新README和package.json中的依赖信息\n更新版本\nchore: release v1.0.4&quot;,
+  &quot;time&quot;: &quot;2024-08-09 22:13:11&quot;
+}
+</code></pre>
+<h2>Install</h2>
+<pre class="prettyprint source lang-bash"><code>pnpm add jxk
+</code></pre>
+<pre class="prettyprint source lang-bash"><code>yarn add jxk
+</code></pre>
+<pre class="prettyprint source lang-bash"><code>npm i jxk
+</code></pre>
+<p>Add plugin to your <code>vite.config.ts</code> or <code>vite.config.js</code>:</p>
+<pre class="prettyprint source lang-ts"><code>// vite.config.ts
+import { defineConfig } from 'vite'
+import VersionGitPlugin from 'jxk'
+
+export default defineConfig({
+  plugins: [
+    VersionGitPlugin(),
+  ],
+})
+
+</code></pre>
+<h2>License</h2>
+<p><a href="./LICENSE">MIT</a> License © 2024 <a href="https://github.com/xkloveme">xkloveme</a></p></article>
+</section>
+
+
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            Documentation generated by
+            <a href="https://github.com/jsdoc3/jsdoc"
+                >JSDoc
+                4.0.3</a
+            >
+            on
+            Sun Aug 11 2024 01:38:30 GMT+0000 (Coordinated Universal Time)
+            using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+    </body>
+</html>
