@@ -1,4 +1,4 @@
-<h1 align="center">jxk</h1>
+<h1 align="center">jxk 函数工具库</h1>
 
 <p align="center">
 A Vite plugin that focuses on generating packaging information for Git projects.
