@@ -48,8 +48,8 @@
   "scripts": {
     "gen": "node generate.js",
     "docs": "rimraf docs & jsdoc -c jsdoc.json",
-    "build": "rimraf dist && unbuild",
-    "dev": "npm run play",
+    "dev": "npm run gen && npm run play",
+    "build": "unbuild",
     "lint": "eslint .",
     "play": "vite playground",
     "release": "bumpp && npm publish",

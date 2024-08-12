@@ -1,5 +1,5 @@
 // @ts-ignore
-import * as jxk from '../../dist'
+import * as jxk from '../../src/index'
 
 export function setupCounter(element: HTMLButtonElement) {
   let counter = 0

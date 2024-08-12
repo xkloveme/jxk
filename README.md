@@ -1,54 +1,45 @@
-<h1 align="center">jxk 函数工具库</h1>
+# jxk Function Utility Library
 
 <p align="center">
-A Vite plugin that focuses on generating packaging information for Git projects.
+  <strong>jxk (standing for: Fast, Lightweight, and Convenient)</strong> is a utility library that contains commonly used functions.
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/jxk">
+
     <img src="https://img.shields.io/npm/v/jxk?color=orange&label=" alt="version" />
+
   </a>
   <a href="https://github.com/qmhc/jxk/blob/main/LICENSE">
+
     <img src="https://img.shields.io/npm/l/jxk" alt="license" />
+
   </a>
 </p>
 
-
 **English** | [中文](./README.zh-CN.md)
 
-## It is better to use with watone tools power builder
+## Table of Contents
 
-[Microsoft Store Download](https://microsoftedge.microsoft.com/addons/detail/%E5%8D%8E%E9%80%9A%E4%BA%91%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/afmbapanbkfkkpknjdepbafobedckoeg?hl=zh-CN)
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Functions](#functions)
+* [Contributing](#contributing)
+* [License](#license)
 
-[Use Documentation](https://wt-front-end.github.io/wt-docs/wt-edge.html)
+## Introduction
 
-Get the `version` information from `package.json`, then automatically put the version file `version.json` in your project dist folder when packaging.
+The `jxk` library aims to provide developers with a set of handy tools that can be used in both client-side and server-side JavaScript environments. It includes functions for common tasks such as manipulating objects and arrays, string handling, type checking, and more.
 
-```json
-// package.json
-{
-  // ...
-  "name": "jxk",
-  "version": "1.0.0"
-}
-```
-```json
-// dist/version.json
-{
-  "name": "jxk",
-  "version": "1.0.0",
-  "branch": "(HEAD -> main, origin/main, origin/HEAD)",
-  "hash": "3e85fdd2e0aeac7685e3d20da16ff979440cbcb8",
-  "commitUser": "xkloveme (xkloveme@gmail.com)",
-  "commitContent": "chore: 更新README和package.json中的依赖信息\n更新版本\nchore: release v1.0.4",
-  "time": "2024-08-09 22:13:11"
-}
-```
+## Installation
 
-## Install
+To use `jxk` , you can install it via npm:
+
 ```bash
 pnpm add jxk
 ```
+
 ```bash
 yarn add jxk
 ```
@@ -57,20 +48,56 @@ yarn add jxk
 npm i jxk
 ```
 
-Add plugin to your `vite.config.ts` or `vite.config.js`:
+## Usage
 
-```ts
-// vite.config.ts
-import { defineConfig } from 'vite'
-import VersionGitPlugin from 'jxk'
+Once installed, you can import the library in your project:
 
-export default defineConfig({
-  plugins: [
-    VersionGitPlugin(),
-  ],
-})
+```javascript
+import jxk from 'jxk';
 
+// Or if you are using a function:
+import {
+    sm4
+} from 'jxk';
 ```
+
+## Functions
+
+For all functions, please visit: [https://www.jixiaokang.com/jxk/](https://www.jixiaokang.com/jxk/)
+
+Here is a list of some of the functions included in the `jxk` library:
+
+### Object Functions
+
+* deepClone: Creates a deep copy of an object.
+* mergeObjects: Merges multiple objects into one.
+* pickProperties: Picks specific properties from an object.
+
+### Array Functions
+
+* flattenArray: Flattens a nested array.
+* chunkArray: Splits an array into chunks of a specified size.
+* uniqueArray: Removes duplicates from an array.
+
+### String Functions
+
+capitalizeString: Capitalizes the first letter of a string.
+slugify: Converts a string into a URL-friendly format.
+
+### Type Checking
+
+isObject: Checks if a value is an object.
+isArray: Checks if a value is an array.
+isString: Checks if a value is a string.
+
+### Miscellaneous
+
+* debounce: Debounces a function to prevent it from being called too often.
+* throttle: Throttles a function to limit its execution frequency.
+
+## Contributing
+
+Contributions are welcome! Please read the CONTRIBUTING.md file for details on our code of conduct, how to submit pull requests, and so on.
 
 ## License
 
