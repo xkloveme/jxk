@@ -1,40 +1,36 @@
-# jxk Function Utility Library
+<h1 align="center">jxk 函数工具库</h1>
 
 <p align="center">
-  <strong>jxk (standing for: Fast, Lightweight, and Convenient)</strong> is a utility library that contains commonly used functions.
+  jxk (意为： 极速、小巧、快捷)的函数工具库，包含了常用的函数
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/jxk">
-
-    <img src="https://img.shields.io/npm/v/jxk?color=orange&label=" alt="version" />
-
+    <img src="https://img.shields.io/npm/v/jxk?color=orange&label=" alt="版本" />
   </a>
   <a href="https://github.com/qmhc/jxk/blob/main/LICENSE">
-
-    <img src="https://img.shields.io/npm/l/jxk" alt="license" />
-
+    <img src="https://img.shields.io/npm/l/jxk" alt="许可证" />
   </a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
+**中文** | [English](./README.en.md)
 
-## Table of Contents
+## 目录
 
-* [Introduction](#introduction)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Functions](#functions)
-* [Contributing](#contributing)
-* [License](#license)
+* [简介](#简介)
+* [安装](#安装)
+* [使用](#使用)
+* [函数](#函数)
+* [贡献](#贡献)
+* [许可](#许可)
 
-## Introduction
+## 简介
 
-The `jxk` library aims to provide developers with a set of handy tools that can be used in both client-side and server-side JavaScript environments. It includes functions for common tasks such as manipulating objects and arrays, string handling, type checking, and more.
+`jxk` 库旨在为开发人员提供一系列便捷工具，可以在客户端和服务器端的 JavaScript 环境中使用。它包括处理对象和数组、字符串操作、类型检查等功能的常用函数。
 
-## Installation
+## 安装
 
-To use `jxk` , you can install it via npm:
+要使用 `jxk` ，您可以通过 npm 进行安装：
 
 ```bash
 pnpm add jxk
@@ -48,9 +44,9 @@ yarn add jxk
 npm i jxk
 ```
 
-## Usage
+## 使用
 
-Once installed, you can import the library in your project:
+安装后，您可以在项目中导入库：
 
 ```javascript
 import jxk from 'jxk';
@@ -61,44 +57,44 @@ import {
 } from 'jxk';
 ```
 
-## Functions
+## 函数
 
-For all functions, please visit: [https://www.jixiaokang.com/jxk/](https://www.jixiaokang.com/jxk/)
+所有函数请访问：[https://www.jixiaokang.com/jxk/](https://www.jixiaokang.com/jxk/)
 
-Here is a list of some of the functions included in the `jxk` library:
+以下是 `jxk` 库中包含的一些函数列表：
 
-### Object Functions
+### 对象函数
 
-* deepClone: Creates a deep copy of an object.
-* mergeObjects: Merges multiple objects into one.
-* pickProperties: Picks specific properties from an object.
+* deepClone: 创建对象的深拷贝。
+* mergeObjects: 将多个对象合并为一个。
+* pickProperties: 从对象中选取特定属性。
 
-### Array Functions
+### 数组函数
 
-* flattenArray: Flattens a nested array.
-* chunkArray: Splits an array into chunks of a specified size.
-* uniqueArray: Removes duplicates from an array.
+* flattenArray: 扁平化嵌套数组。
+* chunkArray: 将数组分割为指定大小的块。
+* uniqueArray: 从数组中移除重复项。
 
-### String Functions
+### 字符串函数
 
-capitalizeString: Capitalizes the first letter of a string.
-slugify: Converts a string into a URL-friendly format.
+* capitalizeString: 将字符串的首字母大写。
+* slugify: 将字符串转换为 URL 友好格式。
 
-### Type Checking
+### 类型检查
 
-isObject: Checks if a value is an object.
-isArray: Checks if a value is an array.
-isString: Checks if a value is a string.
+* isObject: 判断值是否为对象。
+* isArray: 判断值是否为数组。
+* isString: 判断值是否为字符串。
 
-### Miscellaneous
+### 其他
 
-* debounce: Debounces a function to prevent it from being called too often.
-* throttle: Throttles a function to limit its execution frequency.
+* debounce: 防抖函数，防止函数被频繁调用。
+* throttle: 节流函数，限制函数执行频率。
 
-## Contributing
+## 贡献
 
-Contributions are welcome! Please read the CONTRIBUTING.md file for details on our code of conduct, how to submit pull requests, and so on.
+欢迎贡献！请阅读 CONTRIBUTING.md 文件以了解我们的行为准则、提交拉取请求的方式等详情。
 
-## License
+## 许可证
 
 [MIT](./LICENSE) License © 2024 [xkloveme](https://github.com/xkloveme)
