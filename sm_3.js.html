@@ -56,7 +56,7 @@
 
         <div id="main">
             
-            <h1 class="page-title">misc/4StateSymbol.js</h1>
+            <h1 class="page-title">sm/3.js</h1>
             
 
             
@@ -66,28 +66,18 @@
 
 <section>
     <article>
-        <pre class="prettyprint source linenums"><code>/**
- * 状态方法
- * @category misc
- * @alias xxx
- * @param {*} state
- * @returns {*}
- * @example 
- * jxk_xxx('success') // '√'
+        <pre class="prettyprint source linenums"><code>import {sm3} from "sm-crypto"
+/**
+ * 判断是否是数字
+ * @category sm
+ * @alias sm3
+ * @param {(string | number)} num
+ * @returns {boolean}
+ * @example 示例
  * @author xkloveme xkloveme@gmail.com
- * @Date 2024-08-10 23:18:14
+ * @Date: 2024-08-10 21:53:59
  */
-export default function xxx (state){
-  const obj = {
-    info: 'i',
-    success: '√',
-    warn: '‼',
-    error: '×'
-};
-
-return obj[state];
-}
-</code></pre>
+export default sm3</code></pre>
     </article>
 </section>
 

@@ -64,8 +64,9 @@ h1 {
 }
 
 h1.page-title {
-  font-size: 48px;
-  margin: 1em 30px;
+  font-size: 20px;
+  color: blue;
+  margin: 10px 30px;
   line-height: 100%;
   word-wrap: break-word;
 }
@@ -87,8 +88,8 @@ h4 {
 }
 
 h4.name {
-  color: #fff;
-  background: #183f62;
+  color: #00ef02;
+  background: #004482;
   box-shadow: 0 .25em .5em #d3d3d3;
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
@@ -310,8 +311,8 @@ nav .active {
 nav .active:before {
   content: "▶";
   position: absolute;
-  font-size: 22px;
-  line-height: 15px;
+  font-size: 18px;
+  line-height: 20px;
   left: -18px;
 }
 

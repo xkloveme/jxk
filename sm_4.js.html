@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://static.yicode.tech/logo/yidash2.png" />
+        
+        <meta property="og:url" content="" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-color: #3aa21c;
+            background-color: #fff;
+            color: #0a0f0b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#isNumber">isNumber</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#SM2">SM2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="sm4.html">sm4</a></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+            <h1 class="page-title">sm/4.js</h1>
+            
+
+            
+
+
+
+
+<section>
+    <article>
+        <pre class="prettyprint source linenums"><code>import {sm4} from "sm-crypto"
+/**
+ * sm4 
+ * @category sm
+ * @alias sm4
+ * @param {(string | number)} num
+ * @returns {boolean}
+ * @example
+ * 加密
+ * import {sm4} from "jxk"
+ * const msg = 'hello world! 我是 juneandgreen.' // 可以为 utf8 串或字节数组
+ * const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特  *
+ * let encryptData = sm4.encrypt(msg, key) // 加密，默认输出 16 进制字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 充）
+ * let encryptData = sm4.encrypt(msg, key, {padding: 'none'}) // 加密，不使用 padding
+ * let encryptData = sm4.encrypt(msg, key, {padding: 'none', output: 'array'}) // 加密，不使用 padding，输出为字节数组
+ * let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 加密，cbc 模式
+ * @example
+ * 解密
+  import {sm4} from "jxk"
+  const encryptData =   '0e395deb10f6e8a17e17823e1fd9bd98a1bff1df508b5b8a1efb79ec633d1bb129432ac1b74972dbe97bab04f024e89c' // 可以为 16 进制串或字节数组
+  const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特
+  let decryptData = sm4.decrypt(encryptData, key) // 解密，默认输出 utf8 字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 填充）
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none'}) // 解密，不使用 padding
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none', output: 'array'}) // 解密，不使用 padding，输出为字节数组
+  let decryptData = sm4.decrypt(encryptData, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 解密，cbc 模式
+ * @author xkloveme xkloveme@gmail.com
+ * @Date: 2024-08-10 21:53:59
+ */
+/**
+ * SM4 加密和解密工具
+ * @category sm
+ * @alias sm4
+ * @author xkloveme xkloveme@gmail.com
+ * @Date: 2024-08-10 21:53:59
+ */
+export class SM4Tool {
+  /**
+   * 加密数据
+   * @param {string|Uint8Array} originalData - 待加密的数据
+   * @param {string|Uint8Array} key - 加密密钥
+   * @param {Object} [options] - 加密选项
+   * @param {('ecb'|'cbc')} [options.mode='ecb'] - 加密模式
+   * @param {('pkcs7'|'none')} [options.padding='pkcs7'] - 填充方式
+   * @param {('hex'|'array')} [options.output='hex'] - 输出格式
+   * @param {string|Uint8Array} [options.iv] - 初始向量
+   * @returns {string|Uint8Array} - 加密后的数据
+   */
+  static encrypt(originalData, key, options = {}) {
+    if (!originalData) {
+      return originalData;
+    }
+
+    try {
+      const sm4 = new SM4({ mode: options.mode || 'ecb', padding: options.padding || 'pkcs7' });
+      const encrypted = sm4.encrypt(originalData, key);
+
+      if (options.output === 'array') {
+        return encrypted;
+      } else {
+        return encrypted.toString('hex');
+      }
+    } catch (error) {
+      console.error('🐛: ~ encrypt ~ error:', originalData, error);
+      return '';
+    }
+  }
+
+  /**
+   * 解密数据
+   * @param {string|Uint8Array} encryptedData - 待解密的数据
+   * @param {string|Uint8Array} key - 解密密钥
+   * @param {Object} [options] - 解密选项
+   * @param {('ecb'|'cbc')} [options.mode='ecb'] - 解密模式
+   * @param {('pkcs7'|'none')} [options.padding='pkcs7'] - 填充方式
+   * @param {('utf8'|'array')} [options.output='utf8'] - 输出格式
+   * @param {string|Uint8Array} [options.iv] - 初始向量
+   * @returns {string|Uint8Array} - 解密后的数据
+   */
+  static decrypt(encryptedData, key, options = {}) {
+    if (!encryptedData) {
+      return encryptedData;
+    }
+
+    try {
+      const sm4 = new SM4({ mode: options.mode || 'ecb', padding: options.padding || 'pkcs7' });
+      const decrypted = sm4.decrypt(encryptedData, key);
+
+      if (options.output === 'array') {
+        return decrypted;
+      } else {
+        const decryptedStr = decrypted.toString('utf8');
+        try {
+          // 尝试解析为 JSON 对象
+          return JSON.parse(decryptedStr);
+        } catch (parseError) {
+          // 如果解析失败，返回原始字符串
+          return decryptedStr;
+        }
+      }
+    } catch (error) {
+      console.error('🐛: ~ decrypt ~ error:', encryptedData, error);
+      return '';
+    }
+  }
+}
+
+// 导出 SM4Tool 类
+export default SM4Tool;</code></pre>
+    </article>
+</section>
+
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            MIT License ©
+            <a href="https://github.com/xkloveme/docdash-extended"
+                >xkloveme
+                4.0.3</a
+            >
+            on
+            Mon Aug 12 2024 01:45:22 GMT+0000 (Coordinated Universal Time)
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+    </body>
+</html>
