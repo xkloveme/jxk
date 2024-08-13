@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-yarn-
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        run: npm install pnpm && pnpm
+        run: yarn
 
       # 运行生成入口文件
       - name: Build src index.js 文件
