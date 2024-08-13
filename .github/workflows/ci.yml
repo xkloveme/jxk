@@ -25,7 +25,7 @@ jobs:
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        run: npm install pnpm
+        run: npm install pnpm && pnpm install
 
       # 运行生成入口文件
       - name: Build src index.js 文件
@@ -37,7 +37,7 @@ jobs:
 
       # 打包为 playground
       - name: Build playground site
-        run: pnpm play:install && pnpm play:build
+        run: pnpm play:build
       # 移动文件夹
       - name: Move playground to docs
         run: mv playground/dist docs/playground
