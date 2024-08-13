@@ -37,7 +37,7 @@ jobs:
 
       # 打包为 playground
       - name: Build playground site
-        run: yarn play:build
+        run: pnpm play:install && pnpm play:build
       # 移动文件夹
       - name: Move playground to docs
         run: mv playground/dist docs/playground
