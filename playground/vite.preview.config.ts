@@ -18,7 +18,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'playground',
     commonjsOptions: {
       ignore: ['typescript'],
     },

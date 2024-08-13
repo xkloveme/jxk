@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-yarn-
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        run: yarn
+        run: npm install pnpm && yarn
 
       # 运行生成入口文件
       - name: Build src index.js 文件
@@ -44,6 +44,13 @@ jobs:
       # 打包为 docs
       - name: Build docs site
         run: yarn docs
+
+      # 打包为 playground
+      - name: Build playground site
+        run: yarn play:build
+      # 移动文件夹
+      - name: Move playground to docs
+        run: mv playground/dist docs/playground
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
