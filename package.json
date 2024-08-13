@@ -52,6 +52,7 @@
     "build": "unbuild",
     "lint": "eslint .",
     "play": "vite playground",
+    "play:build": "pnpm -r --filter=playground run build-preview",
     "release": "bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
