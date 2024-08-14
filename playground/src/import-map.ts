@@ -32,7 +32,7 @@ export function useVueImportMap(
       }/dist/server-renderer.esm-browser.js`
       const jxk =
       normalizeDefaults(defaults.jxkFunction) ||
-      `https://cdn.jsdelivr.net/npm/jxk/dist/index.mjs`
+      `https://unpkg.com/jxk/dist/index.mjs`
     return {
       imports: {
         vue,
