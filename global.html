@@ -50,7 +50,7 @@
             <input type="text" id="nav-search" placeholder="搜索" />
             
             
-            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#isNumber">isNumber</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#SM2">SM2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="sm4.html">sm4</a></li></ul><h3><a href="global.html">Global</a></h3>
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_number">is_number</a></li><li><a href="global.html#yd_is_chinese">yd_is_chinese</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_regexp">reg_regexp</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
             
         </nav>
 
@@ -147,7 +147,7 @@
 
         
         
-<h4 class="name" id="SM2"><span class="type-signature"></span>SM2<span class="type-signature"></span></h4>
+<h4 class="name" id="sm2"><span class="type-signature"></span>sm2<span class="type-signature"></span></h4>
 
 
 
@@ -162,7 +162,7 @@
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sm_2.js.html">sm/2.js</a>, <a href="sm_2.js.html#line12">line 12</a>
+        <a href="sm_2.js.html">sm/2.js</a>, <a href="sm_2.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -219,10 +219,89 @@
 
 
 <h5 class="h5-examples">
-    示例：
+    示例：s
 </h5>
 
-<pre class="prettyprint"><code>示例</code></pre>
+<pre class="prettyprint"><code>import {sm2} from "jxk";
+ let keypair = sm2.generateKeyPairHex()
+
+publicKey = keypair.publicKey // 公钥
+privateKey = keypair.privateKey // 私钥
+
+// 默认生成公钥 130 位太长，可以压缩公钥到 66 位
+const compressedPublicKey = sm2.compressPublicKeyHex(publicKey) // compressedPublicKey 和 publicKey 等价
+sm2.comparePublicKeyHex(publicKey, compressedPublicKey) // 判断公钥是否等价
+
+// 自定义随机数，参数会直接透传给 BigInt 构造器
+// 注意：开发者使用自定义随机数，需要自行确保传入的随机数符合密码学安全
+let keypair2 = sm2.generateKeyPairHex('123123123123123')
+
+// 初始化随机数池，在某些场景下可能会用到
+await sm2.initRNGPool()
+
+let verifyResult = sm2.verifyPublicKey(publicKey) // 验证公钥
+verifyResult = sm2.verifyPublicKey(compressedPublicKey) // 验证公钥</code></pre>
+
+<pre class="prettyprint"><code>// 加密解密
+import { sm2 } from 'jxk'
+const cipherMode = 1 // 1 - C1C3C2，0 - C1C2C3，默认为1
+// 支持使用 asn1 对加密结果进行编码，在 options 参数中传入 { asn1: true } 即可，默认不开启
+let encryptData = sm2.doEncrypt(msgString, publicKey, cipherMode, { asn1: false }) // 加密结果
+
+// 支持使用 asn1 对密文进行解码再解密，在 options 参数中传入 { asn1: true } 即可，默认不开启
+let decryptData = sm2.doDecrypt(encryptData, privateKey, cipherMode, { asn1: false }) // 解密结果
+
+encryptData = sm2.doEncrypt(msgArray, publicKey, cipherMode) // 加密结果，输入数组
+decryptData = sm2.doDecrypt(encryptData, privateKey, cipherMode, {output: 'array'}) // 解密结果，输出数组</code></pre>
+
+<pre class="prettyprint"><code>// 签名验签
+// 纯签名 + 生成椭圆曲线点
+let sigValueHex = sm2.doSignature(msg, privateKey) // 签名
+let verifyResult = sm2.doVerifySignature(msg, sigValueHex, publicKey) // 验签结果
+
+// 纯签名
+let sigValueHex2 = sm2.doSignature(msg, privateKey, {
+    pointPool: [sm2.getPoint(), sm2.getPoint(), sm2.getPoint(), sm2.getPoint()], // 传入事先已生成好的椭圆曲线点，可加快签名速度
+}) // 签名
+let verifyResult2 = sm2.doVerifySignature(msg, sigValueHex2, publicKey) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + der编解码
+let sigValueHex3 = sm2.doSignature(msg, privateKey, {
+    der: true,
+}) // 签名
+let verifyResult3 = sm2.doVerifySignature(msg, sigValueHex3, publicKey, {
+    der: true,
+}) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑
+let sigValueHex4 = sm2.doSignature(msg, privateKey, {
+    hash: true,
+}) // 签名
+let verifyResult4 = sm2.doVerifySignature(msg, sigValueHex4, publicKey, {
+    hash: true,
+}) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑（不做公钥推导）
+let sigValueHex5 = sm2.doSignature(msg, privateKey, {
+    hash: true,
+    publicKey, // 传入公钥的话，可以去掉sm3杂凑中推导公钥的过程，速度会比纯签名 + 生成椭圆曲线点 + sm3杂凑快
+})
+let verifyResult5 = sm2.doVerifySignature(msg, sigValueHex5, publicKey, {
+    hash: true,
+    publicKey,
+})
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑 + 不做公钥推 + 添加 userId（长度小于 8192）
+// 默认 userId 值为 1234567812345678
+let sigValueHex6 = sm2.doSignature(msgString, privateKey, {
+    hash: true,
+    publicKey,
+    userId: 'testUserId',
+})
+let verifyResult6 = sm2.doVerifySignature(msgString, sigValueHex6, publicKey, {
+    hash: true,
+    userId: 'testUserId',
+})</code></pre>
 
 
 
@@ -238,13 +317,13 @@
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>判断是否是数字</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>SM3 消息摘要算法</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sm_3.js.html">sm/3.js</a>, <a href="sm_3.js.html#line12">line 12</a>
+        <a href="sm_3.js.html">sm/3.js</a>, <a href="sm_3.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -291,7 +370,7 @@
 
 
 <div class="description usertext">
-    <p>判断是否是数字</p>
+    <p>SM3 消息摘要算法</p>
 </div>
 
 
@@ -304,7 +383,108 @@
     示例：
 </h5>
 
-<pre class="prettyprint"><code>示例</code></pre>
+<pre class="prettyprint"><code>// 示例用法
+import {sm3} from "jxk";
+const hash = sm3("Hello, World!");
+console.log(hash); // 输出 SM3 哈希值</code></pre>
+
+
+
+
+        
+        
+<h4 class="name" id="sm4"><span class="type-signature"></span>sm4<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>sm4</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sm_4.js.html">sm/4.js</a>, <a href="sm_4.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>sm4</p>
+</div>
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    示例：s
+</h5>
+
+<pre class="prettyprint"><code>加密
+import {sm4} from "jxk"
+const msg = '我是原始数据' // 可以为 utf8 串或字节数组
+const key = '5e0a3ab263b283e3db6001018776c4f0' // 可以为 16 进制串或字节数组，要求为 128 比特  *
+let encryptData = sm4.encrypt(msg, key) // 加密，默认输出 16 进制字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 充）
+let encryptData = sm4.encrypt(msg, key, {padding: 'none'}) // 加密，不使用 padding
+let encryptData = sm4.encrypt(msg, key, {padding: 'none', output: 'array'}) // 加密，不使用 padding，输出为字节数组
+let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 加密，cbc 模式</code></pre>
+
+<pre class="prettyprint"><code>解密
+  import {sm4} from "jxk"
+  const encryptData =  'aaff18e2a966d10017469a492b800169d68e6f979da91cdeed454bb769665892' // 可以为 16 进制串或字节数组
+  const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特
+  let decryptData = sm4.decrypt(encryptData, key) // 解密，默认输出 utf8 字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 填充）
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none'}) // 解密，不使用 padding
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none', output: 'array'}) // 解密，不使用 padding，输出为字节数组
+  let decryptData = sm4.decrypt(encryptData, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 解密，cbc 模式</code></pre>
 
 
 
@@ -320,8 +500,356 @@
 
 
 
-<h4 class="name" id="isNumber">
-    <span class="type-signature"></span>isNumber<span class="signature">(num)</span><span class="type-signature"> &rarr; {boolean}</span>
+<h4 class="name" id="is_array">
+    <span class="type-signature"></span>is_array<span class="signature">(value)</span><span class="type-signature"> &rarr; {boolean}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>是否是数组</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="is_array.js.html">is/array.js</a>, <a href="is_array.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>is_array([1,2,3]) // true</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>value</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">any</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>任意值</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回是否是数组</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="is_boolean">
+    <span class="type-signature"></span>is_boolean<span class="signature">(value)</span><span class="type-signature"> &rarr; {Boolean}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>判断是否是布尔值</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="is_boolean.js.html">is/boolean.js</a>, <a href="is_boolean.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>value</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">any</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>任意值</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回是否是布尔值</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="is_number">
+    <span class="type-signature"></span>is_number<span class="signature">(num)</span><span class="type-signature"> &rarr; {boolean}</span>
 </h4>
 
 
@@ -693,6 +1221,360 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 
+<h4 class="name" id="reg_businessLicense">
+    <span class="type-signature"></span>reg_businessLicense<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+</h4>
+
+
+<p class="summary usertext"><p>/(^(?:(?![I0ZSV])[\dA-Z]){2}\d{6}(?:(?![I0ZSV])[\dA-Z]){10}$)|(^\d{15}$)|([0-9A-Z]{18})/</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>营业执照号码校验</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reg_businessLicense.js.html">reg/businessLicense.js</a>, <a href="reg_businessLicense.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回营业执照号码正则</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">RegExp</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="reg_licencePlateNumber">
+    <span class="type-signature"></span>reg_licencePlateNumber<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+</h4>
+
+
+<p class="summary usertext"><p>/^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4,5}[A-HJ-NP-Z0-9挂学警港澳]$/</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>车牌号校验</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reg_licencePlateNumber.js.html">reg/licencePlateNumber.js</a>, <a href="reg_licencePlateNumber.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回车牌号正则</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">RegExp</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="reg_regexp">
+    <span class="type-signature"></span>reg_regexp<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+</h4>
+
+
+<p class="summary usertext"><p>/^[GCDZTSPKXLY1-9]\d{1,4}$/</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>火车车次正则</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reg_trainNumber.js.html">reg/trainNumber.js</a>, <a href="reg_trainNumber.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回火车车次正则</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">RegExp</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
 <h4 class="name" id="xxx">
     <span class="type-signature"></span>xxx<span class="signature">(state)</span><span class="type-signature"> &rarr; {*}</span>
 </h4>
@@ -865,6 +1747,226 @@ console.log(addressComponents5); // 输出: null</code></pre>
         
         
 
+
+
+<h4 class="name" id="yd_is_chinese">
+    <span class="type-signature"></span>yd_is_chinese<span class="signature">(str, isPure)</span><span class="type-signature"> &rarr; {boolean}</span>
+</h4>
+
+
+<p class="summary usertext"><p>判断是否为中文字符串</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>是否为中文
+中文范围：\u4E00-\u9FFF 基本的CJK统一表意文字区块。
+中文范围：\u3400-\u4DBF CJK统一表意文字扩展A区块。
+中文范围：\u20000-\u2A6DF CJK统一表意文字扩展B区块。
+中文范围：\u2A700-\u2B73F CJK统一表意文字扩展C区块。
+中文范围：\u2B740-\u2B81F CJK统一表意文字扩展D区块。
+中文范围：\u2B820-\u2CEAF CJK统一表意文字扩展E区块。
+中文范围：\uF900-\uFAFF CJK兼容表意文字区块。
+中文范围：\u2F800-\u2FA1F CJK兼容表意文字补充区块。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="is_chinese.js.html">is/chinese.js</a>, <a href="is_chinese.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>go522000 &lt;https://github.com/go522000></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 默认匹配纯中文
+yd_is_chinese('中文'); // true</code></pre>
+
+<pre class="prettyprint"><code>// 第二个参数设置为 false，则匹配包含中文的字符串
+yd_is_chinese('abc中文123', false); // true</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>str</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>字符串</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>isPure</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">boolean</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>是否纯中文</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回是否是中文字符串</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
         
 
         
@@ -887,7 +1989,7 @@ console.log(addressComponents5); // 输出: null</code></pre>
                 4.0.3</a
             >
             on
-            Tue Aug 13 2024 06:34:20 GMT+0000 (Coordinated Universal Time)
+            Wed Aug 14 2024 09:49:38 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
