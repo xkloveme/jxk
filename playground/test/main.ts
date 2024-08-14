@@ -16,6 +16,9 @@ const App = {
       runtimeDev: import.meta.env.PROD
         ? undefined
         : `${location.origin}/src/vue-dev-proxy`,
+      jxkFunction: import.meta.env.PROD
+        ? undefined
+        : `${location.origin}/src/jxk`,
       serverRenderer: import.meta.env.PROD
         ? undefined
         : `${location.origin}/src/vue-server-renderer-dev-proxy`,

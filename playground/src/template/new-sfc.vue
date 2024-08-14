@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import jxk from 'jxk'
+</script>
 
 <template>
   <div>

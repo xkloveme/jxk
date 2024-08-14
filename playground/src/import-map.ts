@@ -1,10 +1,10 @@
 import { computed, version as currentVersion, ref } from 'vue'
-
 export function useVueImportMap(
   defaults: {
     runtimeDev?: string | (() => string)
     runtimeProd?: string | (() => string)
     serverRenderer?: string | (() => string)
+    jxkFunction?: string | (() => string)
     vueVersion?: string | null
   } = {},
 ) {
@@ -30,10 +30,14 @@ export function useVueImportMap(
       `https://cdn.jsdelivr.net/npm/@vue/server-renderer@${
         vueVersion.value || currentVersion
       }/dist/server-renderer.esm-browser.js`
+      const jxk =
+      normalizeDefaults(defaults.jxkFunction) ||
+      `https://cdn.jsdelivr.net/npm/jxk/dist/index.mjs`
     return {
       imports: {
         vue,
         'vue/server-renderer': serverRenderer,
+        jxk,
       },
     }
   })

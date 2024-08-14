@@ -1,15 +1,21 @@
-import {sm4} from "sm-crypto"
+import { SM4 } from "../../utils/sm4"
 /**
- * sm4 
+ * sm4
  * @category sm
  * @alias sm4
- * @param {(string | number)} num
- * @returns {boolean}
+ * @param {string|Uint8Array} originalData - 待加密的数据
+ * @param {string|Uint8Array} key 加密密钥
+ * @param {Object} [options] 加密选项
+ * @param {('ecb'|'cbc')} [options.mode='ecb'] 加密模式
+ * @param {('pkcs7'|'none')} [options.padding='pkcs7'] 填充方式
+ * @param {('hex'|'array')} [options.output='hex'] 输出格式
+ * @param {string|Uint8Array} [options.iv] 初始向量
+ * @returns {string|Uint8Array} 加密后的数据
  * @example
  * 加密
  * import {sm4} from "jxk"
- * const msg = 'hello world! 我是 juneandgreen.' // 可以为 utf8 串或字节数组
- * const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特  *
+ * const msg = '我是原始数据' // 可以为 utf8 串或字节数组
+ * const key = '5e0a3ab263b283e3db6001018776c4f0' // 可以为 16 进制串或字节数组，要求为 128 比特  *
  * let encryptData = sm4.encrypt(msg, key) // 加密，默认输出 16 进制字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 充）
  * let encryptData = sm4.encrypt(msg, key, {padding: 'none'}) // 加密，不使用 padding
  * let encryptData = sm4.encrypt(msg, key, {padding: 'none', output: 'array'}) // 加密，不使用 padding，输出为字节数组
@@ -17,7 +23,7 @@ import {sm4} from "sm-crypto"
  * @example
  * 解密
   import {sm4} from "jxk"
-  const encryptData =   '0e395deb10f6e8a17e17823e1fd9bd98a1bff1df508b5b8a1efb79ec633d1bb129432ac1b74972dbe97bab04f024e89c' // 可以为 16 进制串或字节数组
+  const encryptData =  'aaff18e2a966d10017469a492b800169d68e6f979da91cdeed454bb769665892' // 可以为 16 进制串或字节数组
   const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特
   let decryptData = sm4.decrypt(encryptData, key) // 解密，默认输出 utf8 字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 填充）
   let decryptData = sm4.decrypt(encryptData, key, {padding: 'none'}) // 解密，不使用 padding
@@ -26,14 +32,7 @@ import {sm4} from "sm-crypto"
  * @author xkloveme xkloveme@gmail.com
  * @Date: 2024-08-10 21:53:59
  */
-/**
- * SM4 加密和解密工具
- * @category sm
- * @alias sm4
- * @author xkloveme xkloveme@gmail.com
- * @Date: 2024-08-10 21:53:59
- */
-export class SM4Tool {
+export default {
   /**
    * 加密数据
    * @param {string|Uint8Array} originalData - 待加密的数据
@@ -45,15 +44,12 @@ export class SM4Tool {
    * @param {string|Uint8Array} [options.iv] - 初始向量
    * @returns {string|Uint8Array} - 加密后的数据
    */
-  static encrypt(originalData, key, options = {}) {
-    if (!originalData) {
+  encrypt: (originalData, key, options = {}) => {
+    if (originalData === '' || originalData === null || originalData === undefined) {
       return originalData;
     }
-
     try {
-      const sm4 = new SM4({ mode: options.mode || 'ecb', padding: options.padding || 'pkcs7' });
-      const encrypted = sm4.encrypt(originalData, key);
-
+      const encrypted = SM4(originalData, key, 1, options);
       if (options.output === 'array') {
         return encrypted;
       } else {
@@ -63,7 +59,7 @@ export class SM4Tool {
       console.error('🐛: ~ encrypt ~ error:', originalData, error);
       return '';
     }
-  }
+  },
 
   /**
    * 解密数据
@@ -76,15 +72,13 @@ export class SM4Tool {
    * @param {string|Uint8Array} [options.iv] - 初始向量
    * @returns {string|Uint8Array} - 解密后的数据
    */
-  static decrypt(encryptedData, key, options = {}) {
-    if (!encryptedData) {
+  decrypt: (encryptedData, key, options = {}) => {
+    if (encryptedData === '' || encryptedData === null || encryptedData === undefined) {
       return encryptedData;
     }
 
     try {
-      const sm4 = new SM4({ mode: options.mode || 'ecb', padding: options.padding || 'pkcs7' });
-      const decrypted = sm4.decrypt(encryptedData, key);
-
+      const decrypted = SM4(encryptedData, key, 0, options);
       if (options.output === 'array') {
         return decrypted;
       } else {
@@ -103,6 +97,3 @@ export class SM4Tool {
     }
   }
 }
-
-// 导出 SM4Tool 类
-export default SM4Tool;

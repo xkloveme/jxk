@@ -1,19 +1,33 @@
 <!doctype html>
 <html>
-  <head>
-    <style>
-      html.dark {
-        color-scheme: dark;
-      }
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-    </style>
-    <!-- PREVIEW-OPTIONS-HEAD-HTML -->
-    <script>
-      ;(() => {
+<head>
+  <style>
+    html.dark {
+      color-scheme: dark;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+  </style>
+  <script src="//cdn.jsdelivr.net/npm/@watone/console"></script>
+  <script> eruda.init({
+      useShadowDom: false,
+      tool: ['console', 'network', 'sources'],
+      defaults: {
+        token: '',
+        displaySize: 50,
+        transparency: 1,
+        theme: 'Light',
+      },
+    })
+    eruda.show()
+  </script>
+  <!-- PREVIEW-OPTIONS-HEAD-HTML -->
+  <script>
+      ; (() => {
         let scriptEls = []
 
         window.process = { env: {} }
@@ -31,7 +45,7 @@
           return Promise.resolve(window.__modules__[key])
         }
 
-        async function handle_message(ev) {
+        async function handle_message (ev) {
           let { action, cmd_id } = ev.data
           // 通知父级
           const send_message = (payload) =>
@@ -160,62 +174,62 @@
         })
 
         let previous = { level: null, args: null }
-        // console 上报
-        ;['clear', 'log', 'info', 'dir', 'warn', 'error', 'table'].forEach(
-          (level) => {
-            const original = console[level]
-            // 重写 console
-            console[level] = (...args) => {
-              const msg = args[0]
-              if (typeof msg === 'string') {
-                if (
-                  msg.includes('You are running a development build of Vue') ||
-                  msg.includes('You are running the esm-bundler build of Vue')
-                ) {
-                  return
+          // console 上报
+          ;['clear', 'log', 'info', 'dir', 'warn', 'error', 'table'].forEach(
+            (level) => {
+              const original = console[level]
+              // 重写 console
+              console[level] = (...args) => {
+                const msg = args[0]
+                if (typeof msg === 'string') {
+                  if (
+                    msg.includes('You are running a development build of Vue') ||
+                    msg.includes('You are running the esm-bundler build of Vue')
+                  ) {
+                    return
+                  }
                 }
-              }
 
-              original(...args)
+                original(...args)
 
-              const stringifiedArgs = stringify(args)
-              if (
-                previous.level === level &&
-                previous.args &&
-                previous.args === stringifiedArgs
-              ) {
-                parent.postMessage(
-                  { action: 'console', level, duplicate: true },
-                  '*',
-                )
-              } else {
-                previous = { level, args: stringifiedArgs }
-
-                try {
-                  parent.postMessage({ action: 'console', level, args }, '*')
-                } catch (err) {
+                const stringifiedArgs = stringify(args)
+                if (
+                  previous.level === level &&
+                  previous.args &&
+                  previous.args === stringifiedArgs
+                ) {
                   parent.postMessage(
-                    { action: 'console', level, args: args.map(toString) },
+                    { action: 'console', level, duplicate: true },
                     '*',
                   )
+                } else {
+                  previous = { level, args: stringifiedArgs }
+
+                  try {
+                    parent.postMessage({ action: 'console', level, args }, '*')
+                  } catch (err) {
+                    parent.postMessage(
+                      { action: 'console', level, args: args.map(toString) },
+                      '*',
+                    )
+                  }
                 }
               }
-            }
-          },
-        )
-        // 特殊 console 暂且不管
-        ;[
-          { method: 'group', action: 'console_group' },
-          { method: 'groupEnd', action: 'console_group_end' },
-          { method: 'groupCollapsed', action: 'console_group_collapsed' },
-        ].forEach((group_action) => {
-          const original = console[group_action.method]
-          console[group_action.method] = (label) => {
-            parent.postMessage({ action: group_action.action, label }, '*')
+            },
+          )
+          // 特殊 console 暂且不管
+          ;[
+            { method: 'group', action: 'console_group' },
+            { method: 'groupEnd', action: 'console_group_end' },
+            { method: 'groupCollapsed', action: 'console_group_collapsed' },
+          ].forEach((group_action) => {
+            const original = console[group_action.method]
+            console[group_action.method] = (label) => {
+              parent.postMessage({ action: group_action.action, label }, '*')
 
-            original(label)
-          }
-        })
+              original(label)
+            }
+          })
 
         const timers = new Map()
 
@@ -331,7 +345,7 @@
           original_trace(...args)
         }
 
-        function toString(value) {
+        function toString (value) {
           if (value instanceof Error) {
             return value.message
           }
@@ -342,11 +356,11 @@
           ]) {
             try {
               return fn(value)
-            } catch (err) {}
+            } catch (err) { }
           }
         }
 
-        function isComponentProxy(value) {
+        function isComponentProxy (value) {
           return (
             value &&
             typeof value === 'object' &&
@@ -357,7 +371,7 @@
           )
         }
 
-        function stringify(args) {
+        function stringify (args) {
           try {
             return JSON.stringify(args, (key, value) => {
               return isComponentProxy(value) ? '{component proxy}' : value
@@ -367,23 +381,20 @@
           }
         }
       })()
-    </script>
-    <!-- 引入了  ES Module-->
-    <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->
-    <!-- <script
+  </script>
+  <!-- 引入了  ES Module-->
+  <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->
+  <!-- <script
       async
       src="https://cdn.jsdelivr.net/npm/es-module-shims@1.5.18/dist/es-module-shims.wasm.js"
     ></script> -->
-    <script type="importmap">
+  <script type="importmap">
       <!--IMPORT_MAP-->
     </script>
-    <script type="module">
-      import { ref } from 'vue'
-      console.log(ref)
-    </script>
-  </head>
+</head>
 
-  <body>
-    <!--PREVIEW-OPTIONS-PLACEHOLDER-HTML-->
-  </body>
+<body>
+  <!--PREVIEW-OPTIONS-PLACEHOLDER-HTML-->
+</body>
+
 </html>

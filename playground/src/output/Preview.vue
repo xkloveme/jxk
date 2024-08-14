@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import Message from '../Message.vue'
 import {
   type Ref,
@@ -226,7 +227,7 @@ async function updatePreview() {
     if (major === 3 && (minor < 2 || (minor === 2 && patch < 27))) {
       alert(
         `The selected version of Vue (${store.vueVersion}) does not support in-browser SSR.` +
-          ` Rendering in client mode instead.`,
+        ` Rendering in client mode instead.`,
       )
       isSSR = false
     }
@@ -256,9 +257,8 @@ async function updatePreview() {
          }
          app.config.warnHandler = () => {}
          window.__ssr_promise__ = _renderToString(app).then(html => {
-           document.body.innerHTML = '<div id="app">' + html + '</div>' + \`${
-             previewOptions?.bodyHTML || ''
-           }\`
+           document.body.innerHTML = '<div id="app">' + html + '</div>' + \`${previewOptions?.bodyHTML || ''
+        }\`
          }).catch(err => {
            console.error("SSR Error", err)
          })
@@ -270,19 +270,17 @@ async function updatePreview() {
     // 编译代码
     const modules = compileModulesForPreview(store)
     console.info(
-      `[@vue/repl] successfully compiled ${modules.length} module${
-        modules.length > 1 ? `s` : ``
+      `[@vue/repl] successfully compiled ${modules.length} module${modules.length > 1 ? `s` : ``
       }.`,
     )
 
     const codeToEval = [
       `window.__modules__ = {};window.__css__ = [];` +
-        `if (window.__app__) window.__app__.unmount();` +
-        (isSSR
-          ? ``
-          : `document.body.innerHTML = '<div id="app"></div>' + \`${
-              previewOptions?.bodyHTML || ''
-            }\``),
+      `if (window.__app__) window.__app__.unmount();` +
+      (isSSR
+        ? ``
+        : `document.body.innerHTML = '<div id="app"></div>' + \`${previewOptions?.bodyHTML || ''
+        }\``),
       ...modules,
       `document.querySelectorAll('style[css]').forEach(el => el.remove())
         document.head.insertAdjacentHTML('beforeend', window.__css__.map(s => \`<style css>\${s}</style>\`).join('\\n'))`,
@@ -291,8 +289,7 @@ async function updatePreview() {
     // if main file is a vue file, mount it.
     if (mainFile.endsWith('.vue')) {
       codeToEval.push(
-        `import { ${
-          isSSR ? `createSSRApp` : `createApp`
+        `import { ${isSSR ? `createSSRApp` : `createApp`
         } as _createApp } from "vue"
         ${previewOptions?.customCode?.importCode || ''}
         const _mount = () => {
@@ -333,12 +330,7 @@ defineExpose({ reload })
 </script>
 
 <template>
-  <div
-    v-show="show"
-    ref="container"
-    class="iframe-container"
-    :class="{ [theme]: previewTheme }"
-  />
+  <div v-show="show" ref="container" class="iframe-container" :class="{ [theme]: previewTheme }" />
   <Message :err="runtimeError" />
   <Message v-if="!runtimeError" :warn="runtimeWarning" />
 </template>
@@ -351,6 +343,7 @@ defineExpose({ reload })
   border: none;
   background-color: #fff;
 }
+
 .iframe-container.dark :deep(iframe) {
   background-color: #1e1e1e;
 }

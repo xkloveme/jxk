@@ -1,1 +1,1 @@
-export const libNames = ["address_areaMatch","is_number","misc_4StateSymbol","misc_sm4","sm2","sm3","sm4"];
+export const libNames = ["address_areaMatch","is_array","is_boolean","is_chinese","is_number","misc_4StateSymbol","misc_sm4","reg_businessLicense","reg_licencePlateNumber","reg_trainNumber","sm2","sm3","sm4"];
