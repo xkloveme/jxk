@@ -1,7 +1,7 @@
 /**
  * 从数组中选择指定标签的项
  * @alias array_pick
- * @category 数组操作
+ * @category array
  * @param {Array} arrObj 数组对象
  * @param {string} field 匹配的字段
  * @param {Array} values 匹配的值

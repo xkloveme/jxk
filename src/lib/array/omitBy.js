@@ -1,7 +1,7 @@
 /**
  * 从数组中排除指定标签的项
  * @alias array_omitBy
- * @category 数组操作
+ * @category array
  * @param {object[]} arry - 需要处理的数组，其中每个对象包含 `label` 和 `value` 属性
  * @param {string[]} keys - 需要排除的标签列表
  * @returns {object[]} 返回一个新数组，其中不包含具有指定标签的项
