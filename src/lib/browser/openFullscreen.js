@@ -1,18 +1,32 @@
 /**
  * 开启网页全屏
- * @author xkloveme xkloveme@gmail.com
- * @category browser
+ * 
  * @alias browser_openFullscreen
- * @param {string} element 元素
+ * @category browser
+ * 
+ * @param {Element} element - 要进入全屏模式的 DOM 元素
+ * 
+ * @author xkloveme <xkloveme@gmail.com>
+ * 
+ * @example
+ * const element = document.getElementById('myElement');
+ * browser_openFullscreen(element);
  */
-export default (element) => {
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if (element.msRequestFullscreen) {
-    element.msRequestFullscreen();
-  } else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullScreen();
+export default function browser_openFullscreen(element) {
+  // 参数验证
+  if (!(element instanceof Element)) {
+    throw new TypeError('The argument must be an instance of Element.');
   }
-};
+
+  // 兼容性处理
+  const requestFullscreen = element.requestFullscreen ||
+                            element.mozRequestFullScreen ||
+                            element.msRequestFullscreen ||
+                            element.webkitRequestFullScreen;
+
+  if (requestFullscreen) {
+    requestFullscreen.call(element);
+  } else {
+    throw new Error('Fullscreen is not supported by this browser.');
+  }
+}

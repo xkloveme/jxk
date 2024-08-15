@@ -13,7 +13,7 @@
  * @example
  * browser_encode('<p>Hello</p>'); // 返回 "&lt;p&gt;Hello&lt;/p&gt;"
  */
-export const browser_encode = (html) => {
+export default  (html) => {
   // 参数验证
   if (typeof html !== 'string') {
     throw new TypeError('The input must be a string.');

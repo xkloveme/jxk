@@ -69,34 +69,96 @@ import {
 
 以下是 `jxk` 库中包含的一些函数列表：
 
-### 对象函数
+## HTML 标签处理
 
-* deepClone: 创建对象的深拷贝。
-* mergeObjects: 将多个对象合并为一个。
-* pickProperties: 从对象中选取特定属性。
+- **browser_decode**: HTML 标签反转义。
+  - **用途**: 将 HTML 实体转换回原始字符。
+  - **示例**:
+    ```javascript
+    browser_decode('&lt;p&gt;Hello&lt;/p&gt;'); // 返回 "<p>Hello</p>"
+    ```
 
-### 数组函数
+- **browser_encode**: HTML 标签转义。
+  - **用途**: 将特殊字符转换为 HTML 实体以防止 XSS 攻击。
+  - **示例**:
+    ```javascript
+    browser_encode('<p>Hello</p>'); // 返回 "&lt;p&gt;Hello&lt;/p&gt;"
+    ```
 
-* flattenArray: 扁平化嵌套数组。
-* chunkArray: 将数组分割为指定大小的块。
-* uniqueArray: 从数组中移除重复项。
+## 加密算法
 
-### 字符串函数
+- **sm2**: SM2 国密算法，包括生成密钥对、加密、解密、签名、验签等功能。
+- **sm3**: SM3 消息摘要算法。
+- **sm4**: SM4 加密和解密功能。
 
-* capitalizeString: 将字符串的首字母大写。
-* slugify: 将字符串转换为 URL 友好格式。
+## 时间格式化
 
-### 类型检查
+- **time_date**: 格式化时间，参考文档为 [date-fns](https://date-fns.p6p.net/)。
+- **time_format**: 格式化时间。
 
-* isObject: 判断值是否为对象。
-* isArray: 判断值是否为数组。
-* isString: 判断值是否为字符串。
+## 地址分析
 
-### 其他
+- **analysis_address**: 省、市、区分析提取。
+- **analysis_idcard**: 对身份证号解析。
 
-* debounce: 防抖函数，防止函数被频繁调用。
-* throttle: 节流函数，限制函数执行频率。
+## 数组处理
 
+- **array_chunk**: 根据指定大小将数组分割成二维数组。
+  - **示例**:
+    ```javascript
+    array_chunk([1, 2, 3, 4, 5], 2); // 返回 [[1, 2], [3, 4], [5]]
+    ```
+
+- **array_concat**: 合并数组。
+  - **示例**:
+    ```javascript
+    array_concat([1, 2], [3, 4]); // 返回 [1, 2, 3, 4]
+    ```
+
+- **array_countOccurrences**: 统计数组中各项出现的次数。
+  - **示例**:
+    ```javascript
+    array_countOccurrences(['apple', 'banana', 'apple', 'orange', 'banana', 'banana']);
+    // 返回 { apple: 2, banana: 3, orange: 1 }
+    ```
+
+- **array_diffBoth**: 数组的差集。
+- **array_diffFirst**: 取第一个数组的差集。
+- **array_durstenfeldShuffle**: Durstenfeld 随机洗牌算法。
+- **array_findIndex**: 查找数组中匹配的索引。
+- **array_findObj**: 查找数组中匹配的值。
+- **array_findParent**: 在数组中获取指定子 ID 的祖级数据。
+- **array_findParent (另一个)**: 在 Tree 中获取指定子 ID 的祖级数据。
+- **array_flatten**: 将多维数组拍平为一维数组。
+- **array_fromTree**: 将树形结构转换为扁平化的数组。
+- **array_groupBy**: 数组数据分组。
+- **array_intersection**: 计算两个数组的交集。
+- **array_keyBy**: 数组按 key 排序。
+- **array_max**: 计算数组中的最大值。
+- **array_merge**: 合并多个数组并返回它们的并集。
+- **array_min**: 计算数组中的最小值。
+- **array_omitBy**: 从数组中排除指定标签的项。
+- **array_paging**: 对数组进行分页。
+- **array_pick**: 从数组中选择指定标签的项。
+- **array_randomItem**: 随机取数组中的元素。
+- **array_remove**: 根据元素删除。
+- **array_sattoloShuffle**: Sattolo 洗牌算法。
+- **array_shuffle**: 数组随机排序（俗称洗牌）。
+- **array_sort**: 排序。
+- **array_sumBy**: 数组求和。
+- **array_toMapByKey**: 根据某个键的值将数组转换为 Map 对象。
+- **array_toTree**: 将数组转换为树形结构。
+- **array_uniqWith**: 数组去重。
+- **array_unique**: 数组去重。
+- **array_uniqueByField**: 对象数组根据某个字段去重。
+
+## 浏览器操作
+
+- **browser_copyText**: 复制文本。
+  - **示例**:
+    ```javascript
+    browser_copyText('Hello, world!');
+    ```
 ## 贡献
 
 欢迎贡献！请阅读 CONTRIBUTING.md 文件以了解我们的行为准则、提交拉取请求的方式等详情。

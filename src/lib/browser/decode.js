@@ -13,7 +13,7 @@
  * @example
  * browser_decode('&lt;p&gt;Hello&lt;/p&gt;'); // 返回 "Hello"
  */
-export const browser_decode = (text) => {
+export default (text) => {
   // 参数验证
   if (typeof text !== 'string') {
     throw new TypeError('The input must be a string.');
