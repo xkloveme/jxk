@@ -96,7 +96,6 @@ export { default as reg_trainNumber } from './lib/reg/trainNumber.js';
 export { default as sm2 } from './lib/sm/2.js';
 export { default as sm3 } from './lib/sm/3.js';
 export { default as sm4 } from './lib/sm/4.js';
-export { default as time_computeAge } from './lib/time/computeAge.js';
 export { default as time_customFormat } from './lib/time/customFormat.js';
 export { default as time_date } from './lib/time/date.js';
 export { default as time_dateRange } from './lib/time/dateRange.js';
