@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { format, parseISO, getYear, subMonths } from 'date-fns';
+import { format, formatISO, getYear, subMonths } from 'date-fns';
 import time_computeAge from './computeAge'; // 确保路径正确
 
 describe('time_computeAge', () => {
@@ -18,7 +18,7 @@ describe('time_computeAge', () => {
 
     test('边界情况：出生日期在今年的某一天', () => {
         const birthday = format(subMonths(new Date(), 5), 'yyyy-MM-dd'); // 例如，5 个月前
-        const expectedAge = getYear(new Date()) - getYear(parseISO(birthday));
+        const expectedAge = getYear(new Date()) - getYear(formatISO(birthday));
         const age = time_computeAge(birthday);
         expect(age).toBe(expectedAge);
     });
