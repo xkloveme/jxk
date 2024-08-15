@@ -1,33 +1,33 @@
 /**
- * 省、市、区提取
- * @author xkloveme <https://xkloveme.me>
- * @category address
- * @alias jxk_address_areaMatch
+ * 省、市、区分析提取
+ * @author xkloveme xkloveme@gmail.com
+ * @category analysis
+ * @alias analysis_address
  * @param {string} address 地址字符串
  * @returns {Array} 省市区
  * @example
  * const address1 = "北京市朝阳区建国门外大街";
- * const addressComponents1 = extractAddressComponents(address1);
+ * const addressComponents1 = analysis_address(address1);
  * console.log(addressComponents1); // 输出: { province: '北京', city: '朝阳', region: '建国门外大街' }
  *
  * @example
  * const address2 = "广东省深圳市南山区科技园";
- * const addressComponents2 = extractAddressComponents(address2);
+ * const addressComponents2 = analysis_address(address2);
  * console.log(addressComponents2); // 输出: { province: '广东', city: '深圳', region: '南山区科技园' }
  *
  * @example
  * const address3 = "上海市浦东新区张江高科技园区";
- * const addressComponents3 = extractAddressComponents(address3);
+ * const addressComponents3 = analysis_address(address3);
  * console.log(addressComponents3); // 输出: { province: '上海', city: '浦东新区', region: '张江高科技园区' }
  *
  * @example
  * const address4 = "黑龙江省哈尔滨市道里区";
- * const addressComponents4 = extractAddressComponents(address4);
+ * const addressComponents4 = analysis_address(address4);
  * console.log(addressComponents4); // 输出: { province: '黑龙江', city: '哈尔滨', region: '道里区' }
  *
  * @example
  * const address5 = "错误地址";
- * const addressComponents5 = extractAddressComponents(address5);
+ * const addressComponents5 = analysis_address(address5);
  * console.log(addressComponents5); // 输出: null
  */
 
@@ -40,13 +40,10 @@ export default (address) => {
     if (!match) {
         return null;
     }
-
     // 从匹配结果中提取省、市、区信息
-    const addressComponents = {
-        province: match[1],
-        city: match.groups?.city,
-        region: match.groups?.region
-    };
-
-    return addressComponents;
+    return {
+      province: match[1],
+      city: match.groups?.city,
+      region: match.groups?.region
+  };
 };

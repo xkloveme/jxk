@@ -49,7 +49,7 @@
     "gen": "node generate.js",
     "docs": "rimraf docs & jsdoc -c jsdoc.json",
     "dev": "npm run gen && npm run play",
-    "build": "unbuild",
+    "build": "npm run gen && unbuild",
     "lint": "eslint .",
     "play": "vite playground",
     "play:install": "pnpm -r --filter=playground install",
@@ -74,5 +74,7 @@
     "vite-plugin-git-version": "^1.0.7",
     "vitest": "^2.0.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "date-fns": "^3.6.0"
+  }
 }

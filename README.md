@@ -1,7 +1,7 @@
 <h1 align="center">jxk 函数工具库</h1>
 
 <p align="center">
-  jxk (意为： 极速、小巧、快捷) 的函数工具库，包含了常用的函数
+  jxk (意为： 极致、小巧、快捷) 的函数工具库，包含了常用的函数
 </p>
 
 <p align="center">

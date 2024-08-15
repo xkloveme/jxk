@@ -1,7 +1,7 @@
 # jxk Function Utility Library
 
 <p align="center">
-  <strong>jxk (standing for: Fast, Lightweight, and Convenient)</strong> is a utility library that contains commonly used functions.
+  <strong>jxk (meaning: extreme, small, fast) </strong> zero-dependency function library, including commonly used functions
 </p>
 
 <p align="center">

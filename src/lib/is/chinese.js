@@ -8,17 +8,17 @@
  * 中文范围：\u2B820-\u2CEAF CJK统一表意文字扩展E区块。
  * 中文范围：\uF900-\uFAFF CJK兼容表意文字区块。
  * 中文范围：\u2F800-\u2FA1F CJK兼容表意文字补充区块。
- * @alias yd_is_chinese
+ * @alias is_chinese
  * @category is
  * @returns {boolean} 返回是否是中文字符串
  * @author go522000 <https://github.com/go522000>
  * @summary 判断是否为中文字符串
  * @example
  * // 默认匹配纯中文
- * yd_is_chinese('中文'); // true
+ * is_chinese('中文'); // true
  * @example
  * // 第二个参数设置为 false，则匹配包含中文的字符串
- * yd_is_chinese('abc中文123', false); // true
+ * is_chinese('abc中文123', false); // true
  * @param {string} str 字符串
  * @param {boolean} isPure 是否纯中文
  */
