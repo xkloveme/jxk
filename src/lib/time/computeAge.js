@@ -1,4 +1,4 @@
-import { parseISO, isValid, differenceInYears, isBefore } from 'date-fns';
+import { formatISO, isValid, differenceInYears, isBefore } from 'date-fns';
 
 /**
  * 计算年龄
@@ -12,7 +12,7 @@ import { parseISO, isValid, differenceInYears, isBefore } from 'date-fns';
  */
 const computeAge = (birthday) => {
     if (birthday) {
-        const _birthday = parseISO(birthday);
+        const _birthday = formatISO(birthday);
 
         if (!isValid(_birthday)) {
             return 0;
