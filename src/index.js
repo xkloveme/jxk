@@ -22,7 +22,7 @@ export { default as mask_address } from './lib/mask/address.js';
 export { default as mask_idcard } from './lib/mask/idcard.js';
 export { default as mask_name } from './lib/mask/name.js';
 export { default as mask_phone } from './lib/mask/phone.js';
-export { default as misc_sm4 } from './lib/misc/sm4.js';
+export { default as misc_sm4 } from './lib/misc/deepClone.js';
 export { default as reg_businessLicense } from './lib/reg/businessLicense.js';
 export { default as reg_idcard } from './lib/reg/idcard.js';
 export { default as reg_licencePlateNumber } from './lib/reg/licencePlateNumber.js';

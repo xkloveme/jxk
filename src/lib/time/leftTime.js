@@ -1,6 +1,6 @@
 /**
  * 计算剩余时间
- * @author 陈随易 <https://chensuiyi.me>
+ * @author xkloveme xkloveme@gmail.com
  * @category time
  * @alias time_leftTime
  * @param {number} seconds 剩余时间秒数

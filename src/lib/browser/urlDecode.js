@@ -1,5 +1,5 @@
 /**
- * @alias url_urlDecode
+ * @alias browser_urlDecode
  * @category browser
  * @returns {string} 处理后的字符串。
  * @author penn <https://github.com/penn201500>
