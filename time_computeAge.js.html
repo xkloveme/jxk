@@ -66,7 +66,7 @@
 
 <section>
     <article>
-        <pre class="prettyprint source linenums"><code>import { parseISO, isValid, differenceInYears, isBefore } from 'date-fns';
+        <pre class="prettyprint source linenums"><code>import { formatISO, isValid, differenceInYears, isBefore } from 'date-fns';
 
 /**
  * 计算年龄
@@ -80,7 +80,7 @@
  */
 const computeAge = (birthday) => {
     if (birthday) {
-        const _birthday = parseISO(birthday);
+        const _birthday = formatISO(birthday);
 
         if (!isValid(_birthday)) {
             return 0;
@@ -120,7 +120,7 @@ export default computeAge;
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 09:54:34 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 10:01:43 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
