@@ -1,6 +1,6 @@
 /**
  * 延迟函数
- * @author 陈随易 <https://chensuiyi.me>
+ * @author xkloveme <xkloveme@gmail.com>
  * @category misc
  * @alias misc_delay
  * @param {Number} wait 等待时间
