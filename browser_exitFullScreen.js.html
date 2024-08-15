@@ -68,24 +68,28 @@
     <article>
         <pre class="prettyprint source linenums"><code>/**
  * 退出网页全屏
- * @author xkloveme xkloveme@gmail.com
- * @category browser
+ * 
  * @alias browser_exitFullScreen
+ * @category browser
+ * 
+ * @author xkloveme &lt;xkloveme@gmail.com>
+ * 
+ * @example
+ * browser_exitFullScreen();
  */
-export default () => {
-  if (document.fullscreenElement || document.webkitFullscreenElement) {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
+export default function browser_exitFullScreen() {
+  // 兼容性处理
+  const exitFullscreen = document.exitFullscreen ||
+                         document.msExitFullscreen ||
+                         document.mozCancelFullScreen ||
+                         document.webkitExitFullscreen;
+
+  if (exitFullscreen) {
+    exitFullscreen.call(document);
+  } else {
+    throw new Error('Fullscreen is not supported by this browser.');
   }
-};
-</code></pre>
+}</code></pre>
     </article>
 </section>
 
@@ -106,7 +110,7 @@ export default () => {
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

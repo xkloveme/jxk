@@ -133,33 +133,167 @@ import {
 <h2>函数</h2>
 <p>所有函数请访问：<a href="https://www.jixiaokang.com/jxk/">https://www.jixiaokang.com/jxk/</a></p>
 <p>以下是 <code>jxk</code> 库中包含的一些函数列表：</p>
-<h3>对象函数</h3>
+<h2>HTML 标签处理</h2>
 <ul>
-<li>deepClone: 创建对象的深拷贝。</li>
-<li>mergeObjects: 将多个对象合并为一个。</li>
-<li>pickProperties: 从对象中选取特定属性。</li>
+<li>
+<p><strong>browser_decode</strong>: HTML 标签反转义。</p>
+<ul>
+<li><strong>用途</strong>: 将 HTML 实体转换回原始字符。</li>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>browser_decode('&lt;p&gt;Hello&lt;/p&gt;'); // 返回 &quot;&lt;p>Hello&lt;/p>&quot;
+</code></pre>
+</li>
 </ul>
-<h3>数组函数</h3>
+</li>
+<li>
+<p><strong>browser_encode</strong>: HTML 标签转义。</p>
 <ul>
-<li>flattenArray: 扁平化嵌套数组。</li>
-<li>chunkArray: 将数组分割为指定大小的块。</li>
-<li>uniqueArray: 从数组中移除重复项。</li>
+<li><strong>用途</strong>: 将特殊字符转换为 HTML 实体以防止 XSS 攻击。</li>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>browser_encode('&lt;p>Hello&lt;/p>'); // 返回 &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;
+</code></pre>
+</li>
 </ul>
-<h3>字符串函数</h3>
-<ul>
-<li>capitalizeString: 将字符串的首字母大写。</li>
-<li>slugify: 将字符串转换为 URL 友好格式。</li>
+</li>
 </ul>
-<h3>类型检查</h3>
+<h2>加密算法</h2>
 <ul>
-<li>isObject: 判断值是否为对象。</li>
-<li>isArray: 判断值是否为数组。</li>
-<li>isString: 判断值是否为字符串。</li>
+<li><strong>sm2</strong>: SM2 国密算法，包括生成密钥对、加密、解密、签名、验签等功能。</li>
+<li><strong>sm3</strong>: SM3 消息摘要算法。</li>
+<li><strong>sm4</strong>: SM4 加密和解密功能。</li>
 </ul>
-<h3>其他</h3>
+<h2>时间格式化</h2>
 <ul>
-<li>debounce: 防抖函数，防止函数被频繁调用。</li>
-<li>throttle: 节流函数，限制函数执行频率。</li>
+<li><strong>time_date</strong>: 格式化时间，参考文档为 <a href="https://date-fns.p6p.net/">date-fns</a>。</li>
+<li><strong>time_format</strong>: 格式化时间。</li>
+</ul>
+<h2>地址分析</h2>
+<ul>
+<li><strong>analysis_address</strong>: 省、市、区分析提取。</li>
+<li><strong>analysis_idcard</strong>: 对身份证号解析。</li>
+</ul>
+<h2>数组处理</h2>
+<ul>
+<li>
+<p><strong>array_chunk</strong>: 根据指定大小将数组分割成二维数组。</p>
+<ul>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>array_chunk([1, 2, 3, 4, 5], 2); // 返回 [[1, 2], [3, 4], [5]]
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>array_concat</strong>: 合并数组。</p>
+<ul>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>array_concat([1, 2], [3, 4]); // 返回 [1, 2, 3, 4]
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>array_countOccurrences</strong>: 统计数组中各项出现的次数。</p>
+<ul>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>array_countOccurrences(['apple', 'banana', 'apple', 'orange', 'banana', 'banana']);
+// 返回 { apple: 2, banana: 3, orange: 1 }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>array_diffBoth</strong>: 数组的差集。</p>
+</li>
+<li>
+<p><strong>array_diffFirst</strong>: 取第一个数组的差集。</p>
+</li>
+<li>
+<p><strong>array_durstenfeldShuffle</strong>: Durstenfeld 随机洗牌算法。</p>
+</li>
+<li>
+<p><strong>array_findIndex</strong>: 查找数组中匹配的索引。</p>
+</li>
+<li>
+<p><strong>array_findObj</strong>: 查找数组中匹配的值。</p>
+</li>
+<li>
+<p><strong>array_findParent</strong>: 在数组中获取指定子 ID 的祖级数据。</p>
+</li>
+<li>
+<p><strong>array_findParent (另一个)</strong>: 在 Tree 中获取指定子 ID 的祖级数据。</p>
+</li>
+<li>
+<p><strong>array_flatten</strong>: 将多维数组拍平为一维数组。</p>
+</li>
+<li>
+<p><strong>array_fromTree</strong>: 将树形结构转换为扁平化的数组。</p>
+</li>
+<li>
+<p><strong>array_groupBy</strong>: 数组数据分组。</p>
+</li>
+<li>
+<p><strong>array_intersection</strong>: 计算两个数组的交集。</p>
+</li>
+<li>
+<p><strong>array_keyBy</strong>: 数组按 key 排序。</p>
+</li>
+<li>
+<p><strong>array_max</strong>: 计算数组中的最大值。</p>
+</li>
+<li>
+<p><strong>array_merge</strong>: 合并多个数组并返回它们的并集。</p>
+</li>
+<li>
+<p><strong>array_min</strong>: 计算数组中的最小值。</p>
+</li>
+<li>
+<p><strong>array_omitBy</strong>: 从数组中排除指定标签的项。</p>
+</li>
+<li>
+<p><strong>array_paging</strong>: 对数组进行分页。</p>
+</li>
+<li>
+<p><strong>array_pick</strong>: 从数组中选择指定标签的项。</p>
+</li>
+<li>
+<p><strong>array_randomItem</strong>: 随机取数组中的元素。</p>
+</li>
+<li>
+<p><strong>array_remove</strong>: 根据元素删除。</p>
+</li>
+<li>
+<p><strong>array_sattoloShuffle</strong>: Sattolo 洗牌算法。</p>
+</li>
+<li>
+<p><strong>array_shuffle</strong>: 数组随机排序（俗称洗牌）。</p>
+</li>
+<li>
+<p><strong>array_sort</strong>: 排序。</p>
+</li>
+<li>
+<p><strong>array_sumBy</strong>: 数组求和。</p>
+</li>
+<li>
+<p><strong>array_toMapByKey</strong>: 根据某个键的值将数组转换为 Map 对象。</p>
+</li>
+<li>
+<p><strong>array_toTree</strong>: 将数组转换为树形结构。</p>
+</li>
+<li>
+<p><strong>array_uniqWith</strong>: 数组去重。</p>
+</li>
+<li>
+<p><strong>array_unique</strong>: 数组去重。</p>
+</li>
+<li>
+<p><strong>array_uniqueByField</strong>: 对象数组根据某个字段去重。</p>
+</li>
+</ul>
+<h2>浏览器操作</h2>
+<ul>
+<li><strong>browser_copyText</strong>: 复制文本。
+<ul>
+<li><strong>示例</strong>:<pre class="prettyprint source lang-javascript"><code>browser_copyText('Hello, world!');
+</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 <h2>贡献</h2>
 <p>欢迎贡献！请阅读 CONTRIBUTING.md 文件以了解我们的行为准则、提交拉取请求的方式等详情。</p>
@@ -185,7 +319,7 @@ import {
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

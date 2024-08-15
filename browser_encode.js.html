@@ -81,7 +81,7 @@
  * @example
  * browser_encode('&lt;p>Hello&lt;/p>'); // 返回 "&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;"
  */
-export const browser_encode = (html) => {
+export default  (html) => {
   // 参数验证
   if (typeof html !== 'string') {
     throw new TypeError('The input must be a string.');
@@ -118,7 +118,7 @@ export const browser_encode = (html) => {
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

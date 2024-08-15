@@ -81,7 +81,7 @@
  * @example
  * browser_decode('&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;'); // 返回 "Hello"
  */
-export const browser_decode = (text) => {
+export default (text) => {
   // 参数验证
   if (typeof text !== 'string') {
     throw new TypeError('The input must be a string.');
@@ -126,7 +126,7 @@ export const browser_decode = (text) => {
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

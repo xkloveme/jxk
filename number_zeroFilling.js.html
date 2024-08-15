@@ -86,7 +86,7 @@
  * number_zeroFilling(123, 2); // 返回 "123"
  * number_zeroFilling(-123, 6); // 抛出错误 "输入参数必须是大于等于0的整数"
  */
-export function number_zeroFilling(num, len, check = true) {
+export default (num, len, check = true) =>{
   // 参数验证
   if (typeof num !== 'number' &amp;&amp; typeof num !== 'string') {
     throw new TypeError('The first argument must be a number or a string.');
@@ -132,7 +132,7 @@ export function number_zeroFilling(num, len, check = true) {
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

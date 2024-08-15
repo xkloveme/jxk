@@ -147,170 +147,6 @@
 
         
         
-<h4 class="name" id="browser_decode"><span class="type-signature type-signature-constant">(constant) </span>browser_decode<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>HTML 标签反转义</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">源码:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="browser_decode.js.html">browser/decode.js</a>, <a href="browser_decode.js.html#line16">line 16</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">作者:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>HTML 标签反转义</p>
-</div>
-
-
-
-
-
-
-
-<h5 class="h5-examples">
-    示例：
-</h5>
-
-<pre class="prettyprint"><code>browser_decode('&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;'); // 返回 "Hello"</code></pre>
-
-
-
-
-        
-        
-<h4 class="name" id="browser_encode"><span class="type-signature type-signature-constant">(constant) </span>browser_encode<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>HTML 标签转义</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">源码:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="browser_encode.js.html">browser/encode.js</a>, <a href="browser_encode.js.html#line16">line 16</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">作者:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>HTML 标签转义</p>
-</div>
-
-
-
-
-
-
-
-<h5 class="h5-examples">
-    示例：
-</h5>
-
-<pre class="prettyprint"><code>browser_encode('&lt;p>Hello&lt;/p>'); // 返回 "&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;"</code></pre>
-
-
-
-
-        
-        
 <h4 class="name" id="sm2"><span class="type-signature"></span>sm2<span class="type-signature"></span></h4>
 
 
@@ -8775,8 +8611,8 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
 
 
 
-<h4 class="name" id="browser_exitFullScreen">
-    <span class="type-signature"></span>browser_exitFullScreen<span class="signature">()</span><span class="type-signature"></span>
+<h4 class="name" id="browser_decode">
+    <span class="type-signature"></span>browser_decode<span class="signature">(text)</span><span class="type-signature"> &rarr; {string}</span>
 </h4>
 
 
@@ -8787,13 +8623,13 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>退出网页全屏</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>HTML 标签反转义</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="browser_exitFullScreen.js.html">browser/exitFullScreen.js</a>, <a href="browser_exitFullScreen.js.html#line7">line 7</a>
+        <a href="browser_decode.js.html">browser/decode.js</a>, <a href="browser_decode.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -8817,7 +8653,7 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
     <dt class="tag-author">作者:</dt>
     <dd class="tag-author">
         <ul>
-            <li>xkloveme xkloveme@gmail.com</li>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
         </ul>
     </dd>
     
@@ -8842,6 +8678,374 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
 
 
 
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>browser_decode('&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;'); // 返回 "Hello"</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>text</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要反转义的 HTML 字符串</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <ul>
+<li>反转义后的纯文本</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_encode">
+    <span class="type-signature"></span>browser_encode<span class="signature">(html)</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>HTML 标签转义</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_encode.js.html">browser/encode.js</a>, <a href="browser_encode.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>browser_encode('&lt;p>Hello&lt;/p>'); // 返回 "&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;"</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>html</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要转义的 HTML 字符串</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <ul>
+<li>转义后的 HTML 实体字符串</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_exitFullScreen">
+    <span class="type-signature"></span>browser_exitFullScreen<span class="signature">()</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>退出网页全屏</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_exitFullScreen.js.html">browser/exitFullScreen.js</a>, <a href="browser_exitFullScreen.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>browser_exitFullScreen();</code></pre>
 
 
 
@@ -9494,7 +9698,7 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="browser_openFullscreen.js.html">browser/openFullscreen.js</a>, <a href="browser_openFullscreen.js.html#line8">line 8</a>
+        <a href="browser_openFullscreen.js.html">browser/openFullscreen.js</a>, <a href="browser_openFullscreen.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -9518,7 +9722,7 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
     <dt class="tag-author">作者:</dt>
     <dd class="tag-author">
         <ul>
-            <li>xkloveme xkloveme@gmail.com</li>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
         </ul>
     </dd>
     
@@ -9543,6 +9747,15 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
 
 
 
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>const element = document.getElementById('myElement');
+browser_openFullscreen(element);</code></pre>
 
 
 
@@ -9581,7 +9794,7 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
             <td class="type">
                 
                 
-<span class="param-type">string</span>
+<span class="param-type">Element</span>
 
 
 
@@ -9593,7 +9806,7 @@ sort([{a: 1, b: 2}, {a: 2, b: 4}], { order: 'des' })
             
 
             <td class="description last">
-                <p>元素</p>
+                <p>要进入全屏模式的 DOM 元素</p>
             </td>
         </tr>
 
@@ -18585,7 +18798,7 @@ console.log(time_timestampToDate("invalid")); // 输出: null</code></pre>
                 4.0.3</a
             >
             on
-            Thu Aug 15 2024 08:14:36 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 08:33:29 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
