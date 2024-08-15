@@ -69,7 +69,6 @@ export { default as is_set } from './lib/is/set.js';
 export { default as is_string } from './lib/is/string.js';
 export { default as is_symbol } from './lib/is/symbol.js';
 export { default as is_undefined } from './lib/is/undefined.js';
-export { default as is_unicodeSupported } from './lib/is/unicodeSupported.js';
 export { default as is_weakMap } from './lib/is/weakMap.js';
 export { default as is_weakSet } from './lib/is/weakSet.js';
 export { default as mask_address } from './lib/mask/address.js';
