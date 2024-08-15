@@ -1,6 +1,6 @@
 /**
  * 数组数据分组
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_groupBy
  * @param {Array} array 数组

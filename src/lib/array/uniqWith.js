@@ -1,6 +1,6 @@
 /**
  * 数组去重
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_uniqWith
  * @param {Array} array 数组数据

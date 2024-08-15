@@ -32,7 +32,7 @@ const _convertTime = (obj) => {
 
 /**
  * 转换相对时间
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category time
  * @alias time_relativeTime
  * @param {Array | Object} data 数组或对象

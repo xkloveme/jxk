@@ -1,6 +1,6 @@
 /**
  * 省、市、区分析提取
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category analysis
  * @alias analysis_address
  * @param {string} address 地址字符串

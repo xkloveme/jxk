@@ -1,6 +1,6 @@
 /**
  * 复制文本
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category browser
  * @param {string} text 要复制的文本
  * @returns {Promise<boolean>} 是否复制成功

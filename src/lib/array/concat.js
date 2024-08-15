@@ -1,6 +1,6 @@
 /**
  * 合并数组
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_concat
  * @param  {...any} args 多个数组

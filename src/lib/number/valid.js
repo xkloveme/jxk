@@ -1,6 +1,6 @@
 /**
  * 返回有效数字
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category number
  * @alias number_valid
  * @param {Number} number 数字传参

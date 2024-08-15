@@ -1,7 +1,7 @@
 import { checkIDCardValidity } from '../../utils/common';
 /**
  * 对身份证号解析
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category analysis
  * @alias analysis_idcard
  * @param {string} idCard 身份证号

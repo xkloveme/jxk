@@ -1,6 +1,6 @@
 /**
  * 脱敏姓名
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category  mask
  * @alias mask_name
  * @param {string}  name 脱敏姓名

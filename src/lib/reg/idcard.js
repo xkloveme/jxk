@@ -1,6 +1,6 @@
 /**
  * 国内身份证正则
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category reg
  * @alias reg_idcard
  * @returns {RegExp} 返回国内身份证正则

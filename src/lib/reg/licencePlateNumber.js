@@ -1,6 +1,6 @@
 /**
  * 车牌号校验
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category reg
  * @alias reg_licencePlateNumber
  * @returns {RegExp} 返回车牌号正则

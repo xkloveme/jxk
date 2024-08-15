@@ -1,6 +1,6 @@
 /**
  * 数组的差集
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_diffBoth
  * @param {Array} arr1 数组1

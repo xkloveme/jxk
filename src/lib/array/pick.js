@@ -7,7 +7,7 @@
  * @param {Array} values 匹配的值
  * @returns {object[]} 返回一个新数组，其中只包含具有指定标签的项
  * @author 卞雪瑞 <bianxr0803@gmail.com>
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @summary 这个函数根据给定的标签列表，从数组中选择所有匹配这些标签的项，并返回这些项。
  * @example
  * array_pick(

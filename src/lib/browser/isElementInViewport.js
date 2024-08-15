@@ -1,6 +1,6 @@
 /**
  * 检测元素是否至少有部分在可视区域内
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category browser
  * @alias browser_isElementInViewport
  * @param {HTMLElement} element 需要检测的元素

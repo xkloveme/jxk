@@ -1,6 +1,6 @@
 /**
  * 脱敏地址
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category  mask
  * @alias mask_address
  * @param {string}   address 地址

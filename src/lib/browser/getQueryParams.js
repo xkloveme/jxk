@@ -1,6 +1,6 @@
 /**
  * 获取url参数
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category browser
  * @alias browser_getQueryParams
  * @param {string} url 要解析的URL

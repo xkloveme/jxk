@@ -1,6 +1,6 @@
 /**
  * 在当前页面打开新窗口页
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category browser
  * @alias browser_openWindow
  * @param {string} url 打开的网页地址

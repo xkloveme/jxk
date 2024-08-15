@@ -1,6 +1,6 @@
 /**
  * 数组求和
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_sumBy
  * @param {Array} arr 数组数据

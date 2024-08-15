@@ -1,6 +1,6 @@
 /**
  * 查找数组中匹配的索引
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_findIndex
  * @param {Array} array 数组

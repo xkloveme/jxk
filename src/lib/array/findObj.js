@@ -1,6 +1,6 @@
 /**
  * 查找数组中匹配的值
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_findObj
  * @param {Array} arrObj 数组对象

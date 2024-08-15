@@ -5,7 +5,7 @@ import { SM3 } from "../../utils/sm3";
  * 
  * @category sm
  * @alias sm3
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @Date: 2024-08-10 21:53:59
  *
  * @example

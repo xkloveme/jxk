@@ -1,6 +1,6 @@
 /**
  * 脱敏身份证号
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category  mask
  * @alias mask_idcard
  * @param {string} idcard 身份证号

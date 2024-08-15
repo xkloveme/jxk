@@ -7,7 +7,7 @@
  * @example
  * improt { is_number } from 'jxk'
  * is_number(123) // true
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @Date: 2024-08-10 21:53:59
  */
 export default function is_number(num) {

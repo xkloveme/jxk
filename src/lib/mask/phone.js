@@ -1,6 +1,6 @@
 /**
  * 脱敏手机号
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category  mask
  * @alias mask_phone
  * @param {string}  phone 手机号

@@ -1,6 +1,6 @@
 /**
  * 营业执照号码校验
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category reg
  * @alias reg_businessLicense
  * @returns {RegExp} 返回营业执照号码正则

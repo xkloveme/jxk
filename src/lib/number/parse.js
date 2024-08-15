@@ -1,6 +1,6 @@
 /**
  * 解析数字
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category number
  * @alias number_parse
  * @param {Number} 传入数字

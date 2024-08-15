@@ -1,6 +1,6 @@
 /**
  * 数组按key排序
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category array
  * @alias array_keyBy
  * @param {Array} array 数组

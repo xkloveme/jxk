@@ -1,6 +1,6 @@
 /**
  * 国内手机号正则
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @category reg
  * @alias reg_phone
  * @returns {RegExp} 返回国内手机号正则

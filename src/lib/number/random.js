@@ -13,7 +13,7 @@ import is_float from '../is/float.js';
  * 
  * @returns {number} - 随机数
  * 
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * 
  * @summary 产生一个包括 lower 与 upper 之间的数。
  * 如果只提供一个参数返回一个0到提供数之间的数。

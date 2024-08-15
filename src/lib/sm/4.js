@@ -29,7 +29,7 @@ import { SM4 } from "../../utils/sm4"
   let decryptData = sm4.decrypt(encryptData, key, {padding: 'none'}) // 解密，不使用 padding
   let decryptData = sm4.decrypt(encryptData, key, {padding: 'none', output: 'array'}) // 解密，不使用 padding，输出为字节数组
   let decryptData = sm4.decrypt(encryptData, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 解密，cbc 模式
- * @author xkloveme xkloveme@gmail.com
+ * @author xkloveme <xkloveme@gmail.com>
  * @Date: 2024-08-10 21:53:59
  */
 export default {
