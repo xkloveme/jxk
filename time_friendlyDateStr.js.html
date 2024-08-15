@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://static.yicode.tech/logo/yidash2.png" />
+        
+        <meta property="og:url" content="" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-color: #3aa21c;
+            background-color: #fff;
+            color: #0a0f0b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li><li><a href="global.html#url_urlDecode">url_urlDecode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_number">is_number</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_computeAge">time_computeAge</a></li><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+            <h1 class="page-title">time/friendlyDateStr.js</h1>
+            
+
+            
+
+
+
+
+<section>
+    <article>
+        <pre class="prettyprint source linenums"><code>import { dismantleDate } from '../../utils/common';
+/**
+ * 友好的时间显示
+ * @author lz-freedom &lt;https://github.com/lz-freedom>
+ * @category time
+ * @alias time_friendlyDateStr
+ * @param {string|Date|number} sTime 待格式化的时间, 可传递时间戳(秒、毫秒)、日期对象、日期字符串(YYYY-MM-DD HH:mm:SS)
+ * @param {string} type  类型 normal | blur | full | ymd | other
+ * @returns {string|null} 格式化后的字符串
+ *
+ * @example
+ * // 示例: 刚刚
+ * console.log(time_friendlyDateStr('2024-08-02 10:36:30', 'normal')) // 输出: 刚刚
+ *
+ * @example
+ * // 示例: 1分钟前
+ * console.log(time_friendlyDateStr('2024-08-02 10:35:30', 'normal')) // 输出: 1分钟前
+ *
+ * @example
+ * // 示例: 3小时前
+ * console.log(time_friendlyDateStr('2024-08-02 07:35:30', 'blur')) // 输出: 3小时前
+ */
+export default (sTime, type = 'normal') => {
+    if (!sTime) {
+        console.error('Unknown time format.');
+        return null;
+    }
+    // 处理各种类型的时间
+    let date;
+    switch (typeof sTime) {
+        case 'number':
+            // 秒级时间戳转毫秒级
+            if (sTime.toString().length === 10) {
+                sTime *= 1000;
+            }
+            date = new Date(sTime);
+            break;
+        case 'string':
+            const regexMapping = {
+                'YYYY-MM-DD HH:mm:SS': /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/
+            };
+            const match = sTime.match(regexMapping['YYYY-MM-DD HH:mm:SS']);
+            if (!match) {
+                console.error('Invalid Time string.');
+                return null;
+            }
+            date = new Date(sTime);
+            break;
+        case 'object':
+            if (!(sTime instanceof Date) || isNaN(sTime.getTime())) {
+                console.error('Invalid Date object.');
+                return null;
+            }
+            date = sTime;
+            break;
+        default:
+            console.error('Unknown time format.');
+            return null;
+    }
+
+    // 计算时间差
+    const cTimestamp = Math.floor(Date.now() / 1000); // 当前时间戳（单位：秒）
+    const sTimestamp = Math.floor(date.getTime() / 1000); // 源时间戳（单位：秒）
+    const dTimestamp = cTimestamp - sTimestamp; // 时间差
+    const sDate = new Date(sTimestamp * 1000);
+    const cDate = new Date(cTimestamp * 1000);
+    const dDay = Math.floor((cDate - sDate) / (24 * 3600 * 1000)); // 日期差
+    const dYear = cDate.getFullYear() - sDate.getFullYear(); // 年份差
+
+    // 精确的时间显示
+    if (type === 'normal') {
+        if (dTimestamp &lt; 60) {
+            if (dTimestamp &lt; 10) {
+                return '刚刚';
+            } else {
+                return `${Math.floor(dTimestamp / 10) * 10}秒前`;
+            }
+        } else if (dTimestamp &lt; 3600) {
+            return `${Math.floor(dTimestamp / 60)}分钟前`;
+        } else if (dYear === 0 &amp;&amp; dDay === 0) {
+            return `今天${sDate.getHours()}:${sDate.getMinutes()}`;
+        } else if (dYear === 0) {
+            const { year, month, day, hours, minutes, seconds } = dismantleDate(sDate);
+            return `${sDate.getMonth() + 1}月${sDate.getDate()}日 ${hours}:${minutes}:${seconds}`;
+        } else {
+            const { year, month, day, hours, minutes, seconds } = dismantleDate(sDate);
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+    }
+
+    // 相对模糊的时间显示
+    if (type === 'blur') {
+        if (dTimestamp &lt; 60) {
+            return `${dTimestamp}秒前`;
+        } else if (dTimestamp &lt; 3600) {
+            return `${Math.floor(dTimestamp / 60)}分钟前`;
+        } else if (dTimestamp >= 3600 &amp;&amp; dDay === 0) {
+            return `${Math.floor(dTimestamp / 3600)}小时前`;
+        } else if (dDay > 0 &amp;&amp; dDay &lt;= 7) {
+            return `${dDay}天前`;
+        } else if (dDay > 7 &amp;&amp; dDay &lt;= 30) {
+            return `${Math.floor(dDay / 7)}周前`;
+        } else if (dDay > 30) {
+            return `${Math.floor(dDay / 30)}个月前`;
+        }
+    }
+
+    // 完整的时间显示
+    if (type === 'full') {
+        const { year, month, day, hours, minutes, seconds } = dismantleDate(sDate);
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+
+    // 年月日的时间显示
+    if (type === 'ymd') {
+        const { year, month, day } = dismantleDate(sDate);
+        return `${year}-${month}-${day}`;
+    }
+
+    // 兜底显示
+    if (dTimestamp &lt; 60) {
+        return `${dTimestamp}秒前`;
+    } else if (dTimestamp &lt; 3600) {
+        return `${Math.floor(dTimestamp / 60)}分钟前`;
+    } else if (dTimestamp >= 3600 &amp;&amp; dDay === 0) {
+        return `${Math.floor(dTimestamp / 3600)}小时前`;
+    } else {
+        const { year, month, day, hours, minutes, seconds } = dismantleDate(sDate);
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+};
+</code></pre>
+    </article>
+</section>
+
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            MIT License ©
+            <a href="https://github.com/xkloveme/docdash-extended"
+                >xkloveme
+                4.0.3</a
+            >
+            on
+            Thu Aug 15 2024 05:20:13 GMT+0000 (Coordinated Universal Time)
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+    </body>
+</html>

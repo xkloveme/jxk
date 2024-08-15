@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://static.yicode.tech/logo/yidash2.png" />
+        
+        <meta property="og:url" content="" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-color: #3aa21c;
+            background-color: #fff;
+            color: #0a0f0b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li><li><a href="global.html#url_urlDecode">url_urlDecode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_number">is_number</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_computeAge">time_computeAge</a></li><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+            <h1 class="page-title">browser/urlDecode.js</h1>
+            
+
+            
+
+
+
+
+<section>
+    <article>
+        <pre class="prettyprint source linenums"><code>/**
+ * @alias url_urlDecode
+ * @category browser
+ * @returns {string} 处理后的字符串。
+ * @author penn &lt;https://github.com/penn201500>
+ * @description 对字符串进行 URL 解码。
+ * @param {string} input - 要处理的字符串。
+ * @throws {Error} 如果输入不是字符串则报错。
+ */
+
+export default (input) => {
+    try {
+        if (typeof input !== 'string') {
+            throw new TypeError('输入必须是字符串。');
+        }
+
+        return decodeURIComponent(input);
+    } catch (error) {
+        console.error('Error:', error.message);
+        return null;
+    }
+};
+</code></pre>
+    </article>
+</section>
+
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            MIT License ©
+            <a href="https://github.com/xkloveme/docdash-extended"
+                >xkloveme
+                4.0.3</a
+            >
+            on
+            Thu Aug 15 2024 05:20:13 GMT+0000 (Coordinated Universal Time)
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+    </body>
+</html>

@@ -50,7 +50,7 @@
             <input type="text" id="nav-search" placeholder="搜索" />
             
             
-            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_number">is_number</a></li><li><a href="global.html#yd_is_chinese">yd_is_chinese</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_regexp">reg_regexp</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li><li><a href="global.html#url_urlDecode">url_urlDecode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_number">is_number</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_computeAge">time_computeAge</a></li><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3><a href="global.html">Global</a></h3>
             
         </nav>
 
@@ -76,17 +76,17 @@
  * 中文范围：\u2B820-\u2CEAF CJK统一表意文字扩展E区块。
  * 中文范围：\uF900-\uFAFF CJK兼容表意文字区块。
  * 中文范围：\u2F800-\u2FA1F CJK兼容表意文字补充区块。
- * @alias yd_is_chinese
+ * @alias is_chinese
  * @category is
  * @returns {boolean} 返回是否是中文字符串
  * @author go522000 &lt;https://github.com/go522000>
  * @summary 判断是否为中文字符串
  * @example
  * // 默认匹配纯中文
- * yd_is_chinese('中文'); // true
+ * is_chinese('中文'); // true
  * @example
  * // 第二个参数设置为 false，则匹配包含中文的字符串
- * yd_is_chinese('abc中文123', false); // true
+ * is_chinese('abc中文123', false); // true
  * @param {string} str 字符串
  * @param {boolean} isPure 是否纯中文
  */
@@ -117,7 +117,7 @@ export default (str, isPure = true) => {
                 4.0.3</a
             >
             on
-            Wed Aug 14 2024 10:04:19 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 05:20:13 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>

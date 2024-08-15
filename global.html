@@ -50,7 +50,7 @@
             <input type="text" id="nav-search" placeholder="搜索" />
             
             
-            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>地址</h3><ul><li><a href="global.html#jxk_address_areaMatch">jxk_address_areaMatch</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_number">is_number</a></li><li><a href="global.html#yd_is_chinese">yd_is_chinese</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#xxx">xxx</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_regexp">reg_regexp</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li><li><a href="global.html#url_urlDecode">url_urlDecode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_number">is_number</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="global.html#sm2">sm2</a></li><li><a href="global.html#sm3">sm3</a></li><li><a href="global.html#sm4">sm4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="global.html#sm4#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="global.html#sm4#.encrypt">encrypt</a></li></ul></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_computeAge">time_computeAge</a></li><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3><a href="global.html">Global</a></h3>
             
         </nav>
 
@@ -491,9 +491,3050 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
 
         
         
+<h4 class="name" id="time_date"><span class="type-signature"></span>time_date<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>格式化时间</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_date.js.html">time/date.js</a>, <a href="time_date.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>https://github.com/date-fns/date-fns</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>格式化时间</p>
+</div>
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    示例：
+</h5>
+
+<pre class="prettyprint"><code>// 全部函数参考文档 https://date-fns.p6p.net/
+ import { time_date } from "jxk";
+
+// 示例日期
+const date1 = new Date(2024, 0, 1); // 2024年1月1日
+const date2 = new Date(2024, 2, 15); // 2024年3月15日
+
+// 检查 date1 是否在 date2 之前
+const result = time_date.isBefore(date1, date2);
+
+console.log("date1 是否在 date2 之前：", result); // date1 是否在 date2 之前：true</code></pre>
+
+
+
+
+        
+        
+<h4 class="name" id="time_format"><span class="type-signature"></span>time_format<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>格式化时间</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_format.js.html">time/format.js</a>, <a href="time_format.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>https://github.com/date-fns/date-fns</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>格式化时间</p>
+</div>
+
+
+
+
+
+
+
+
+        
+        
 
         
         <h3 class="subsection-title">方法</h3>
+
+        
+        
+
+
+
+<h4 class="name" id="analysis_address">
+    <span class="type-signature"></span>analysis_address<span class="signature">(address)</span><span class="type-signature"> &rarr; {Array}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>省、市、区分析提取</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="analysis_address.js.html">analysis/address.js</a>, <a href="analysis_address.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>const address1 = "北京市朝阳区建国门外大街";
+const addressComponents1 = analysis_address(address1);
+console.log(addressComponents1); // 输出: { province: '北京', city: '朝阳', region: '建国门外大街' }</code></pre>
+
+<pre class="prettyprint"><code>const address2 = "广东省深圳市南山区科技园";
+const addressComponents2 = analysis_address(address2);
+console.log(addressComponents2); // 输出: { province: '广东', city: '深圳', region: '南山区科技园' }</code></pre>
+
+<pre class="prettyprint"><code>const address3 = "上海市浦东新区张江高科技园区";
+const addressComponents3 = analysis_address(address3);
+console.log(addressComponents3); // 输出: { province: '上海', city: '浦东新区', region: '张江高科技园区' }</code></pre>
+
+<pre class="prettyprint"><code>const address4 = "黑龙江省哈尔滨市道里区";
+const addressComponents4 = analysis_address(address4);
+console.log(addressComponents4); // 输出: { province: '黑龙江', city: '哈尔滨', region: '道里区' }</code></pre>
+
+<pre class="prettyprint"><code>const address5 = "错误地址";
+const addressComponents5 = analysis_address(address5);
+console.log(addressComponents5); // 输出: null</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>address</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>地址字符串</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>省市区</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="analysis_idcard">
+    <span class="type-signature"></span>analysis_idcard<span class="signature">(idCard)</span><span class="type-signature"> &rarr; {object}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>对身份证号解析</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="analysis_idcard.js.html">analysis/idcard.js</a>, <a href="analysis_idcard.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>areaCode</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>地区码</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>birthDate</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>出生日期</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>gender</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>性别</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>valid</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">boolean</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>是否有效</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>analysis_idcard('110101200001011232'); // {areaCode: '110101', birthDate: '2000-01-01', gender: '男', valid: true}</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>idCard</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>身份证号</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回身份证号各信息</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_copyText">
+    <span class="type-signature"></span>browser_copyText<span class="signature">(text)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>复制文本</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_copyText.js.html">browser/copyText.js</a>, <a href="browser_copyText.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>browser_copyText('123456');</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>text</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要复制的文本</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>是否复制成功</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_exitFullScreen">
+    <span class="type-signature"></span>browser_exitFullScreen<span class="signature">()</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>退出网页全屏</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_exitFullScreen.js.html">browser/exitFullScreen.js</a>, <a href="browser_exitFullScreen.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_getQueryParams">
+    <span class="type-signature"></span>browser_getQueryParams<span class="signature">(url)</span><span class="type-signature"> &rarr; {object}</span>
+</h4>
+
+
+<p class="summary usertext"><p>这个函数使用了URL和URLSearchParams接口，解析URL并返回一个包含所有查询参数的对象。
+你可以将这个函数用于任何需要解析URL参数的场景。</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>获取url参数</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_getQueryParams.js.html">browser/getQueryParams.js</a>, <a href="browser_getQueryParams.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>url</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要解析的URL</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>包含所有查询参数的对象</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_isElementInViewport">
+    <span class="type-signature"></span>browser_isElementInViewport<span class="signature">(element)</span><span class="type-signature"> &rarr; {boolean}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>检测元素是否至少有部分在可视区域内</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_isElementInViewport.js.html">browser/isElementInViewport.js</a>, <a href="browser_isElementInViewport.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>browser_isElementInViewport(document.getElementById('myElement')); // 返回 true 或 false</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>element</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">HTMLElement</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>需要检测的元素</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>元素是否在可视区域内</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_md5">
+    <span class="type-signature"></span>browser_md5<span class="signature">(string, key<span class="signature-attributes">opt</span>, raw<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>计算MD5值</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_md5.js.html">browser/md5.js</a>, <a href="browser_md5.js.html#line256">line 256</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>https://github.com/blueimp/JavaScript-MD5</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>string</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>输入字符串</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>key</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>HMAC key</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>raw</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">boolean</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>Raw output switch</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回MD5值</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_openFullscreen">
+    <span class="type-signature"></span>browser_openFullscreen<span class="signature">(element)</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>开启网页全屏</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_openFullscreen.js.html">browser/openFullscreen.js</a>, <a href="browser_openFullscreen.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>element</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>元素</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_openPrint">
+    <span class="type-signature"></span>browser_openPrint<span class="signature">(id)</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>在当前页面打开新窗口页,并打印</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_openPrint.js.html">browser/openPrint.js</a>, <a href="browser_openPrint.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>id</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>需要打印的 dom id</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_openWindow">
+    <span class="type-signature"></span>browser_openWindow<span class="signature">(url, title, width, height)</span><span class="type-signature"> &rarr; {Window|null}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>在当前页面打开新窗口页</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_openWindow.js.html">browser/openWindow.js</a>, <a href="browser_openWindow.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>url</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>打开的网页地址</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>title</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>打开的网页标题</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>width</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>打开网页的宽度</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>height</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>打开网页的高度</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>新打开的窗口对象，或在失败时返回 null</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Window</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="browser_urlEncode">
+    <span class="type-signature"></span>browser_urlEncode<span class="signature">(input)</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>对字符串进行 URL 编码。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_urlEncode.js.html">browser/urlEncode.js</a>, <a href="browser_urlEncode.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>penn &lt;https://github.com/penn201500></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>input</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要处理的字符串。</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">抛出：</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+            <p>如果输入不是字符串则报错。</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>类型</dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>处理后的字符串。</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="file_dataURLtoFile">
+    <span class="type-signature"></span>file_dataURLtoFile<span class="signature">(dataurl, callback)</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Base64 DataURL 转 文件</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="file_dataURLtoFile.js.html">file/dataURLtoFile.js</a>, <a href="file_dataURLtoFile.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>wzskyline</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>file_dataURLtoFile('base64.....')  -> File</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>dataurl</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Base64 DataURL</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>callback</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">function</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调函数</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="file_fileInfo">
+    <span class="type-signature"></span>file_fileInfo<span class="signature">(path)</span><span class="type-signature"> &rarr; {Object}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>从路径中截取文件信息</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="file_fileInfo.js.html">file/fileInfo.js</a>, <a href="file_fileInfo.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>wzskyline</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>file_fileInfo('/path/to/file.png') -> {name: 'file', type: 'png', fullName: 'file.png'}</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>path</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">String</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>路径参数</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>文件的信息</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="file_fileToDataURL">
+    <span class="type-signature"></span>file_fileToDataURL<span class="signature">(object, callback)</span><span class="type-signature"></span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>文件转Base64 DataURL</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="file_fileToDataURL.js.html">file/fileToDataURL.js</a>, <a href="file_fileToDataURL.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>wzskyline</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>file_fileToDataURL(file,()=>{}) </code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>object</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>文件或者blob对象</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>callback</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">function</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>回调函数</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="file_formatFileSize">
+    <span class="type-signature"></span>file_formatFileSize<span class="signature">(fileSize)</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>格式化文件大小</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="file_formatFileSize.js.html">file/formatFileSize.js</a>, <a href="file_formatFileSize.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>黄方明 &lt;https://github.com/hank-open></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>file_formatFileSize(500) => "500 Bytes"</code></pre>
+
+<pre class="prettyprint"><code>file_formatFileSize(2048) => "2 KB"</code></pre>
+
+<pre class="prettyprint"><code>file_formatFileSize(1048576) => "1 MB"</code></pre>
+
+<pre class="prettyprint"><code>file_formatFileSize(1073741824) => "1 GB"</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>fileSize</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>文件大小，以字节为单位</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>格式化后的文件大小，包含单位</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
 
         
         
@@ -848,6 +3889,226 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
 
 
 
+<h4 class="name" id="is_chinese">
+    <span class="type-signature"></span>is_chinese<span class="signature">(str, isPure)</span><span class="type-signature"> &rarr; {boolean}</span>
+</h4>
+
+
+<p class="summary usertext"><p>判断是否为中文字符串</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>是否为中文
+中文范围：\u4E00-\u9FFF 基本的CJK统一表意文字区块。
+中文范围：\u3400-\u4DBF CJK统一表意文字扩展A区块。
+中文范围：\u20000-\u2A6DF CJK统一表意文字扩展B区块。
+中文范围：\u2A700-\u2B73F CJK统一表意文字扩展C区块。
+中文范围：\u2B740-\u2B81F CJK统一表意文字扩展D区块。
+中文范围：\u2B820-\u2CEAF CJK统一表意文字扩展E区块。
+中文范围：\uF900-\uFAFF CJK兼容表意文字区块。
+中文范围：\u2F800-\u2FA1F CJK兼容表意文字补充区块。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="is_chinese.js.html">is/chinese.js</a>, <a href="is_chinese.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>go522000 &lt;https://github.com/go522000></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 默认匹配纯中文
+is_chinese('中文'); // true</code></pre>
+
+<pre class="prettyprint"><code>// 第二个参数设置为 false，则匹配包含中文的字符串
+is_chinese('abc中文123', false); // true</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>str</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>字符串</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>isPure</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">boolean</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>是否纯中文</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回是否是中文字符串</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
 <h4 class="name" id="is_number">
     <span class="type-signature"></span>is_number<span class="signature">(num)</span><span class="type-signature"> &rarr; {boolean}</span>
 </h4>
@@ -866,7 +4127,7 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="is_number.js.html">is/number.js</a>, <a href="is_number.js.html#line11">line 11</a>
+        <a href="is_number.js.html">is/number.js</a>, <a href="is_number.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -922,7 +4183,8 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
     举例：
 </h5>
 
-<pre class="prettyprint"><code>示例</code></pre>
+<pre class="prettyprint"><code>improt { is_number } from 'jxk'
+is_number(123) // true</code></pre>
 
 
 
@@ -1025,10 +4287,12 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
 
 
 
-<h4 class="name" id="jxk_address_areaMatch">
-    <span class="type-signature"></span>jxk_address_areaMatch<span class="signature">(address)</span><span class="type-signature"> &rarr; {Array}</span>
+<h4 class="name" id="mask_address">
+    <span class="type-signature"></span>mask_address<span class="signature">(address)</span><span class="type-signature"> &rarr; {String}</span>
 </h4>
 
+
+<p class="summary usertext"><p>mask_address('13968341859')</p></p>
 
 
 
@@ -1037,13 +4301,13 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>省、市、区提取</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>脱敏地址</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="address_areaMatch.js.html">address/areaMatch.js</a>, <a href="address_areaMatch.js.html#line35">line 35</a>
+        <a href="mask_address.js.html">mask/address.js</a>, <a href="mask_address.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -1067,7 +4331,7 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
     <dt class="tag-author">作者:</dt>
     <dd class="tag-author">
         <ul>
-            <li>xkloveme &lt;https://xkloveme.me></li>
+            <li>xkloveme xkloveme@gmail.com</li>
         </ul>
     </dd>
     
@@ -1099,25 +4363,8 @@ let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba987654321001234
     举例：
 </h5>
 
-<pre class="prettyprint"><code>const address1 = "北京市朝阳区建国门外大街";
-const addressComponents1 = extractAddressComponents(address1);
-console.log(addressComponents1); // 输出: { province: '北京', city: '朝阳', region: '建国门外大街' }</code></pre>
-
-<pre class="prettyprint"><code>const address2 = "广东省深圳市南山区科技园";
-const addressComponents2 = extractAddressComponents(address2);
-console.log(addressComponents2); // 输出: { province: '广东', city: '深圳', region: '南山区科技园' }</code></pre>
-
-<pre class="prettyprint"><code>const address3 = "上海市浦东新区张江高科技园区";
-const addressComponents3 = extractAddressComponents(address3);
-console.log(addressComponents3); // 输出: { province: '上海', city: '浦东新区', region: '张江高科技园区' }</code></pre>
-
-<pre class="prettyprint"><code>const address4 = "黑龙江省哈尔滨市道里区";
-const addressComponents4 = extractAddressComponents(address4);
-console.log(addressComponents4); // 输出: { province: '黑龙江', city: '哈尔滨', region: '道里区' }</code></pre>
-
-<pre class="prettyprint"><code>const address5 = "错误地址";
-const addressComponents5 = extractAddressComponents(address5);
-console.log(addressComponents5); // 输出: null</code></pre>
+<pre class="prettyprint"><code>improt { mask_address } from 'jxk'
+mask_address('江苏省南京市鼓楼区中山路 18 号德基广场写字楼 16 层') // 江苏****鼓楼区中山路 18 号德基广场写字楼 16 层</code></pre>
 
 
 
@@ -1168,7 +4415,7 @@ console.log(addressComponents5); // 输出: null</code></pre>
             
 
             <td class="description last">
-                <p>地址字符串</p>
+                <p>地址</p>
             </td>
         </tr>
 
@@ -1195,7 +4442,7 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 <div class="param-desc">
-    <p>省市区</p>
+    <p>返回脱敏地址</p>
 </div>
 
 
@@ -1204,7 +4451,550 @@ console.log(addressComponents5); // 输出: null</code></pre>
     <dt>类型</dt>
     <dd>
         
-<span class="param-type">Array</span>
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="mask_idcard">
+    <span class="type-signature"></span>mask_idcard<span class="signature">(idcard)</span><span class="type-signature"> &rarr; {String}</span>
+</h4>
+
+
+<p class="summary usertext"><p>mask_idcard('420101197208271072')</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>脱敏身份证号</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mask_idcard.js.html">mask/idcard.js</a>, <a href="mask_idcard.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>improt { mask_idcard } from 'jxk'
+mask_idcard('420101197208271072') // 4**********2</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>idcard</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>身份证号</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回脱敏身份证号</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="mask_name">
+    <span class="type-signature"></span>mask_name<span class="signature">(name)</span><span class="type-signature"> &rarr; {String}</span>
+</h4>
+
+
+<p class="summary usertext"><p>mask_phone('13968341859')</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>脱敏姓名</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mask_name.js.html">mask/name.js</a>, <a href="mask_name.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>improt { mask_name } from 'jxk'
+mask_name('jxk') // *xk</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>name</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>脱敏姓名</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回脱敏手机号</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="mask_phone">
+    <span class="type-signature"></span>mask_phone<span class="signature">(phone)</span><span class="type-signature"> &rarr; {String}</span>
+</h4>
+
+
+<p class="summary usertext"><p>mask_phone('13968341859')</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>脱敏手机号</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mask_phone.js.html">mask/phone.js</a>, <a href="mask_phone.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>improt { mask_phone } from 'jxk'
+mask_phone('13968341859') // 139****1859</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>phone</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>手机号</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回脱敏手机号</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">String</span>
 
 
 
@@ -1314,6 +5104,124 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 <div class="param-desc">
     <p>返回营业执照号码正则</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">RegExp</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="reg_idcard">
+    <span class="type-signature"></span>reg_idcard<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+</h4>
+
+
+<p class="summary usertext"><p>/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>国内身份证正则</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reg_idcard.js.html">reg/idcard.js</a>, <a href="reg_idcard.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回国内身份证正则</p>
 </div>
 
 
@@ -1457,8 +5365,126 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 
-<h4 class="name" id="reg_regexp">
-    <span class="type-signature"></span>reg_regexp<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+<h4 class="name" id="reg_phone">
+    <span class="type-signature"></span>reg_phone<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
+</h4>
+
+
+<p class="summary usertext"><p>/^0{0,1}(13[0-9]|15[0-9]|16[0-9]|17[0-9]|18[7-9])[0-9]{8}$/</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>国内手机号正则</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="reg_phone.js.html">reg/phone.js</a>, <a href="reg_phone.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>xkloveme xkloveme@gmail.com</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回国内手机号正则</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">RegExp</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="reg_trainNumber">
+    <span class="type-signature"></span>reg_trainNumber<span class="signature">()</span><span class="type-signature"> &rarr; {RegExp}</span>
 </h4>
 
 
@@ -1575,8 +5601,182 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 
-<h4 class="name" id="xxx">
-    <span class="type-signature"></span>xxx<span class="signature">(state)</span><span class="type-signature"> &rarr; {*}</span>
+<h4 class="name" id="time_computeAge">
+    <span class="type-signature"></span>time_computeAge<span class="signature">(birthday)</span><span class="type-signature"> &rarr; {Number}</span>
+</h4>
+
+
+<p class="summary usertext"><p>根据给的生日计算出用户的年龄</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>计算年龄</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_computeAge.js.html">time/computeAge.js</a>, <a href="time_computeAge.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>卞雪瑞 &lt;bianxr0803@gmail.com></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>birthday</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">String</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>生日日期字符串</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <ul>
+<li>返回计算出的年龄，如果未提供生日则返回0</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_customFormat">
+    <span class="type-signature"></span>time_customFormat<span class="signature">(format<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
 </h4>
 
 
@@ -1587,13 +5787,219 @@ console.log(addressComponents5); // 输出: null</code></pre>
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>状态方法</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>获取格式化的当前日期和时间，支持自定义格式。</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="misc_4StateSymbol.js.html">misc/4StateSymbol.js</a>, <a href="misc_4StateSymbol.js.html#line12">line 12</a>
+        <a href="time_customFormat.js.html">time/customFormat.js</a>, <a href="time_customFormat.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>penn &lt;https://github.com/penn201500></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>console.log(time_customFormat()) // 输出: "2024-07-30 15:45:30"</code></pre>
+
+<pre class="prettyprint"><code>console.log(time_customFormat("DD/MM/YYYY HH:mm:SS")) // 输出: "30/07/2024 15:45:30"</code></pre>
+
+<pre class="prettyprint"><code>console.log(time_customFormat("MM-DD-YYYY")) // 输出: "07-30-2024"</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+            <th>默认</th>
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>format</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>"YYYY-MM-DD_HH-mm-SS"</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>可选的日期时间格式。</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>格式化后的日期时间字符串。</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_dateRange">
+    <span class="type-signature"></span>time_dateRange<span class="signature">(year, month, day, hour, minute, second)</span><span class="type-signature"> &rarr; {Array}</span>
+</h4>
+
+
+<p class="summary usertext"><p>生成一个时间范围数组，该数组包含当前时间和目标时间
+如果目标时间在当前时间之后，则返回 [当前时间, 目标时间] 的数组
+如果目标时间在当前时间之前或相同，则返回 [目标时间, 当前时间] 的数组</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>返回一个时间范围</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_dateRange.js.html">time/dateRange.js</a>, <a href="time_dateRange.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -1645,14 +6051,6 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 
-<h5 class="h5-examples">
-    举例：
-</h5>
-
-<pre class="prettyprint"><code>jxk_xxx('success') // '√'</code></pre>
-
-
-
 
 
 <h5 class="h5-parameters">参数：</h5>
@@ -1670,6 +6068,8 @@ console.log(addressComponents5); // 输出: null</code></pre>
             
 
             
+            <th>默认</th>
+            
 
             <th class="last">描述</th>
         </tr>
@@ -1681,14 +6081,14 @@ console.log(addressComponents5); // 输出: null</code></pre>
         <tr>
             
             <td class="name">
-                <code>state</code>
+                <code>year</code>
             </td>
             
 
             <td class="type">
                 
                 
-<span class="param-type">*</span>
+<span class="param-type">number</span>
 
 
 
@@ -1698,9 +6098,185 @@ console.log(addressComponents5); // 输出: null</code></pre>
             
 
             
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
 
             <td class="description last">
+                <p>需要增加的年数，默认为0</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>month</code>
+            </td>
+            
+
+            <td class="type">
                 
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>需要增加的月数，默认为0</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>day</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>需要增加的天数，默认为0</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>hour</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>需要增加的小时数，默认为0</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>minute</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>需要增加的分钟数，默认为0</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>second</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>需要增加的秒数，默认为0</p>
             </td>
         </tr>
 
@@ -1726,13 +6302,17 @@ console.log(addressComponents5); // 输出: null</code></pre>
 <h5 class="h5-returns">返回：</h5>
 
 
+<div class="param-desc">
+    <p>返回一个包含两个Date对象的数组，分别代表开始时间和结束时间</p>
+</div>
+
 
 
 <dl class="param-type">
     <dt>类型</dt>
     <dd>
         
-<span class="param-type">*</span>
+<span class="param-type">Array</span>
 
 
 
@@ -1749,12 +6329,10 @@ console.log(addressComponents5); // 输出: null</code></pre>
 
 
 
-<h4 class="name" id="yd_is_chinese">
-    <span class="type-signature"></span>yd_is_chinese<span class="signature">(str, isPure)</span><span class="type-signature"> &rarr; {boolean}</span>
+<h4 class="name" id="time_dateToTimestamp">
+    <span class="type-signature"></span>time_dateToTimestamp<span class="signature">(date, inMilliseconds)</span><span class="type-signature"> &rarr; {number|null}</span>
 </h4>
 
-
-<p class="summary usertext"><p>判断是否为中文字符串</p></p>
 
 
 
@@ -1763,21 +6341,15 @@ console.log(addressComponents5); // 输出: null</code></pre>
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>是否为中文
-中文范围：\u4E00-\u9FFF 基本的CJK统一表意文字区块。
-中文范围：\u3400-\u4DBF CJK统一表意文字扩展A区块。
-中文范围：\u20000-\u2A6DF CJK统一表意文字扩展B区块。
-中文范围：\u2A700-\u2B73F CJK统一表意文字扩展C区块。
-中文范围：\u2B740-\u2B81F CJK统一表意文字扩展D区块。
-中文范围：\u2B820-\u2CEAF CJK统一表意文字扩展E区块。
-中文范围：\uF900-\uFAFF CJK兼容表意文字区块。
-中文范围：\u2F800-\u2FA1F CJK兼容表意文字补充区块。</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>将 Date 对象转换为 Unix 时间戳。
+验证 Date 对象是否有效，并允许选择输出时间戳的精度（秒或毫秒）。
+该函数将验证输入的 Date 对象是否表示有效的日期。</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="is_chinese.js.html">is/chinese.js</a>, <a href="is_chinese.js.html#line25">line 25</a>
+        <a href="time_dateToTimestamp.js.html">time/dateToTimestamp.js</a>, <a href="time_dateToTimestamp.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -1801,7 +6373,7 @@ console.log(addressComponents5); // 输出: null</code></pre>
     <dt class="tag-author">作者:</dt>
     <dd class="tag-author">
         <ul>
-            <li>go522000 &lt;https://github.com/go522000></li>
+            <li>penn &lt;https://github.com/penn201500></li>
         </ul>
     </dd>
     
@@ -1833,11 +6405,17 @@ console.log(addressComponents5); // 输出: null</code></pre>
     举例：
 </h5>
 
-<pre class="prettyprint"><code>// 默认匹配纯中文
-yd_is_chinese('中文'); // true</code></pre>
+<pre class="prettyprint"><code>// 示例: 有效的 Date 对象，输出秒级时间戳
+console.log(time_dateToTimestamp(new Date())) // 输出: Unix 时间戳（10位数字）</code></pre>
 
-<pre class="prettyprint"><code>// 第二个参数设置为 false，则匹配包含中文的字符串
-yd_is_chinese('abc中文123', false); // true</code></pre>
+<pre class="prettyprint"><code>// 示例: 有效的 Date 对象，输出毫秒级时间戳
+console.log(time_dateToTimestamp(new Date(), true)) // 输出: Unix 时间戳（13位数字）</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 无效的 Date 对象
+console.log(time_dateToTimestamp(new Date("invalid"))) // 输出: null</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 显然无效的 Date 对象
+console.log(time_dateToTimestamp(new Date('1000-00-00 00:00:00Z'))) // 输出: null</code></pre>
 
 
 
@@ -1869,14 +6447,14 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
         <tr>
             
             <td class="name">
-                <code>str</code>
+                <code>date</code>
             </td>
             
 
             <td class="type">
                 
                 
-<span class="param-type">string</span>
+<span class="param-type">Date</span>
 
 
 
@@ -1888,7 +6466,7 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
             
 
             <td class="description last">
-                <p>字符串</p>
+                <p>Date 对象。</p>
             </td>
         </tr>
 
@@ -1897,7 +6475,7 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
         <tr>
             
             <td class="name">
-                <code>isPure</code>
+                <code>inMilliseconds</code>
             </td>
             
 
@@ -1916,7 +6494,7 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
             
 
             <td class="description last">
-                <p>是否纯中文</p>
+                <p>如果为 true，则输出 13 位数字的时间戳（毫秒级），否则输出 10 位数字的时间戳（秒级）。默认为 false。</p>
             </td>
         </tr>
 
@@ -1943,7 +6521,7 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
 
 
 <div class="param-desc">
-    <p>返回是否是中文字符串</p>
+    <p>对应的 Unix 时间戳，如果 Date 对象无效则返回 null。</p>
 </div>
 
 
@@ -1952,7 +6530,1578 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
     <dt>类型</dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_friendlyDateStr">
+    <span class="type-signature"></span>time_friendlyDateStr<span class="signature">(sTime, type)</span><span class="type-signature"> &rarr; {string|null}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>友好的时间显示</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_friendlyDateStr.js.html">time/friendlyDateStr.js</a>, <a href="time_friendlyDateStr.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>lz-freedom &lt;https://github.com/lz-freedom></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 示例: 刚刚
+console.log(time_friendlyDateStr('2024-08-02 10:36:30', 'normal')) // 输出: 刚刚</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 1分钟前
+console.log(time_friendlyDateStr('2024-08-02 10:35:30', 'normal')) // 输出: 1分钟前</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 3小时前
+console.log(time_friendlyDateStr('2024-08-02 07:35:30', 'blur')) // 输出: 3小时前</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>sTime</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>待格式化的时间, 可传递时间戳(秒、毫秒)、日期对象、日期字符串(YYYY-MM-DD HH:mm:SS)</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>type</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>类型 normal | blur | full | ymd | other</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>格式化后的字符串</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_getDays">
+    <span class="type-signature"></span>time_getDays<span class="signature">(year, month)</span><span class="type-signature"></span>
+</h4>
+
+
+<p class="summary usertext"><p>返回某年某月天数</p></p>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>返回某年某月天数</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_getDays.js.html">time/getDays.js</a>, <a href="time_getDays.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>grantguo &lt;https://github.com/ForeverGuo></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>const days_1 = time_getDays()
+// => 31
+const days_2 = time_getDays(2024,9)
+// => 30</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>year</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>年</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>month</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>月</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回某年某月天数</p>
+</div>
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_leftTime">
+    <span class="type-signature"></span>time_leftTime<span class="signature">(seconds)</span><span class="type-signature"> &rarr; {object}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>计算剩余时间</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_leftTime.js.html">time/leftTime.js</a>, <a href="time_leftTime.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>陈随易 &lt;https://chensuiyi.me></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>seconds</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>剩余时间秒数</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回剩余时间的不同单位值</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_relativeTime">
+    <span class="type-signature"></span>time_relativeTime<span class="signature">(data)</span><span class="type-signature"> &rarr; {Object}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>转换相对时间</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_relativeTime.js.html">time/relativeTime.js</a>, <a href="time_relativeTime.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>陈随易 &lt;https://chensuiyi.me></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>data</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>数组或对象</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>返回转换后的相对时间</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_stringToDate">
+    <span class="type-signature"></span>time_stringToDate<span class="signature">(timeStr, format, timezoneOffset<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Date|null}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>将日期时间字符串根据指定格式转换为 Date 对象，并可选时区。
+支持多种字符串格式，并验证输入格式的正确性。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_stringToDate.js.html">time/stringToDate.js</a>, <a href="time_stringToDate.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>penn &lt;https://github.com/penn201500></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 示例: 格式 "YYYY-MM-DD HH:mm:SS"，UTC-5
+const date1 = time_stringToDate("2021-01-01 00:00:00", "YYYY-MM-DD HH:mm:SS", -5)
+console.log(date1) // 输出: Date 对象，调整至时区: UTC-5</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 格式 "YYYY-MM-DD_HH-mm-SS"
+const date2 = time_stringToDate("2021-01-01_00-00-00", "YYYY-MM-DD_HH-mm-SS")
+console.log(date2) // 输出: Date 对象</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 格式 "DD/MM/YYYY HH:mm:SS"
+const date3 = time_stringToDate("01/01/2021 00:00:00", "DD/MM/YYYY HH:mm:SS")
+console.log(date3) // 输出: Date 对象</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 格式 "MM-DD-YYYY"
+const date4 = time_stringToDate("01-01-2021", "MM-DD-YYYY")
+console.log(date4) // 输出: Date 对象</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+            <th>默认</th>
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>timeStr</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>日期时间字符串（例如：&quot;2021-01-01 00:00:00&quot;）。</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>format</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>日期时间字符串的格式（例如：&quot;YYYY-MM-DD HH:mm:SS&quot;）。</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>timezoneOffset</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>0</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>可选的时区偏移量，以小时为单位，相对于UTC时间。</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>转换后对应的 Date 对象，如果格式不匹配则返回 null。</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_timestampToDate">
+    <span class="type-signature"></span>time_timestampToDate<span class="signature">(ts)</span><span class="type-signature"> &rarr; {Date|null}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>将 Unix 时间戳转换为 Date 对象。
+支持秒级 (10位数字) 和毫秒级 (13位数字) 的 Unix 时间戳。
+验证时间戳是否有效，并自动调整精度。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_timestampToDate.js.html">time/timestampToDate.js</a>, <a href="time_timestampToDate.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>penn &lt;https://github.com/penn201500></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 示例: 有效的秒级时间戳
+console.log(time_timestampToDate(1704067200)); // 输出: Date 对象，代表 2024-01-01 00:00:00 UTC</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 有效的毫秒级时间戳
+console.log(time_timestampToDate(1704067200000)); // 输出: Date 对象，代表 2024-01-01 00:00:00 UTC</code></pre>
+
+<pre class="prettyprint"><code>// 示例: 无效的时间戳
+console.log(time_timestampToDate("invalid")); // 输出: null</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>ts</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Unix 时间戳。</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>对应的 Date 对象，如果时间戳无效或格式不正确则返回 null。</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="time_week">
+    <span class="type-signature"></span>time_week<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>返回当前日期是星期几</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="time_week.js.html">time/week.js</a>, <a href="time_week.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>tank</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>周几</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id="url_urlDecode">
+    <span class="type-signature"></span>url_urlDecode<span class="signature">(input)</span><span class="type-signature"> &rarr; {string}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>对字符串进行 URL 解码。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browser_urlDecode.js.html">browser/urlDecode.js</a>, <a href="browser_urlDecode.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>penn &lt;https://github.com/penn201500></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>input</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+
+
+
+                
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>要处理的字符串。</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">抛出：</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+            <p>如果输入不是字符串则报错。</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>类型</dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>处理后的字符串。</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
 
@@ -1989,7 +8138,7 @@ yd_is_chinese('abc中文123', false); // true</code></pre>
                 4.0.3</a
             >
             on
-            Wed Aug 14 2024 10:04:19 GMT+0000 (Coordinated Universal Time)
+            Thu Aug 15 2024 05:20:13 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
