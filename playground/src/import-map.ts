@@ -37,6 +37,7 @@ export function useVueImportMap(
       imports: {
         vue,
         'vue/server-renderer': serverRenderer,
+        'date-fns': '//cdn.jsdelivr.net/npm/date-fns',
         jxk,
       },
     }
