@@ -24,7 +24,7 @@ export default (text) => {
   }
 
   // 创建临时元素
-  const temp = document.createElement('div');
+  let temp = document.createElement('div');
 
   // 设置 innerHTML
   temp.innerHTML = text;

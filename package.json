@@ -54,7 +54,7 @@
     "play": "vite playground",
     "play:install": "pnpm -r --filter=playground install",
     "play:build": "pnpm -r --filter=playground run build-preview",
-    "release": "bumpp && npm publish",
+    "release": "npm run build && bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
