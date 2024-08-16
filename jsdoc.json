@@ -1,47 +1,65 @@
 {
-    "tags": {
-        "allowUnknownTags": true
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": [
+      "./src/lib",
+      "README.md"
+    ],
+    "includePattern": "\\.js$|\\.ts$",
+    "excludePattern": "(node_modules/|docs)"
+  },
+  "plugins": [
+    "plugins/markdown",
+    "node_modules/docdash-extended-xkloveme/categories"
+  ],
+  "opts": {
+    "template": "node_modules/docdash-extended-xkloveme",
+    "encoding": "utf8",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "categoriesFile": "./categories.json",
+  "docdash": {
+    "static": true,
+    "sort": true,
+    "search": true,
+    "collapse": true,
+    "typedefs": true,
+    "removeQuotes": "none",
+    "navLevel": 5,
+    "menu": {
+      "Github": {
+        "href": "https://github.com/xkloveme/jxk",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repository"
+      },
+      "NPM": {
+        "href": "https://www.npmjs.com/package/jxk?activeTab=readme",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "npm"
+      },
+      "前端文档": {
+        "href": "https://wt-front-end.github.io/wt-docs/",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "front-end"
+      }
     },
-    "source": {
-        "include": ["./src/lib", "README.md"],
-        "includePattern": "\\.js$|\\.ts$",
-        "excludePattern": "(node_modules/|docs)"
-    },
-    "plugins": ["plugins/markdown", "node_modules/docdash-extended-xkloveme/categories"],
-    "opts": {
-        "template": "node_modules/docdash-extended-xkloveme",
-        "encoding": "utf8",
-        "destination": "docs/",
-        "recurse": true,
-        "verbose": true
-    },
-    "templates": {
-        "cleverLinks": false,
-        "monospaceLinks": false
-    },
-    "categoriesFile": "./categories.json",
-    "docdash": {
-        "static": true,
-        "sort": true,
-        "search": true,
-        "collapse": true,
-        "typedefs": true,
-        "removeQuotes": "none",
-        "navLevel": 5,
-        "menu": {
-            "Github": {
-                "href": "https://github.com/xkloveme/jxk",
-                "target": "_blank",
-                "class": "menu-item",
-                "id": "repository"
-            }
-        },
-        "openGraph": {
-            "title": "jxk函数",
-            "type": "website",
-            "image": "https://cdn.apifox.com/app/project-icon/custom/20240723/ba24ece7-8a91-44f6-902d-efd9d0bd5a46.svg",
-            "site_name": "小康函数",
-            "url": "https://www.jixiaokang.com/jxk"
-        }
+    "openGraph": {
+      "title": "jxk函数",
+      "type": "website",
+      "image": "https://cdn.apifox.com/app/project-icon/custom/20240723/ba24ece7-8a91-44f6-902d-efd9d0bd5a46.svg",
+      "site_name": "小康函数",
+      "url": "https://www.jixiaokang.com/jxk"
     }
+  }
 }
