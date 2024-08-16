@@ -16,7 +16,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - run: npm build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
 
       - run: npx changelogithub
         env:
-          GITHUB_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.HEXO_DEPLOY_PRIVATE_KEY}}
