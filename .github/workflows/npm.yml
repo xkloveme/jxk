@@ -1,8 +1,8 @@
 name: Publish Package to npmjs
 on:
-  # 每当 push 到 main 分支时触发部署
   push:
-    branches: [main]
+    tags:
+      - 'v*' # 触发器会在推送带有 v 开头的标签时触发
 jobs:
   build:
     runs-on: ubuntu-latest
