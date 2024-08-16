@@ -37,11 +37,11 @@
             }
         },
         "openGraph": {
-            "title": "",
+            "title": "jxk函数",
             "type": "website",
-            "image": "https://static.yicode.tech/logo/yidash2.png",
-            "site_name": "",
-            "url": ""
+            "image": "https://cdn.apifox.com/app/project-icon/custom/20240723/ba24ece7-8a91-44f6-902d-efd9d0bd5a46.svg",
+            "site_name": "小康函数",
+            "url": "https://www.jixiaokang.com/jxk"
         }
     }
 }

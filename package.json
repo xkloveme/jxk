@@ -16,12 +16,12 @@
   },
   "bugs": "https://github.com/xkloveme/jxk/issues",
   "keywords": [
-    "vite",
-    "vite-plugin",
     "jxk",
-    "git",
-    "project",
-    "version"
+    "jixk",
+    "小康",
+    "小康函数",
+    "xkloveme",
+    "tools"
   ],
   "sideEffects": false,
   "exports": {
