@@ -21,7 +21,7 @@ jobs:
       - run: pnpm build
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: npx changelogithub
         env:
