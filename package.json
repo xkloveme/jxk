@@ -27,12 +27,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.umd.cjs",
-      "import": "./dist/index.js"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -43,13 +43,14 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "scripts": {
     "gen": "node generate.js",
     "docs": "rimraf docs & jsdoc -c jsdoc.json",
     "dev": "npm run gen && npm run play",
-    "build": "vite build",
+    "build": "npm run gen && vite build && unbuild",
     "lint": "eslint .",
     "play": "vite playground",
     "play:install": "pnpm -r --filter=playground install",
@@ -63,7 +64,6 @@
     "@antfu/utils": "^0.7.10",
     "@types/node": "^22.2.0",
     "bumpp": "^9.5.1",
-    "date-fns": "^3.6.0",
     "docdash-extended-xkloveme": "^1.0.2",
     "eslint": "^9.9.0",
     "esno": "^4.7.0",
@@ -75,5 +75,8 @@
     "vite": "^5.4.0",
     "vite-plugin-git-version": "^1.0.7",
     "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0"
   }
 }
