@@ -11,13 +11,13 @@
  * const add = (x) => x + 1;
  * const multiply = (x) => x * 2;
  * const subtract = (x) => x - 3;
- * const chainedFunction = yd_helper_chain(add, multiply, subtract);
+ * const chainedFunction = misc_chain(add, multiply, subtract);
  * console.log("调用链式函数并输出结果", chainedFunction(5)); // (5 + 1) * 2 - 3 = 9
  * @example
  * const toUpperCase = (str) => str.toUpperCase();
  * const addExclamation = (str) => str + '!';
  * const repeat = (str) => str + str;
- * const shout = yd_helper_chain(toUpperCase, addExclamation, repeat);
+ * const shout = misc_chain(toUpperCase, addExclamation, repeat);
  * console.log("调用链式函数并输出结果",shout('hello')); // "HELLO!HELLO!"
  */
 export default (...funcs) => {

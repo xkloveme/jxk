@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import yd_number_random from './random.js';
+import number_random from './random.js';
 
-describe('yd_number_random', () => {
+describe('number_random', () => {
     it('should be in a number range', () => {
-        const random1 = yd_number_random(1, 10);
-        const random2 = yd_number_random(1.123, 10.123);
+        const random1 = number_random(1, 10);
+        const random2 = number_random(1.123, 10.123);
         expect(random1).not.toBeUndefined();
         expect(random2).not.toBeUndefined();
         expect(random1).toBeGreaterThanOrEqual(1);

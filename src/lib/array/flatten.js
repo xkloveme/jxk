@@ -6,7 +6,7 @@
  * @param {Array} arr - 需要拍平的数组
  * @returns {Array} - 拍平后的数组
  * @example
- * console.log(yd_array_flatten([1, [2, [3, [4]], 5]])); // [1, 2, 3, 4, 5]
+ * console.log(array_flatten([1, [2, [3, [4]], 5]])); // [1, 2, 3, 4, 5]
  */
 export default (arr) => {
     const result = [];

@@ -7,7 +7,7 @@
  * @return 返回是否是有效身份证
  * @summary 返回是否是有效身份证
  * @example
- * yd_is_card(card)
+ * is_card(card)
  * => true or false
  */
 
