@@ -2,7 +2,6 @@ name: Release
 
 on:
   push:
-    branches: [main]
     tags:
       - 'v*' # 触发器会在推送带有 v 开头的标签时触发
 
@@ -17,18 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          registry-url: https://registry.npmjs.org/ # 指定 npm 登录的注册表
-
-      - name: Install dependencies
-        run: npm install pnpm -g && pnpm install
-
-      - name: Build
-        run: pnpm build
-
-      - name: Publish to npm
-        run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # 使用正确的 secret 名称
 
       - name: Generate Changelog
         run: npx changelogithub
