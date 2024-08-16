@@ -598,7 +598,7 @@ console.log("date1 是否在 date2 之前：", result); // date1 是否在 date2
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="time_format.js.html">time/format.js</a>, <a href="time_format.js.html#line10">line 10</a>
+        <a href="time_format.js.html">time/format.js</a>, <a href="time_format.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -651,6 +651,17 @@ console.log("date1 是否在 date2 之前：", result); // date1 是否在 date2
 
 
 
+
+
+
+<h5 class="h5-examples">
+    示例：
+</h5>
+
+<pre class="prettyprint"><code>// 示例用法
+const now = new Date();
+const formattedNow = time_format(now, 'yyyy-MM-dd HH:mm:ss');
+console.log(formattedNow); // 输出类似 "2024-08-16 03:10:40"</code></pre>
 
 
 
@@ -19878,7 +19889,7 @@ number_zeroFilling(-123, 6); // 抛出错误 "输入参数必须是大于等于0
 
 <pre class="prettyprint"><code>console.log(time_customFormat()) // 输出: "2024-07-30 15:45:30"</code></pre>
 
-<pre class="prettyprint"><code>console.log(time_customFormat("DD/MM/YYYY HH:mm:SS")) // 输出: "30/07/2024 15:45:30"</code></pre>
+<pre class="prettyprint"><code>console.log(time_customFormat("DD/MM/YYYY HH:mm:ss")) // 输出: "30/07/2024 15:45:30"</code></pre>
 
 <pre class="prettyprint"><code>console.log(time_customFormat("MM-DD-YYYY")) // 输出: "07-30-2024"</code></pre>
 
@@ -19945,7 +19956,7 @@ number_zeroFilling(-123, 6); // 抛出错误 "输入参数必须是大于等于0
             
             <td class="default">
                 
-                <code>"YYYY-MM-DD_HH-mm-SS"</code>
+                <code>"YYYY-MM-DD HH:mm:ss"</code>
                 
             </td>
             
@@ -21967,7 +21978,7 @@ console.log(time_timestampToDate("invalid")); // 输出: null</code></pre>
                 4.0.3</a
             >
             on
-            Fri Aug 16 2024 03:46:39 GMT+0000 (Coordinated Universal Time)
+            Fri Aug 16 2024 04:36:05 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
