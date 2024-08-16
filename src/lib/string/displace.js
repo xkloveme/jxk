@@ -2,8 +2,8 @@
  * 该函数用于对字符串进行置换操作。
  * 
  * @author xkloveme <xkloveme@gmail.com> - 作者信息
- * @category string - 表明该函数属于字符串处理类别
- * @alias string_displace - 函数别名
+ * @category string
+ * @alias string_displace
  * 
  * @param {String} strs - 需要处理的原始字符串。
  * @param {Number} start - 指定需要保留的字符串前缀长度，默认值为 0。
