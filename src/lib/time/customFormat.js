@@ -3,19 +3,19 @@
  * @author penn <https://github.com/penn201500>
  * @category time
  * @alias time_customFormat
- * @param {string} [format="YYYY-MM-DD_HH-mm-SS"] - 可选的日期时间格式。
+ * @param {string} [format="YYYY-MM-DD HH:mm:ss"] - 可选的日期时间格式。
  * @returns {string} 格式化后的日期时间字符串。
  *
  * @example
  * console.log(time_customFormat()) // 输出: "2024-07-30 15:45:30"
  *
  * @example
- * console.log(time_customFormat("DD/MM/YYYY HH:mm:SS")) // 输出: "30/07/2024 15:45:30"
+ * console.log(time_customFormat("DD/MM/YYYY HH:mm:ss")) // 输出: "30/07/2024 15:45:30"
  *
  * @example
  * console.log(time_customFormat("MM-DD-YYYY")) // 输出: "07-30-2024"
  */
-export default (format = 'YYYY-MM-DD HH:mm:SS') => {
+export default (format = 'YYYY-MM-DD HH:mm:ss') => {
     try {
         if (typeof format !== 'string' || !format.match(/(YYYY|MM|DD|HH|mm|SS)/)) {
             throw new Error('日期格式无效');
@@ -36,7 +36,7 @@ export default (format = 'YYYY-MM-DD HH:mm:SS') => {
             .replace('mm', minutes)
             .replace('DD', day)
             .replace('HH', hours)
-            .replace('SS', seconds);
+            .replace('ss', seconds);
 
         return formattedDateTime;
     } catch (error) {

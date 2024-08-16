@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*' # 触发器会在推送带有 v 开头的标签时触发
+      - 'v*'
 
 jobs:
   release:
@@ -11,13 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # 获取完整的 Git 历史记录
+          fetch-depth: 0
 
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
-      - name: Generate Changelog
-        run: npx changelogithub
+      - run: npx changelogithub
         env:
-          GITHUB_TOKEN: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }} # 使用 GITHUB_TOKEN
+          GITHUB_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}
