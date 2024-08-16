@@ -13,14 +13,14 @@
  * console.log(array_countOccurrences(['a', 'a', 'bb', 'abc', 'fff', 'fff', '橙', '橙'])); // {a: 2, bb: 1, abc: 1, fff: 2, 橙: 2}
  */
 export default (array) => {
-    const occurrences = {};
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (occurrences[element]) {
-            occurrences[element]++;
-        } else {
-            occurrences[element] = 1;
-        }
+  const occurrences = {};
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (occurrences[element]) {
+      occurrences[element]++;
+    } else {
+      occurrences[element] = 1;
     }
-    return occurrences;
+  }
+  return occurrences;
 };

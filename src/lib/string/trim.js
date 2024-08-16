@@ -6,7 +6,7 @@
  * @alias string_trim
  * 
  * @param {string} str - 待处理的字符串。
- * @param {boolean} [trimAll=true] - 控制是否去除所有空白字符，默认为 false 只去除开头结尾。
+ * @param {boolean} [trimAll=false] - 控制是否去除所有空白字符，默认为 false 只去除开头结尾。
  * 
  * @returns {string} - 返回处理后的字符串。
  * 
