@@ -2,8 +2,9 @@ name: Release
 
 on:
   push:
+    branches: [main]
     tags:
-      - 'v*'
+      - 'v*' # 触发器会在推送带有 v 开头的标签时触发
 
 jobs:
   release:
@@ -11,18 +12,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # 获取完整的 Git 历史记录
 
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+          registry-url: https://registry.npmjs.org/ # 指定 npm 登录的注册表
+
       - name: Install dependencies
         run: npm install pnpm -g && pnpm install
-      - run: pnpm build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npx changelogithub
+      - name: Build
+        run: pnpm build
+
+      - name: Publish to npm
+        run: npm publish --provenance --access public
         env:
-          GITHUB_TOKEN: ${{secrets.HEXO_DEPLOY_PRIVATE_KEY}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # 使用正确的 secret 名称
+
+      - name: Generate Changelog
+        run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }} # 使用 GITHUB_TOKEN
