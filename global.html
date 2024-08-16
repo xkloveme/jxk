@@ -1438,13 +1438,13 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>合并数组</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>合并多个数组或单个元素到一个新的数组中。</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_concat.js.html">array/concat.js</a>, <a href="array_concat.js.html#line9">line 9</a>
+        <a href="array_concat.js.html">array/concat.js</a>, <a href="array_concat.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -1493,6 +1493,30 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 合并两个数组
+console.log(array_concat([1, 2], [3, 4])); // 输出 [1, 2, 3, 4]</code></pre>
+
+<pre class="prettyprint"><code>// 合并数组和单个元素
+console.log(array_concat([1, 2], 3, [4, 5])); // 输出 [1, 2, 3, 4, 5]</code></pre>
+
+<pre class="prettyprint"><code>// 合并多个数组和单个元素
+console.log(array_concat([1, 2], [3, 4], 5, [6, 7])); // 输出 [1, 2, 3, 4, 5, 6, 7]</code></pre>
+
+<pre class="prettyprint"><code>// 合并空数组
+console.log(array_concat([], [])); // 输出 []</code></pre>
+
+<pre class="prettyprint"><code>// 合并单个元素
+console.log(array_concat(1, 2, 3)); // 输出 [1, 2, 3]</code></pre>
+
+<pre class="prettyprint"><code>// 合并不同类型的元素
+console.log(array_concat([1, 2], 'text', [3, 4])); // 输出 [1, 2, 'text', 3, 4]</code></pre>
 
 
 
@@ -1555,7 +1579,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>多个数组</p>
+                <p>一个或多个数组或单个元素。</p>
             </td>
         </tr>
 
@@ -1582,7 +1606,9 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 <div class="param-desc">
-    <p>多个数组合并值</p>
+    <ul>
+<li>合并后的数组。</li>
+</ul>
 </div>
 
 
@@ -2344,7 +2370,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 <h4 class="name" id="array_findIndex">
-    <span class="type-signature"></span>array_findIndex<span class="signature">(array, field, value)</span><span class="type-signature"> &rarr; {number}</span>
+    <span class="type-signature"></span>array_findIndex<span class="signature">(array, field, value)</span><span class="type-signature"> &rarr; {number|null}</span>
 </h4>
 
 
@@ -2355,13 +2381,13 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>查找数组中匹配的索引</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>查找数组中具有指定字段和值的对象的索引。</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_findIndex.js.html">array/findIndex.js</a>, <a href="array_findIndex.js.html#line11">line 11</a>
+        <a href="array_findIndex.js.html">array/findIndex.js</a>, <a href="array_findIndex.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -2410,6 +2436,27 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 查找具有 id 为 1 的对象的索引
+console.log(array_findIndex([{id: 1}, {id: 2}], 'id', 1)); // 输出 0</code></pre>
+
+<pre class="prettyprint"><code>// 查找具有 name 为 'Alice' 的对象的索引
+console.log(array_findIndex([{name: 'Alice'}, {name: 'Bob'}], 'name', 'Alice')); // 输出 0</code></pre>
+
+<pre class="prettyprint"><code>// 查找具有 age 为 30 的对象的索引
+console.log(array_findIndex([{age: 25}, {age: 30}], 'age', 30)); // 输出 1</code></pre>
+
+<pre class="prettyprint"><code>// 查找不存在的对象的索引
+console.log(array_findIndex([{age: 25}, {age: 30}], 'age', 40)); // 输出 null</code></pre>
+
+<pre class="prettyprint"><code>// 查找空数组中的对象的索引
+console.log(array_findIndex([], 'age', 40)); // 输出 null</code></pre>
 
 
 
@@ -2460,7 +2507,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>数组</p>
+                <p>待搜索的数组。</p>
             </td>
         </tr>
 
@@ -2488,7 +2535,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>要查找的字段</p>
+                <p>要查找的字段名。</p>
             </td>
         </tr>
 
@@ -2504,7 +2551,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             <td class="type">
                 
                 
-<span class="param-type">string</span>
+<span class="param-type">*</span>
 
 
 
@@ -2516,7 +2563,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>该字段的值</p>
+                <p>字段对应的值。</p>
             </td>
         </tr>
 
@@ -2543,7 +2590,9 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 <div class="param-desc">
-    <p>返回匹配的索引</p>
+    <ul>
+<li>返回匹配对象的索引，如果没有找到则返回 null。</li>
+</ul>
 </div>
 
 
@@ -2553,6 +2602,9 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
     <dd>
         
 <span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
 
 
 
@@ -2581,13 +2633,13 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>查找数组中匹配的值</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>查找数组中具有指定字段和值的对象。</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_findObj.js.html">array/findObj.js</a>, <a href="array_findObj.js.html#line11">line 11</a>
+        <a href="array_findObj.js.html">array/findObj.js</a>, <a href="array_findObj.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -2639,6 +2691,27 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 查找具有 id 为 1 的对象
+console.log(array_findObj([{id: 1}, {id: 2}], 'id', 1)); // 输出 {id: 1}</code></pre>
+
+<pre class="prettyprint"><code>// 查找具有 name 为 'Alice' 的对象
+console.log(array_findObj([{name: 'Alice'}, {name: 'Bob'}], 'name', 'Alice')); // 输出 {name: 'Alice'}</code></pre>
+
+<pre class="prettyprint"><code>// 查找具有 age 为 30 的对象
+console.log(array_findObj([{age: 25}, {age: 30}], 'age', 30)); // 输出 {age: 30}</code></pre>
+
+<pre class="prettyprint"><code>// 查找不存在的对象
+console.log(array_findObj([{age: 25}, {age: 30}], 'age', 40)); // 输出 {}</code></pre>
+
+<pre class="prettyprint"><code>// 查找空数组中的对象
+console.log(array_findObj([], 'age', 40)); // 输出 {}</code></pre>
+
+
+
 
 
 <h5 class="h5-parameters">参数：</h5>
@@ -2686,7 +2759,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>数组对象</p>
+                <p>待搜索的数组。</p>
             </td>
         </tr>
 
@@ -2714,7 +2787,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>要查找的属性</p>
+                <p>要查找的字段名。</p>
             </td>
         </tr>
 
@@ -2730,7 +2803,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             <td class="type">
                 
                 
-<span class="param-type">Any</span>
+<span class="param-type">*</span>
 
 
 
@@ -2742,7 +2815,7 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
             
 
             <td class="description last">
-                <p>属性的值</p>
+                <p>字段对应的值。</p>
             </td>
         </tr>
 
@@ -2769,7 +2842,9 @@ chunk(['a', 'b', 'c', 'd', 'e'], 3, false);
 
 
 <div class="param-desc">
-    <p>返回匹配的对象</p>
+    <ul>
+<li>返回匹配的对象，如果没有找到则返回空对象。</li>
+</ul>
 </div>
 
 
@@ -22348,7 +22423,7 @@ console.log(string_trim('  Multiple   Spaces  ', false)); // 输出 "Multiple   
             
             <td class="default">
                 
-                <code>true</code>
+                <code>false</code>
                 
             </td>
             
@@ -24574,7 +24649,7 @@ console.log(time_timestampToDate("invalid")); // 输出: null</code></pre>
                 </a
             >
             on
-            Fri Aug 16 2024 09:53:10 GMT+0000 (Coordinated Universal Time)
+            Fri Aug 16 2024 10:05:10 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
