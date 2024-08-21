@@ -1,7 +1,7 @@
 {
   "name": "jxk",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "A relatively commonly used tool and function",
   "author": "xkloveme <xkloveme@gmail.com>",
@@ -37,8 +37,7 @@
   "typesVersions": {
     "*": {
       "*": [
-        "./lib/types/*",
-        "./lib/types/*.d.ts"
+        "./lib/types/*"
       ]
     }
   },
