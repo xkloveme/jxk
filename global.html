@@ -15519,11 +15519,9 @@ is_number(123) // true</code></pre>
 
 
 <h4 class="name" id="mask_address">
-    <span class="type-signature"></span>mask_address<span class="signature">(address)</span><span class="type-signature"> &rarr; {String}</span>
+    <span class="type-signature"></span>mask_address<span class="signature">(input)</span><span class="type-signature"> &rarr; {String}</span>
 </h4>
 
-
-<p class="summary usertext"><p>mask_address('13968341859')</p></p>
 
 
 
@@ -15532,13 +15530,13 @@ is_number(123) // true</code></pre>
 <dl class="details">
     
     <dt class="tag-description">描述:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>脱敏地址</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>脱敏地址或普通字符串</p></li></ul></dd>
     
 
     
     <dt class="tag-source">源码:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mask_address.js.html">mask/address.js</a>, <a href="mask_address.js.html#line13">line 13</a>
+        <a href="mask_address.js.html">mask/address.js</a>, <a href="mask_address.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -15594,8 +15592,12 @@ is_number(123) // true</code></pre>
     举例：
 </h5>
 
-<pre class="prettyprint"><code>improt { mask_address } from 'jxk'
-mask_address('江苏省南京市鼓楼区中山路 18 号德基广场写字楼 16 层') // 江苏****鼓楼区中山路 18 号德基广场写字楼 16 层</code></pre>
+<pre class="prettyprint"><code>import { mask_address } from 'jxk'
+mask_address('江苏省南京市鼓楼区中山路18号德基广场写字楼16层') // 江苏省南*市鼓*区中******************层
+mask_address('北京市海淀区清华园1号') // 北京市海*区清****号
+mask_address('上海市浦东新区陆家嘴环路1000号') // 上海市浦*****陆***************号
+mask_address('13812345678') // 1********78
+mask_address('Hello World') // He*********ld</code></pre>
 
 
 
@@ -15627,7 +15629,7 @@ mask_address('江苏省南京市鼓楼区中山路 18 号德基广场写字楼 1
         <tr>
             
             <td class="name">
-                <code>address</code>
+                <code>input</code>
             </td>
             
 
@@ -15646,7 +15648,7 @@ mask_address('江苏省南京市鼓楼区中山路 18 号德基广场写字楼 1
             
 
             <td class="description last">
-                <p>地址</p>
+                <p>地址或普通字符串</p>
             </td>
         </tr>
 
@@ -15673,7 +15675,7 @@ mask_address('江苏省南京市鼓楼区中山路 18 号德基广场写字楼 1
 
 
 <div class="param-desc">
-    <p>返回脱敏地址</p>
+    <p>返回脱敏后的字符串</p>
 </div>
 
 
@@ -24709,7 +24711,7 @@ console.log(time_timestampToDate("invalid")); // 输出: null</code></pre>
                 </a
             >
             on
-            Fri Aug 30 2024 01:53:12 GMT+0000 (Coordinated Universal Time)
+            Fri Aug 30 2024 07:19:07 GMT+0000 (Coordinated Universal Time)
         </footer>
 
         <script>
