@@ -20,22 +20,23 @@
  * // 示例: 无效的时间戳
  * console.log(time_timestampToDate("invalid")); // 输出: null
  */
-export default (ts) => {
-    if (typeof ts === 'string') {
-        ts = parseInt(ts, 10);
-    }
+export default (timestamp) => {
+  if (!timestamp || timestamp === null || timestamp === undefined) {
+    return null;
+  }
 
-    if (typeof ts !== 'number' || isNaN(ts) || ts < 0) {
-        console.error('Invalid timestamp.');
-        return null;
-    }
+  const numericTimestamp = Number(timestamp);
 
-    if (ts.toString().length === 10) {
-        return new Date(ts * 1000);
-    } else if (ts.toString().length === 13) {
-        return new Date(ts);
-    } else {
-        console.error('Timestamp must be either 10 or 13 digits long.');
-        return null;
-    }
+  if (isNaN(numericTimestamp) || numericTimestamp < 0) {
+    return null;
+  }
+
+  // 处理0、10位和13位时间戳
+  if (numericTimestamp === 0 || String(numericTimestamp).length === 10) {
+    return new Date(numericTimestamp * 1000);
+  } else if (String(numericTimestamp).length === 13) {
+    return new Date(numericTimestamp);
+  }
+
+  return null;
 };
