@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { time_date,sm4 } from 'jxk'
+import { time_date,sm4,mask_address } from 'jxk'
 
 const msg = ref('欢迎使用 jxk函数, 您可以在此直接使用!')
 let input = ref('我是原始数据')
@@ -9,6 +9,7 @@ const encryptedData = ref('')
 const decryptedData = ref('')
 function handleEncrypt() {
  console.log(time_date)
+ console.log(mask_address('上海市浦东新区陆家嘴环路1000号'))
  encryptedData.value = sm4.encrypt(input.value, token.value)
 }
 function handleDecrypt() {

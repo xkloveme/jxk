@@ -17,7 +17,7 @@
  */
 export default (format = 'YYYY-MM-DD HH:mm:ss') => {
     try {
-        if (typeof format !== 'string' || !format.match(/(YYYY|MM|DD|HH|mm|SS)/)) {
+        if (typeof format !== 'string' || !format.match(/(YYYY|MM|DD|HH|mm|ss)/)) {
             throw new Error('日期格式无效');
         }
         const now = new Date();

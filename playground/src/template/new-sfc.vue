@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import jxk from 'jxk'
+import * as jxk from 'jxk'
 </script>
 
 <template>

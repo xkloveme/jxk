@@ -21,7 +21,7 @@ import is_float from '../is/float.js';
  */
 export default function number_random(lower, upper, isFloat = false) {
   // 参数验证
-  if (typeof lower !== 'number' || (is_number(lower) && is_number(upper))) {
+  if (!is_number(lower) || (upper !== undefined && !is_number(upper))) {
     throw new TypeError('Both lower and upper must be numbers.');
   }
 
@@ -29,6 +29,11 @@ export default function number_random(lower, upper, isFloat = false) {
   if (upper === undefined) {
     upper = lower;
     lower = 0;
+  }
+
+  // 如果下限大于上限，交换它们
+  if (lower > upper) {
+    [lower, upper] = [upper, lower];
   }
 
   // 判断是否返回浮点数
