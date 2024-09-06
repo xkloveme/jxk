@@ -17,6 +17,9 @@
   <a href="https://www.jixiaokang.com/jxk/playground">
     游乐场🎠演示
   </a>
+  <a href="https://www.jixiaokang.com/jxk/">
+  所有函数请访问https://www.jixiaokang.com/jxk/
+  </a>
 </h1>
 
 **中文** | [English](./README.en.md)
