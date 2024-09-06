@@ -63,7 +63,7 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.3",
-    "vite-plugin-dts": "^4.1.0",
+    "vite-plugin-dts": "~4.0.3",
     "vite-plugin-git-version": "^1.0.7",
     "vitest": "^2.0.5"
   },
