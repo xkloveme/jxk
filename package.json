@@ -28,19 +28,12 @@
     ".": {
       "import": "./lib/index.es.js",
       "require": "./lib/index.cjs.js",
-      "types": "./lib/types/index.d.ts"
+      "types": "./lib/index.d.ts"
     }
   },
   "main": "./lib/index.cjs.js",
   "module": "./lib/index.es.js",
-  "types": "./lib/types/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./lib/types/*"
-      ]
-    }
-  },
+  "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],

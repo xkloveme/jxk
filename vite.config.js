@@ -23,8 +23,9 @@ export default defineConfig({
   plugins: [
     VersionGitPlugin(),
     dts({
-      insertTypesEntry: true,
-      outDir: 'lib/types'
+      insertTypesEntry:true,
+      rollupTypes: true,
+      clearPureImport: false
     })
   ],
 })
