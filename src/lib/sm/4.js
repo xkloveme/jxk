@@ -57,7 +57,7 @@ export default {
       }
     } catch (error) {
       console.error('🐛: ~ encrypt ~ error:', originalData, error);
-      return '';
+      return originalData;
     }
   },
 
@@ -93,7 +93,7 @@ export default {
       }
     } catch (error) {
       console.error('🐛: ~ decrypt ~ error:', encryptedData, error);
-      return '';
+      return encryptedData;
     }
   }
 }

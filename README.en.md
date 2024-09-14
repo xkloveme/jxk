@@ -16,6 +16,9 @@
 <h1 >
   <a href="https://www.jixiaokang.com/jxk/playground">
     Playground🎠Demo
+  </a><br/>
+  <a href="https://www.jixiaokang.com/jxk/">
+  Function Library https://www.jixiaokang.com/jxk/
   </a>
 </h1>
 

@@ -55,6 +55,7 @@
     "@antfu/utils": "^0.7.10",
     "@types/node": "^22.5.4",
     "bumpp": "^9.5.2",
+    "date-fns": "^3.6.0",
     "docdash-extended-xkloveme": "^1.0.3",
     "esbuild": "0.23.1",
     "eslint": "^9.9.1",
@@ -66,8 +67,5 @@
     "vite-plugin-dts": "~4.0.3",
     "vite-plugin-git-version": "^1.0.7",
     "vitest": "^2.0.5"
-  },
-  "dependencies": {
-    "date-fns": "^3.6.0"
   }
 }
