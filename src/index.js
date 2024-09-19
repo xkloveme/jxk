@@ -7,7 +7,6 @@ export { default as array_diffBoth } from './lib/array/diffBoth.js';
 export { default as array_diffFirst } from './lib/array/diffFirst.js';
 export { default as array_durstenfeldShuffle } from './lib/array/durstenfeldShuffle.js';
 export { default as array_findIndex } from './lib/array/findIndex.js';
-export { default as array_findObj } from './lib/array/findObj.js';
 export { default as array_findParent } from './lib/array/findParent.js';
 export { default as array_findParentTree } from './lib/array/findParentTree.js';
 export { default as array_flatten } from './lib/array/flatten.js';

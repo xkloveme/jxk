@@ -49,7 +49,7 @@ export default {
       return originalData;
     }
     try {
-      const encrypted = SM4(originalData, key, 1, options);
+      const encrypted = SM4(originalData + '', key, 1, options);
       if (options.output === 'array') {
         return encrypted;
       } else {
