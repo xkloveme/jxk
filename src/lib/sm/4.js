@@ -79,6 +79,9 @@ export default {
 
     try {
       const decrypted = SM4(encryptedData, key, 0, options);
+      if (decrypted === '') {
+        throw new Error('Decryption failed')
+      }
       if (options.output === 'array') {
         return decrypted;
       } else {
