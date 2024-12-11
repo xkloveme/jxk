@@ -88,7 +88,11 @@ export default {
         const decryptedStr = decrypted.toString('utf8');
         try {
           // 尝试解析为 JSON 对象
-          return JSON.parse(decryptedStr);
+          if(decryptedStr.includes('}') || decryptedStr.includes(']')){
+            return JSON.parse(decryptedStr);
+          }else{
+            return decryptedStr;
+          }
         } catch (parseError) {
           // 如果解析失败，返回原始字符串
           return decryptedStr;
