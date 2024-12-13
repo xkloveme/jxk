@@ -15,10 +15,10 @@
 </p>
 
 <h1 >
-  <a href="https://jxk.jixiaokang.com/playground">
+  <a href="https://jxk.jixiaokang.com/playground/index.html">
     游乐场🎠演示
   </a><br/>
-  <a href="https://jxk.jixiaokang.com//">
+  <a href="https://jxk.jixiaokang.com/">
   所有函数请访问https://jxk.jixiaokang.com/
   </a>
 </h1>

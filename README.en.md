@@ -14,7 +14,7 @@
 </p>
 
 <h1 >
-  <a href="https://jxk.jixiaokang.com/playground">
+  <a href="https://jxk.jixiaokang.com/playground/index.html">
     Playground🎠Demo
   </a><br/>
   <a href="https://jxk.jixiaokang.com/">

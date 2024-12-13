@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '../docs/dist'),
+    outDir: path.resolve(__dirname, '../docs/playground'),
     emptyOutDir: true,
     commonjsOptions: {
       ignore: ['typescript'],
