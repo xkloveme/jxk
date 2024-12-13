@@ -14,11 +14,11 @@
 </p>
 
 <h1 >
-  <a href="https://www.jixiaokang.com/jxk/playground">
+  <a href="https://jxk.jixiaokang.com/playground/index.html">
     Playground🎠Demo
   </a><br/>
-  <a href="https://www.jixiaokang.com/jxk/">
-  Function Library https://www.jixiaokang.com/jxk/
+  <a href="https://jxk.jixiaokang.com/">
+  Function Library https://jxk.jixiaokang.com/
   </a>
 </h1>
 
