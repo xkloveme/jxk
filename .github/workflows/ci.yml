@@ -27,25 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm install pnpm -g && pnpm install
 
-      # 运行生成入口文件
-      - name: Build src index.js 文件
-        run: yarn gen
 
       # 打包为 docs
       - name: Build docs site
-        run: yarn docs
+        run: pnpm build:docs
       # 移动readme文件
       - name: Move readme to docs
         run: mv README.md docs/README.md
       - name: Move readme.en to docs
         run: mv README.en.md docs/README.en.md
-
-      # 打包为 playground
-      - name: Build playground site
-        run: pnpm play:build
-      # 移动文件夹
-      - name: Move playground to docs
-        run: mv playground/dist docs/playground
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
