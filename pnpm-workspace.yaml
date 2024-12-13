@@ -1,2 +1,5 @@
 packages:
-  - playground
+  # 所有包的根目录
+  - '.'
+  # playground 目录
+  - 'playground'

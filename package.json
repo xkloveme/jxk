@@ -26,9 +26,9 @@
   "sideEffects": false,
   "exports": {
     ".": {
+      "types": "./lib/index.d.ts",
       "import": "./lib/index.es.js",
-      "require": "./lib/index.cjs.js",
-      "types": "./lib/index.d.ts"
+      "require": "./lib/index.cjs.js"
     }
   },
   "main": "./lib/index.cjs.js",
@@ -42,6 +42,7 @@
     "docs": "rimraf docs & jsdoc -c jsdoc.json",
     "dev": "npm run gen && npm run play",
     "build": "npm run gen && vite build",
+    "build:docs": "npm run gen && npm run docs && npm run play:build",
     "lint": "eslint .",
     "play": "vite playground",
     "play:install": "pnpm -r --filter=playground install",
@@ -51,21 +52,25 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.2.2",
+    "@antfu/eslint-config": "^3.12.0",
     "@antfu/utils": "^0.7.10",
-    "@types/node": "^22.5.4",
-    "bumpp": "^9.5.2",
-    "date-fns": "^3.6.0",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.1.3",
+    "@rollup/plugin-replace": "^5.0.7",
+    "bumpp": "^9.9.1",
+    "date-fns": "^4.1.0",
     "docdash-extended-xkloveme": "^1.0.3",
     "esbuild": "0.23.1",
-    "eslint": "^9.9.1",
-    "esno": "^4.7.0",
-    "jsdoc": "^4.0.3",
+    "eslint": "^9.16.0",
+    "esno": "^4.8.0",
+    "jsdoc": "^4.0.4",
+    "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.3",
-    "vite-plugin-dts": "~4.0.3",
-    "vite-plugin-git-version": "^1.0.7",
-    "vitest": "^2.0.5"
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "~4.3.0",
+    "vite-plugin-git-version": "^1.0.8",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.2"
   }
 }

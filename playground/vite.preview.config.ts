@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import replace from '@rollup/plugin-replace'
+import path from 'path'
 
 export default defineConfig({
   base: "./",
@@ -18,6 +19,8 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: path.resolve(__dirname, '../docs/dist'),
+    emptyOutDir: true,
     commonjsOptions: {
       ignore: ['typescript'],
     },
@@ -30,7 +33,7 @@ export default defineConfig({
         values: {
           'process.env.NODE_ENV': JSON.stringify('production'),
         },
-      }),
+      }) as any,
     ],
   },
 })
