@@ -1,16 +1,137 @@
 import { SM4 } from "../../utils/sm4"
 /**
- * sm4
+ * SM4 分组密码算法
+ * 
+ * @description SM4 是中华人民共和国密码行业标准，由国家密码管理局于 2012 年 3 月发布。
+ *              SM4 算法是一种对称分组密码算法，分组长度为 128 位，密钥长度为 128 位。
+ *              该算法采用非线性变换、线性变换和轮密钥加的迭代结构，
+ *              加密轮数为 32 轮，具有高安全性和高效率的特点。
+ * 
+ * @module SM4
  * @category sm
  * @alias sm4
+ * @author xkloveme <xkloveme@gmail.com>
+ * @since 0.1.0
+ * @date 2024-08-10 21:53:59
+ * 
+ * @see {@link https://www.oscca.gov.cn/sca/xxgk/2012-03/21/content_1002386.shtml} SM4 分组密码算法标准
+ * @see {@link sm2} SM2 椭圆曲线公钥密码算法
+ * @see {@link sm3} SM3 密码杂凑算法
+ * 
  * @param {string|Uint8Array} originalData - 待加密的数据
- * @param {string|Uint8Array} key 加密密钥
- * @param {Object} [options] 加密选项
- * @param {('ecb'|'cbc')} [options.mode='ecb'] 加密模式
- * @param {('pkcs7'|'none')} [options.padding='pkcs7'] 填充方式
- * @param {('hex'|'array')} [options.output='hex'] 输出格式
- * @param {string|Uint8Array} [options.iv] 初始向量
+ * @param {string|Uint8Array} key - 加密密钥（128 位/16 字节）
+ * @param {Object} [options] - 加密选项
+ * @param {('ecb'|'cbc')} [options.mode='ecb'] - 加密模式
+ * @param {('pkcs7'|'none')} [options.padding='pkcs7'] - 填充方式
+ * @param {('hex'|'array')} [options.output='hex'] - 输出格式
+ * @param {string|Uint8Array} [options.iv] - 初始向量（CBC 模式下必需）
+ * 
  * @returns {string|Uint8Array} 加密后的数据
+ * 
+ * @example
+ * // 基本加密操作（ECB 模式）
+ * import { sm4 } from 'jxk'
+ * 
+ * const plaintext = '机密数据内容' 
+ * const key = '0123456789abcdeffedcba9876543210' // 128 位密钥（32 个十六进制字符）
+ * 
+ * // 默认 ECB 模式加密
+ * const encrypted = sm4.encrypt(plaintext, key)
+ * console.log('密文:', encrypted)
+ * 
+ * // 解密
+ * const decrypted = sm4.decrypt(encrypted, key)
+ * console.log('明文:', decrypted) // '机密数据内容'
+ * 
+ * @example
+ * // CBC 模式加密（更安全）
+ * import { sm4 } from 'jxk'
+ * 
+ * const plaintext = '机密数据内容'
+ * const key = '0123456789abcdeffedcba9876543210'
+ * const iv = 'fedcba98765432100123456789abcdef'  // 128 位初始向量
+ * 
+ * // CBC 模式加密
+ * const encrypted = sm4.encrypt(plaintext, key, {
+ *   mode: 'cbc',
+ *   iv: iv
+ * })
+ * 
+ * // CBC 模式解密
+ * const decrypted = sm4.decrypt(encrypted, key, {
+ *   mode: 'cbc',
+ *   iv: iv
+ * })
+ * 
+ * @example
+ * // 不同输出格式示例
+ * const data = '测试数据'
+ * const key = '0123456789abcdeffedcba9876543210'
+ * 
+ * // 十六进制输出（默认）
+ * const hexResult = sm4.encrypt(data, key, { output: 'hex' })
+ * console.log('十六进制:', hexResult)
+ * 
+ * // 字节数组输出
+ * const arrayResult = sm4.encrypt(data, key, { output: 'array' })
+ * console.log('字节数组:', arrayResult)
+ * 
+ * @example
+ * // 无填充模式（数据长度必须是 16 的倍数）
+ * const data = '1234567890123456' // 16 字节数据
+ * const key = '0123456789abcdeffedcba9876543210'
+ * 
+ * const encrypted = sm4.encrypt(data, key, { padding: 'none' })
+ * const decrypted = sm4.decrypt(encrypted, key, { padding: 'none' })
+ * 
+ * @example
+ * // 批量数据加密（大文件处理）
+ * const largeData = 'x'.repeat(10000) // 10KB 数据
+ * const key = '0123456789abcdeffedcba9876543210'
+ * 
+ * console.time('SM4 加密耗时')
+ * const encrypted = sm4.encrypt(largeData, key)
+ * console.timeEnd('SM4 加密耗时')
+ * 
+ * console.time('SM4 解密耗时')
+ * const decrypted = sm4.decrypt(encrypted, key)
+ * console.timeEnd('SM4 解密耗时')
+ * 
+ * @example
+ * // 与 SM2 结合使用（混合加密）
+ * import { sm2, sm4 } from 'jxk'
+ * 
+ * // 1. 生成 SM2 密钥对
+ * const keyPair = sm2.generateKeyPairHex()
+ * 
+ * // 2. 生成 SM4 对称密钥
+ * const sm4Key = '0123456789abcdeffedcba9876543210'
+ * 
+ * // 3. 使用 SM4 加密大量数据
+ * const largeData = '大量机密数据...'
+ * const encryptedData = sm4.encrypt(largeData, sm4Key)
+ * 
+ * // 4. 使用 SM2 加密 SM4 密钥
+ * const encryptedKey = sm2.doEncrypt(sm4Key, keyPair.publicKey)
+ * 
+ * // 5. 传输 { encryptedData, encryptedKey }
+ * 
+ * // 6. 解密过程：
+ * // 首先使用 SM2 解密出 SM4 密钥
+ * const decryptedSm4Key = sm2.doDecrypt(encryptedKey, keyPair.privateKey)
+ * // 然后使用 SM4 密钥解密数据
+ * const decryptedData = sm4.decrypt(encryptedData, decryptedSm4Key)
+ * 
+ * @security
+ * 安全注意事项：
+ * 1. 密钥必须是 128 位（16 字节）长度，使用高质量随机数生成
+ * 2. 生产环境中建议使用 CBC 模式而非 ECB 模式
+ * 3. CBC 模式下的初始向量 (IV) 必须唯一且不可预测
+ * 4. 密钥存储和传输必须加密保护，不得明文存储
+ * 5. 定期轮换密钥，避免长期使用同一密钥
+ * 6. 对于大文件加密，考虑使用流式加密方式
+ * 7. 加密后的数据应进行完整性校验（如使用 SM3 哈希）
+ */
  * @example
  * 加密
  * import {sm4} from "jxk"

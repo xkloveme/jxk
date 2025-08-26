@@ -15,3 +15,4 @@ categories.json
 docs/*
 lib/*
 docs/dist
+.qoder/*
