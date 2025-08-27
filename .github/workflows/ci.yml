@@ -30,14 +30,15 @@ jobs:
 
       # 打包为 docs
       - name: Build docs site
-        run: pnpm run gen 
-        run: pnpm run docs
-        run: pnpm run play:build
+        run: pnpm run gen && pnpm run docs && pnpm run play:build
       # 移动readme文件
       - name: Move readme to docs
         run: mv README.md docs/README.md
+      - name: Move architecture to docs
         run: mv ARCHITECTURE.md docs/ARCHITECTURE.md
+      - name: Move api to docs
         run: mv API.md docs/API.md
+      - name: Move contributing to docs
         run: mv CONTRIBUTING.md docs/CONTRIBUTING.md
       - name: Move readme.en to docs
         run: mv README.en.md docs/README.en.md
