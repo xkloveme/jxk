@@ -107,7 +107,7 @@ import { SM2 } from "../../utils/sm2";
  * 3. 定期更新密钥对，避免长期使用同一密钥
  * 4. 对敏感数据加密时，建议结合使用 SM4 对称加密
  * 5. 签名时使用 SM3 哈希加强安全性
- */
+ *
  * @example
  * import {sm2} from "jxk";
  let keypair = sm2.generateKeyPairHex()
