@@ -18,14 +18,17 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
           node-version: "22"
+          cache: 'npm'
 
-      # 如果缓存没有命中，安装依赖
+      # 安装依赖
       - name: Install dependencies
-        run: npm install pnpm -g && pnpm install
+        run: |
+          npm install -g pnpm
+          pnpm install --frozen-lockfile
 
 
       # 打包为 docs
@@ -33,7 +36,7 @@ jobs:
         run: pnpm run gen 
       - name: Build docs
         run: pnpm run docs
-      - name: Build play
+      - name: Build playground
         run: pnpm run play:build
       # 移动readme文件
       - name: Move readme to docs
