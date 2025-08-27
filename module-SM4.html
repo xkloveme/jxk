@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="jxk函数" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cdn.apifox.com/app/project-icon/custom/20240723/ba24ece7-8a91-44f6-902d-efd9d0bd5a46.svg" />
+        
+        <meta property="og:site_name" content="小康函数" />
+        
+        <meta property="og:url" content="https://www.jixiaokang.com/jxk" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-color: #3aa21c;
+            background-color: #fff;
+            color: #0a0f0b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h2><a href="https://www.npmjs.com/package/jxk?activeTab=readme" target="_blank" class="menu-item" id="npm" >NPM</a></h2><h2><a href="https://wt.jixiaokang.com" target="_blank" class="menu-item" id="front-end" >前端文档</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>数组</h3><ul><li><a href="global.html#array_chunk">array_chunk</a></li><li><a href="global.html#array_concat">array_concat</a></li><li><a href="global.html#array_countOccurrences">array_countOccurrences</a></li><li><a href="global.html#array_diffBoth">array_diffBoth</a></li><li><a href="global.html#array_diffFirst">array_diffFirst</a></li><li><a href="global.html#array_durstenfeldShuffle">array_durstenfeldShuffle</a></li><li><a href="global.html#array_findIndex">array_findIndex</a></li><li><a href="global.html#array_findParent">array_findParent</a></li><li></li><li><a href="global.html#array_flatten">array_flatten</a></li><li><a href="global.html#array_fromTree">array_fromTree</a></li><li><a href="global.html#array_groupBy">array_groupBy</a></li><li><a href="global.html#array_intersection">array_intersection</a></li><li><a href="global.html#array_keyBy">array_keyBy</a></li><li><a href="global.html#array_max">array_max</a></li><li><a href="global.html#array_merge">array_merge</a></li><li><a href="global.html#array_min">array_min</a></li><li><a href="global.html#array_omitBy">array_omitBy</a></li><li><a href="global.html#array_paging">array_paging</a></li><li><a href="global.html#array_pick">array_pick</a></li><li><a href="global.html#array_randomItem">array_randomItem</a></li><li><a href="global.html#array_remove">array_remove</a></li><li><a href="global.html#array_sattoloShuffle">array_sattoloShuffle</a></li><li><a href="global.html#array_shuffle">array_shuffle</a></li><li><a href="global.html#array_sort">array_sort</a></li><li><a href="global.html#array_sumBy">array_sumBy</a></li><li><a href="global.html#array_toMapByKey">array_toMapByKey</a></li><li><a href="global.html#array_toTree">array_toTree</a></li><li><a href="global.html#array_uniqWith">array_uniqWith</a></li><li><a href="global.html#array_unique">array_unique</a></li><li><a href="global.html#array_uniqueByField">array_uniqueByField</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_decode">browser_decode</a></li><li><a href="global.html#browser_encode">browser_encode</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_htmltToText">browser_htmltToText</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlDecode">browser_urlDecode</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_date">is_date</a></li><li><a href="global.html#is_empty">is_empty</a></li><li><a href="global.html#is_float">is_float</a></li><li><a href="global.html#is_function">is_function</a></li><li><a href="global.html#is_idcard">is_idcard</a></li><li><a href="global.html#is_integer">is_integer</a></li><li><a href="global.html#is_ipv4">is_ipv4</a></li><li><a href="global.html#is_ipv6">is_ipv6</a></li><li><a href="global.html#is_map">is_map</a></li><li><a href="global.html#is_null">is_null</a></li><li><a href="global.html#is_number">is_number</a></li><li><a href="global.html#is_object">is_object</a></li><li><a href="global.html#is_phone">is_phone</a></li><li><a href="global.html#is_regexp">is_regexp</a></li><li><a href="global.html#is_set">is_set</a></li><li><a href="global.html#is_string">is_string</a></li><li><a href="global.html#is_symbol">is_symbol</a></li><li><a href="global.html#is_undefined">is_undefined</a></li><li><a href="global.html#is_weakMap">is_weakMap</a></li><li><a href="global.html#is_weakSet">is_weakSet</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_email">mask_email</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#misc_chain">misc_chain</a></li><li><a href="global.html#misc_debounce">misc_debounce</a></li><li><a href="global.html#misc_deepClone">misc_deepClone</a></li><li><a href="global.html#misc_delay">misc_delay</a></li><li><a href="global.html#misc_download">misc_download</a></li><li><a href="global.html#misc_throttle">misc_throttle</a></li></ul><h3>数字</h3><ul><li><a href="global.html#number_convertUnits">number_convertUnits</a></li><li><a href="global.html#number_parse">number_parse</a></li><li><a href="global.html#number_random">number_random</a></li><li><a href="global.html#number_thousands">number_thousands</a></li><li><a href="global.html#number_toBits">number_toBits</a></li><li><a href="global.html#number_valid">number_valid</a></li><li><a href="global.html#number_zeroFilling">number_zeroFilling</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="module-SM2.html">SM2</a></li><li><a href="module-SM3.html">SM3</a></li><li><a href="module-SM4.html">SM4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SM4.html#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="module-SM4.html#.encrypt">encrypt</a></li></ul></li></ul><h3>字符串</h3><ul><li><a href="global.html#string_between">string_between</a></li><li><a href="global.html#string_camelCase">string_camelCase</a></li><li><a href="global.html#string_capitalize">string_capitalize</a></li><li><a href="global.html#string_countCharacters">string_countCharacters</a></li><li><a href="global.html#string_displace">string_displace</a></li><li><a href="global.html#string_kebabCase">string_kebabCase</a></li><li><a href="global.html#string_randomString">string_randomString</a></li><li><a href="global.html#string_reverse">string_reverse</a></li><li><a href="global.html#string_short">string_short</a></li><li><a href="global.html#string_snakeCase">string_snakeCase</a></li><li><a href="global.html#string_trim">string_trim</a></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3>Modules</h3><ul><li><a href="module-SM2.html">SM2</a></li><li><a href="module-SM3.html">SM3</a></li><li></li><li><a href="module-SM4.html">SM4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SM4.html#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="module-SM4.html#.encrypt">encrypt</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+            <h1 class="page-title">SM4</h1>
+            
+
+            
+
+
+
+
+<section>
+    <header>
+        
+        
+        
+        
+        
+    </header>
+
+    <article>
+        
+        <div class="container-overview">
+            
+            
+            <div class="description usertext"><p>SM4 是中华人民共和国密码行业标准，由国家密码管理局于 2012 年 3 月发布。
+SM4 算法是一种对称分组密码算法，分组长度为 128 位，密钥长度为 128 位。
+该算法采用非线性变换、线性变换和轮密钥加的迭代结构，
+加密轮数为 32 轮，具有高安全性和高效率的特点。</p></div>
+            
+
+            
+            
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>SM4 是中华人民共和国密码行业标准，由国家密码管理局于 2012 年 3 月发布。
+SM4 算法是一种对称分组密码算法，分组长度为 128 位，密钥长度为 128 位。
+该算法采用非线性变换、线性变换和轮密钥加的迭代结构，
+加密轮数为 32 轮，具有高安全性和高效率的特点。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sm_4.js.html">sm/4.js</a>, <a href="sm_4.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">自从:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">查看:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.oscca.gov.cn/sca/xxgk/2012-03/21/content_1002386.shtml">https://www.oscca.gov.cn/sca/xxgk/2012-03/21/content_1002386.shtml</a> SM4 分组密码算法标准</li>
+        
+            <li>sm2 SM2 椭圆曲线公钥密码算法</li>
+        
+            <li>sm3 SM3 密码杂凑算法</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 基本加密操作（ECB 模式）
+import { sm4 } from 'jxk'
+
+const plaintext = '机密数据内容' 
+const key = '0123456789abcdeffedcba9876543210' // 128 位密钥（32 个十六进制字符）
+
+// 默认 ECB 模式加密
+const encrypted = sm4.encrypt(plaintext, key)
+console.log('密文:', encrypted)
+
+// 解密
+const decrypted = sm4.decrypt(encrypted, key)
+console.log('明文:', decrypted) // '机密数据内容'</code></pre>
+
+<pre class="prettyprint"><code>// CBC 模式加密（更安全）
+import { sm4 } from 'jxk'
+
+const plaintext = '机密数据内容'
+const key = '0123456789abcdeffedcba9876543210'
+const iv = 'fedcba98765432100123456789abcdef'  // 128 位初始向量
+
+// CBC 模式加密
+const encrypted = sm4.encrypt(plaintext, key, {
+  mode: 'cbc',
+  iv: iv
+})
+
+// CBC 模式解密
+const decrypted = sm4.decrypt(encrypted, key, {
+  mode: 'cbc',
+  iv: iv
+})</code></pre>
+
+<pre class="prettyprint"><code>// 不同输出格式示例
+const data = '测试数据'
+const key = '0123456789abcdeffedcba9876543210'
+
+// 十六进制输出（默认）
+const hexResult = sm4.encrypt(data, key, { output: 'hex' })
+console.log('十六进制:', hexResult)
+
+// 字节数组输出
+const arrayResult = sm4.encrypt(data, key, { output: 'array' })
+console.log('字节数组:', arrayResult)</code></pre>
+
+<pre class="prettyprint"><code>// 无填充模式（数据长度必须是 16 的倍数）
+const data = '1234567890123456' // 16 字节数据
+const key = '0123456789abcdeffedcba9876543210'
+
+const encrypted = sm4.encrypt(data, key, { padding: 'none' })
+const decrypted = sm4.decrypt(encrypted, key, { padding: 'none' })</code></pre>
+
+<pre class="prettyprint"><code>// 批量数据加密（大文件处理）
+const largeData = 'x'.repeat(10000) // 10KB 数据
+const key = '0123456789abcdeffedcba9876543210'
+
+console.time('SM4 加密耗时')
+const encrypted = sm4.encrypt(largeData, key)
+console.timeEnd('SM4 加密耗时')
+
+console.time('SM4 解密耗时')
+const decrypted = sm4.decrypt(encrypted, key)
+console.timeEnd('SM4 解密耗时')</code></pre>
+
+<pre class="prettyprint"><code>// 与 SM2 结合使用（混合加密）
+import { sm2, sm4 } from 'jxk'
+
+// 1. 生成 SM2 密钥对
+const keyPair = sm2.generateKeyPairHex()
+
+// 2. 生成 SM4 对称密钥
+const sm4Key = '0123456789abcdeffedcba9876543210'
+
+// 3. 使用 SM4 加密大量数据
+const largeData = '大量机密数据...'
+const encryptedData = sm4.encrypt(largeData, sm4Key)
+
+// 4. 使用 SM2 加密 SM4 密钥
+const encryptedKey = sm2.doEncrypt(sm4Key, keyPair.publicKey)
+
+// 5. 传输 { encryptedData, encryptedKey }
+
+// 6. 解密过程：
+// 首先使用 SM2 解密出 SM4 密钥
+const decryptedSm4Key = sm2.doDecrypt(encryptedKey, keyPair.privateKey)
+// 然后使用 SM4 密钥解密数据
+const decryptedData = sm4.decrypt(encryptedData, decryptedSm4Key)</code></pre>
+
+<pre class="prettyprint"><code>加密
+import {sm4} from "jxk"
+const msg = '我是原始数据' // 可以为 utf8 串或字节数组
+const key = '5e0a3ab263b283e3db6001018776c4f0' // 可以为 16 进制串或字节数组，要求为 128 比特  *
+let encryptData = sm4.encrypt(msg, key) // 加密，默认输出 16 进制字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 充）
+let encryptData = sm4.encrypt(msg, key, {padding: 'none'}) // 加密，不使用 padding
+let encryptData = sm4.encrypt(msg, key, {padding: 'none', output: 'array'}) // 加密，不使用 padding，输出为字节数组
+let encryptData = sm4.encrypt(msg, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 加密，cbc 模式</code></pre>
+
+<pre class="prettyprint"><code>解密
+  import {sm4} from "jxk"
+  const encryptData =  'aaff18e2a966d10017469a492b800169d68e6f979da91cdeed454bb769665892' // 可以为 16 进制串或字节数组
+  const key = '0123456789abcdeffedcba9876543210' // 可以为 16 进制串或字节数组，要求为 128 比特
+  let decryptData = sm4.decrypt(encryptData, key) // 解密，默认输出 utf8 字符串，默认使用 pkcs#7 填充（传 pkcs#5 也会走 pkcs#7 填充）
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none'}) // 解密，不使用 padding
+  let decryptData = sm4.decrypt(encryptData, key, {padding: 'none', output: 'array'}) // 解密，不使用 padding，输出为字节数组
+  let decryptData = sm4.decrypt(encryptData, key, {mode: 'cbc', iv: 'fedcba98765432100123456789abcdef'}) // 解密，cbc 模式</code></pre>
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>originalData</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>待加密的数据</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>key</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>加密密钥（128 位/16 字节）</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>options</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>加密选项</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+            <th>默认</th>
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>mode</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'ecb'</span>
+|
+
+<span class="param-type">'cbc'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'ecb'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>加密模式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>padding</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'pkcs7'</span>
+|
+
+<span class="param-type">'none'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'pkcs7'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>填充方式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>output</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'hex'</span>
+|
+
+<span class="param-type">'array'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'hex'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>输出格式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>iv</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>初始向量（CBC 模式下必需）</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <p>加密后的数据</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+            
+            
+        </div>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <h3 class="subsection-title">方法</h3>
+
+        
+        
+
+
+
+<h4 class="name" id=".decrypt">
+    <span class="type-signature type-signature-static">(static) </span>decrypt<span class="signature">(encryptedData, key, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string|Uint8Array}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>解密数据</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sm_4.js.html">sm/4.js</a>, <a href="sm_4.js.html#line196">line 196</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>encryptedData</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>待解密的数据</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>key</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>解密密钥</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>options</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>解密选项</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+            <th>默认</th>
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>mode</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'ecb'</span>
+|
+
+<span class="param-type">'cbc'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'ecb'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>解密模式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>padding</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'pkcs7'</span>
+|
+
+<span class="param-type">'none'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'pkcs7'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>填充方式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>output</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'utf8'</span>
+|
+
+<span class="param-type">'array'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'utf8'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>输出格式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>iv</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>初始向量</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <ul>
+<li>解密后的数据</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+
+
+<h4 class="name" id=".encrypt">
+    <span class="type-signature type-signature-static">(static) </span>encrypt<span class="signature">(originalData, key, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string|Uint8Array}</span>
+</h4>
+
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>加密数据</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sm_4.js.html">sm/4.js</a>, <a href="sm_4.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-parameters">参数：</h5>
+
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>originalData</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>待加密的数据</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>key</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>加密密钥</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>options</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">Object</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+
+            <td class="description last">
+                <p>加密选项</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+        <tr>
+            
+            <th>名称</th>
+            
+
+            <th>类型</th>
+
+            
+            <th>属性</th>
+            
+
+            
+            <th>默认</th>
+            
+
+            <th class="last">描述</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>mode</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'ecb'</span>
+|
+
+<span class="param-type">'cbc'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'ecb'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>加密模式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>padding</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'pkcs7'</span>
+|
+
+<span class="param-type">'none'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'pkcs7'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>填充方式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>output</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">'hex'</span>
+|
+
+<span class="param-type">'array'</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+                <code>'hex'</code>
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>输出格式</p>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            
+            <td class="name">
+                <code>iv</code>
+            </td>
+            
+
+            <td class="type">
+                
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+                
+            </td>
+
+            
+            <td class="attributes">
+                
+                &lt;optional><br />
+                
+
+                
+
+                
+            </td>
+            
+
+            
+            <td class="default">
+                
+            </td>
+            
+
+            <td class="description last">
+                <p>初始向量</p>
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+        
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">返回：</h5>
+
+
+<div class="param-desc">
+    <ul>
+<li>加密后的数据</li>
+</ul>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>类型</dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Uint8Array</span>
+
+
+
+    </dd>
+</dl>
+
+
+
+
+
+
+        
+        
+
+        
+
+        
+    </article>
+</section>
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            MIT License ©
+            <a href="https://github.com/xkloveme/docdash-extended"
+                >xkloveme
+                </a
+            >
+            on
+            Wed Aug 27 2025 02:17:27 GMT+0000 (Coordinated Universal Time)
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-242Y43530W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-242Y43530W');
+</script>
+    </body>
+</html>

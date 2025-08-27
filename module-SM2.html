@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>小康函数文档</title>
+        
+        
+        <meta property="og:title" content="jxk函数" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cdn.apifox.com/app/project-icon/custom/20240723/ba24ece7-8a91-44f6-902d-efd9d0bd5a46.svg" />
+        
+        <meta property="og:site_name" content="小康函数" />
+        
+        <meta property="og:url" content="https://www.jixiaokang.com/jxk" />
+        
+        <script src="scripts/prettify/prettify.js"></script>
+        <script src="scripts/prettify/lang-css.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="styles/prettify.css" />
+        <link type="text/css" rel="stylesheet" href="styles/jsdoc.css" />
+        <script src="scripts/nav.js" defer></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-color: #3aa21c;
+            background-color: #fff;
+            color: #0a0f0b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="navicon-button x">
+            <div class="navicon"></div>
+        </label>
+
+        <label for="nav-trigger" class="overlay"></label>
+
+        <nav >
+            
+            <input type="text" id="nav-search" placeholder="搜索" />
+            
+            
+            <h2><a href="index.html">主页</a></h2><h2><a href="https://github.com/xkloveme/jxk" target="_blank" class="menu-item" id="repository" >Github</a></h2><h2><a href="https://www.npmjs.com/package/jxk?activeTab=readme" target="_blank" class="menu-item" id="npm" >NPM</a></h2><h2><a href="https://wt.jixiaokang.com" target="_blank" class="menu-item" id="front-end" >前端文档</a></h2><h3>解析</h3><ul><li><a href="global.html#analysis_address">analysis_address</a></li><li><a href="global.html#analysis_idcard">analysis_idcard</a></li></ul><h3>数组</h3><ul><li><a href="global.html#array_chunk">array_chunk</a></li><li><a href="global.html#array_concat">array_concat</a></li><li><a href="global.html#array_countOccurrences">array_countOccurrences</a></li><li><a href="global.html#array_diffBoth">array_diffBoth</a></li><li><a href="global.html#array_diffFirst">array_diffFirst</a></li><li><a href="global.html#array_durstenfeldShuffle">array_durstenfeldShuffle</a></li><li><a href="global.html#array_findIndex">array_findIndex</a></li><li><a href="global.html#array_findParent">array_findParent</a></li><li></li><li><a href="global.html#array_flatten">array_flatten</a></li><li><a href="global.html#array_fromTree">array_fromTree</a></li><li><a href="global.html#array_groupBy">array_groupBy</a></li><li><a href="global.html#array_intersection">array_intersection</a></li><li><a href="global.html#array_keyBy">array_keyBy</a></li><li><a href="global.html#array_max">array_max</a></li><li><a href="global.html#array_merge">array_merge</a></li><li><a href="global.html#array_min">array_min</a></li><li><a href="global.html#array_omitBy">array_omitBy</a></li><li><a href="global.html#array_paging">array_paging</a></li><li><a href="global.html#array_pick">array_pick</a></li><li><a href="global.html#array_randomItem">array_randomItem</a></li><li><a href="global.html#array_remove">array_remove</a></li><li><a href="global.html#array_sattoloShuffle">array_sattoloShuffle</a></li><li><a href="global.html#array_shuffle">array_shuffle</a></li><li><a href="global.html#array_sort">array_sort</a></li><li><a href="global.html#array_sumBy">array_sumBy</a></li><li><a href="global.html#array_toMapByKey">array_toMapByKey</a></li><li><a href="global.html#array_toTree">array_toTree</a></li><li><a href="global.html#array_uniqWith">array_uniqWith</a></li><li><a href="global.html#array_unique">array_unique</a></li><li><a href="global.html#array_uniqueByField">array_uniqueByField</a></li></ul><h3>浏览器</h3><ul><li><a href="global.html#browser_copyText">browser_copyText</a></li><li><a href="global.html#browser_decode">browser_decode</a></li><li><a href="global.html#browser_encode">browser_encode</a></li><li><a href="global.html#browser_exitFullScreen">browser_exitFullScreen</a></li><li><a href="global.html#browser_getQueryParams">browser_getQueryParams</a></li><li><a href="global.html#browser_htmltToText">browser_htmltToText</a></li><li><a href="global.html#browser_isElementInViewport">browser_isElementInViewport</a></li><li><a href="global.html#browser_md5">browser_md5</a></li><li><a href="global.html#browser_openFullscreen">browser_openFullscreen</a></li><li><a href="global.html#browser_openPrint">browser_openPrint</a></li><li><a href="global.html#browser_openWindow">browser_openWindow</a></li><li><a href="global.html#browser_urlDecode">browser_urlDecode</a></li><li><a href="global.html#browser_urlEncode">browser_urlEncode</a></li></ul><h3>文件</h3><ul><li><a href="global.html#file_dataURLtoFile">file_dataURLtoFile</a></li><li><a href="global.html#file_fileInfo">file_fileInfo</a></li><li><a href="global.html#file_fileToDataURL">file_fileToDataURL</a></li><li><a href="global.html#file_formatFileSize">file_formatFileSize</a></li></ul><h3>判断是否</h3><ul><li><a href="global.html#is_array">is_array</a></li><li><a href="global.html#is_boolean">is_boolean</a></li><li><a href="global.html#is_chinese">is_chinese</a></li><li><a href="global.html#is_date">is_date</a></li><li><a href="global.html#is_empty">is_empty</a></li><li><a href="global.html#is_float">is_float</a></li><li><a href="global.html#is_function">is_function</a></li><li><a href="global.html#is_idcard">is_idcard</a></li><li><a href="global.html#is_integer">is_integer</a></li><li><a href="global.html#is_ipv4">is_ipv4</a></li><li><a href="global.html#is_ipv6">is_ipv6</a></li><li><a href="global.html#is_map">is_map</a></li><li><a href="global.html#is_null">is_null</a></li><li><a href="global.html#is_number">is_number</a></li><li><a href="global.html#is_object">is_object</a></li><li><a href="global.html#is_phone">is_phone</a></li><li><a href="global.html#is_regexp">is_regexp</a></li><li><a href="global.html#is_set">is_set</a></li><li><a href="global.html#is_string">is_string</a></li><li><a href="global.html#is_symbol">is_symbol</a></li><li><a href="global.html#is_undefined">is_undefined</a></li><li><a href="global.html#is_weakMap">is_weakMap</a></li><li><a href="global.html#is_weakSet">is_weakSet</a></li></ul><h3>脱敏</h3><ul><li><a href="global.html#mask_address">mask_address</a></li><li><a href="global.html#mask_email">mask_email</a></li><li><a href="global.html#mask_idcard">mask_idcard</a></li><li><a href="global.html#mask_name">mask_name</a></li><li><a href="global.html#mask_phone">mask_phone</a></li></ul><h3>杂项</h3><ul><li><a href="global.html#misc_chain">misc_chain</a></li><li><a href="global.html#misc_debounce">misc_debounce</a></li><li><a href="global.html#misc_deepClone">misc_deepClone</a></li><li><a href="global.html#misc_delay">misc_delay</a></li><li><a href="global.html#misc_download">misc_download</a></li><li><a href="global.html#misc_throttle">misc_throttle</a></li></ul><h3>数字</h3><ul><li><a href="global.html#number_convertUnits">number_convertUnits</a></li><li><a href="global.html#number_parse">number_parse</a></li><li><a href="global.html#number_random">number_random</a></li><li><a href="global.html#number_thousands">number_thousands</a></li><li><a href="global.html#number_toBits">number_toBits</a></li><li><a href="global.html#number_valid">number_valid</a></li><li><a href="global.html#number_zeroFilling">number_zeroFilling</a></li></ul><h3>正则表达式</h3><ul><li><a href="global.html#reg_businessLicense">reg_businessLicense</a></li><li><a href="global.html#reg_idcard">reg_idcard</a></li><li><a href="global.html#reg_licencePlateNumber">reg_licencePlateNumber</a></li><li><a href="global.html#reg_phone">reg_phone</a></li><li><a href="global.html#reg_trainNumber">reg_trainNumber</a></li></ul><h3>加解密函数</h3><ul><li><a href="module-SM2.html">SM2</a></li><li><a href="module-SM3.html">SM3</a></li><li><a href="module-SM4.html">SM4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SM4.html#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="module-SM4.html#.encrypt">encrypt</a></li></ul></li></ul><h3>字符串</h3><ul><li><a href="global.html#string_between">string_between</a></li><li><a href="global.html#string_camelCase">string_camelCase</a></li><li><a href="global.html#string_capitalize">string_capitalize</a></li><li><a href="global.html#string_countCharacters">string_countCharacters</a></li><li><a href="global.html#string_displace">string_displace</a></li><li><a href="global.html#string_kebabCase">string_kebabCase</a></li><li><a href="global.html#string_randomString">string_randomString</a></li><li><a href="global.html#string_reverse">string_reverse</a></li><li><a href="global.html#string_short">string_short</a></li><li><a href="global.html#string_snakeCase">string_snakeCase</a></li><li><a href="global.html#string_trim">string_trim</a></li></ul><h3>日期时间</h3><ul><li><a href="global.html#time_customFormat">time_customFormat</a></li><li><a href="global.html#time_date">time_date</a></li><li><a href="global.html#time_dateRange">time_dateRange</a></li><li><a href="global.html#time_dateToTimestamp">time_dateToTimestamp</a></li><li><a href="global.html#time_format">time_format</a></li><li><a href="global.html#time_friendlyDateStr">time_friendlyDateStr</a></li><li><a href="global.html#time_getDays">time_getDays</a></li><li><a href="global.html#time_leftTime">time_leftTime</a></li><li><a href="global.html#time_relativeTime">time_relativeTime</a></li><li><a href="global.html#time_stringToDate">time_stringToDate</a></li><li><a href="global.html#time_timestampToDate">time_timestampToDate</a></li><li><a href="global.html#time_week">time_week</a></li></ul><h3>Modules</h3><ul><li><a href="module-SM2.html">SM2</a></li><li><a href="module-SM3.html">SM3</a></li><li></li><li><a href="module-SM4.html">SM4</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SM4.html#.decrypt">decrypt</a></li><li data-type='method' style='display: none;'><a href="module-SM4.html#.encrypt">encrypt</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+            
+        </nav>
+
+        <div id="main">
+            
+            <h1 class="page-title">SM2</h1>
+            
+
+            
+
+
+
+
+<section>
+    <header>
+        
+        
+        
+        
+        
+    </header>
+
+    <article>
+        
+        <div class="container-overview">
+            
+            
+            <div class="description usertext"><p>SM2 是中华人民共和国密码行业标准，由国家密码管理局于 2010 年 12 月发布。
+SM2 算法基于椭圆曲线离散对数难题，具有高安全性和高效率的特点。
+该算法支持密钥生成、数字签名、签名验证、公钥加密和密钥协商等功能。</p></div>
+            
+
+            
+            
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">描述:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>SM2 是中华人民共和国密码行业标准，由国家密码管理局于 2010 年 12 月发布。
+SM2 算法基于椭圆曲线离散对数难题，具有高安全性和高效率的特点。
+该算法支持密钥生成、数字签名、签名验证、公钥加密和密钥协商等功能。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">源码:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="sm_2.js.html">sm/2.js</a>, <a href="sm_2.js.html#line2">line 2</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">自从:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">作者:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        
+            <li><a href="mailto:xkloveme@gmail.com">xkloveme</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">查看:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.oscca.gov.cn/sca/xxgk/2010-12/17/content_1002386.shtml">https://www.oscca.gov.cn/sca/xxgk/2010-12/17/content_1002386.shtml</a> SM2 椭圆曲线公钥密码算法标准</li>
+        
+            <li>sm3 SM3 密码杂凑算法</li>
+        
+            <li>sm4 SM4 分组密码算法</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-examples">
+    举例：
+</h5>
+
+<pre class="prettyprint"><code>// 密钥对管理示例
+import { sm2 } from 'jxk'
+
+// 生成密钥对
+const keyPair = sm2.generateKeyPairHex()
+console.log('公钥长度:', keyPair.publicKey.length)   // 130 位十六进制
+console.log('私钥长度:', keyPair.privateKey.length)  // 64 位十六进制
+
+// 公钥压缩（节省存储空间）
+const compressedPublicKey = sm2.compressPublicKeyHex(keyPair.publicKey)
+console.log('压缩公钥长度:', compressedPublicKey.length) // 66 位十六进制
+
+// 验证公钥等价性
+const isEquivalent = sm2.comparePublicKeyHex(keyPair.publicKey, compressedPublicKey)
+console.log('公钥等价:', isEquivalent) // true</code></pre>
+
+<pre class="prettyprint"><code>// 加密解密示例
+import { sm2 } from 'jxk'
+
+const keyPair = sm2.generateKeyPairHex()
+const plaintext = '机密消息内容'
+
+// 加密操作
+const cipherMode = 1 // 1: C1C3C2模式, 0: C1C2C3模式
+const encrypted = sm2.doEncrypt(plaintext, keyPair.publicKey, cipherMode)
+console.log('密文长度:', encrypted.length)
+
+// 解密操作
+const decrypted = sm2.doDecrypt(encrypted, keyPair.privateKey, cipherMode)
+console.log('解密结果:', decrypted) // '机密消息内容'
+
+// 支持 ASN.1 编码
+const asn1Encrypted = sm2.doEncrypt(plaintext, keyPair.publicKey, cipherMode, { asn1: true })
+const asn1Decrypted = sm2.doDecrypt(asn1Encrypted, keyPair.privateKey, cipherMode, { asn1: true })</code></pre>
+
+<pre class="prettyprint"><code>// 数字签名与验证示例
+import { sm2 } from 'jxk'
+
+const keyPair = sm2.generateKeyPairHex()
+const message = '需要签名的文档内容'
+
+// 基本签名
+const signature = sm2.doSignature(message, keyPair.privateKey)
+const isValid = sm2.doVerifySignature(message, signature, keyPair.publicKey)
+console.log('签名验证结果:', isValid) // true
+
+// 使用 SM3 哈希 + DER 编码的高级签名
+const advancedSignature = sm2.doSignature(message, keyPair.privateKey, {
+  hash: true,      // 使用 SM3 哈希
+  der: true,       // 使用 DER 编码
+  publicKey: keyPair.publicKey,  // 提供公钥提升性能
+  userId: 'user@example.com'     // 用户标识
+})
+
+const advancedValid = sm2.doVerifySignature(message, advancedSignature, keyPair.publicKey, {
+  hash: true,
+  der: true,
+  userId: 'user@example.com'
+})</code></pre>
+
+<pre class="prettyprint"><code>// 安全最佳实践
+import { sm2 } from 'jxk'
+
+// 1. 使用安全的随机数生成器初始化
+await sm2.initRNGPool()
+
+// 2. 生成密钥对时使用高质量随机数
+const keyPair = sm2.generateKeyPairHex()
+
+// 3. 验证公钥有效性
+const isValidPublicKey = sm2.verifyPublicKey(keyPair.publicKey)
+if (!isValidPublicKey) {
+  throw new Error('公钥验证失败')
+}
+
+// 4. 安全存储私钥（实际应用中应加密存储）
+// 注意：这只是示例，实际中不应直接打印私钥
+console.log('请安全存储私钥:', keyPair.privateKey)</code></pre>
+
+<pre class="prettyprint"><code>import {sm2} from "jxk";
+ let keypair = sm2.generateKeyPairHex()
+
+publicKey = keypair.publicKey // 公钥
+privateKey = keypair.privateKey // 私钥
+
+// 默认生成公钥 130 位太长，可以压缩公钥到 66 位
+const compressedPublicKey = sm2.compressPublicKeyHex(publicKey) // compressedPublicKey 和 publicKey 等价
+sm2.comparePublicKeyHex(publicKey, compressedPublicKey) // 判断公钥是否等价
+
+// 自定义随机数，参数会直接透传给 BigInt 构造器
+// 注意：开发者使用自定义随机数，需要自行确保传入的随机数符合密码学安全
+let keypair2 = sm2.generateKeyPairHex('123123123123123')
+
+// 初始化随机数池，在某些场景下可能会用到
+await sm2.initRNGPool()
+
+let verifyResult = sm2.verifyPublicKey(publicKey) // 验证公钥
+verifyResult = sm2.verifyPublicKey(compressedPublicKey) // 验证公钥</code></pre>
+
+<pre class="prettyprint"><code>// 加密解密
+import { sm2 } from 'jxk'
+const cipherMode = 1 // 1 - C1C3C2，0 - C1C2C3，默认为1
+// 支持使用 asn1 对加密结果进行编码，在 options 参数中传入 { asn1: true } 即可，默认不开启
+let encryptData = sm2.doEncrypt(msgString, publicKey, cipherMode, { asn1: false }) // 加密结果
+
+// 支持使用 asn1 对密文进行解码再解密，在 options 参数中传入 { asn1: true } 即可，默认不开启
+let decryptData = sm2.doDecrypt(encryptData, privateKey, cipherMode, { asn1: false }) // 解密结果
+
+encryptData = sm2.doEncrypt(msgArray, publicKey, cipherMode) // 加密结果，输入数组
+decryptData = sm2.doDecrypt(encryptData, privateKey, cipherMode, {output: 'array'}) // 解密结果，输出数组</code></pre>
+
+<pre class="prettyprint"><code>// 签名验签
+// 纯签名 + 生成椭圆曲线点
+let sigValueHex = sm2.doSignature(msg, privateKey) // 签名
+let verifyResult = sm2.doVerifySignature(msg, sigValueHex, publicKey) // 验签结果
+
+// 纯签名
+let sigValueHex2 = sm2.doSignature(msg, privateKey, {
+    pointPool: [sm2.getPoint(), sm2.getPoint(), sm2.getPoint(), sm2.getPoint()], // 传入事先已生成好的椭圆曲线点，可加快签名速度
+}) // 签名
+let verifyResult2 = sm2.doVerifySignature(msg, sigValueHex2, publicKey) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + der编解码
+let sigValueHex3 = sm2.doSignature(msg, privateKey, {
+    der: true,
+}) // 签名
+let verifyResult3 = sm2.doVerifySignature(msg, sigValueHex3, publicKey, {
+    der: true,
+}) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑
+let sigValueHex4 = sm2.doSignature(msg, privateKey, {
+    hash: true,
+}) // 签名
+let verifyResult4 = sm2.doVerifySignature(msg, sigValueHex4, publicKey, {
+    hash: true,
+}) // 验签结果
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑（不做公钥推导）
+let sigValueHex5 = sm2.doSignature(msg, privateKey, {
+    hash: true,
+    publicKey, // 传入公钥的话，可以去掉sm3杂凑中推导公钥的过程，速度会比纯签名 + 生成椭圆曲线点 + sm3杂凑快
+})
+let verifyResult5 = sm2.doVerifySignature(msg, sigValueHex5, publicKey, {
+    hash: true,
+    publicKey,
+})
+
+// 纯签名 + 生成椭圆曲线点 + sm3杂凑 + 不做公钥推 + 添加 userId（长度小于 8192）
+// 默认 userId 值为 1234567812345678
+let sigValueHex6 = sm2.doSignature(msgString, privateKey, {
+    hash: true,
+    publicKey,
+    userId: 'testUserId',
+})
+let verifyResult6 = sm2.doVerifySignature(msgString, sigValueHex6, publicKey, {
+    hash: true,
+    userId: 'testUserId',
+})</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+        </div>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+    </article>
+</section>
+
+
+
+
+
+            
+        </div>
+
+        <br class="clear" />
+
+        <footer>
+            MIT License ©
+            <a href="https://github.com/xkloveme/docdash-extended"
+                >xkloveme
+                </a
+            >
+            on
+            Wed Aug 27 2025 02:17:27 GMT+0000 (Coordinated Universal Time)
+        </footer>
+
+        <script>
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
+        </script>
+        <script src="scripts/polyfill.js"></script>
+        <script src="scripts/linenumber.js"></script>
+        
+        <script src="scripts/search.js" defer></script>
+        
+        
+        <script src="scripts/collapse.js" defer></script>
+        
+        
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-242Y43530W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-242Y43530W');
+</script>
+    </body>
+</html>
