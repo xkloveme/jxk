@@ -260,6 +260,267 @@ function sms4KeyExt(key, roundKey, cryptFlag) {
   }
 }
 
+// ============== GCM (Galois/Counter Mode) ==============
+
+/**
+ * GF(2^128) multiplication for GHASH
+ * Uses the standard GCM bit-by-bit algorithm
+ */
+function gcmMultiply(x, y) {
+  const z = new Uint8Array(16)
+  const v = new Uint8Array(y)
+
+  for (let i = 0; i < 128; i++) {
+    // If bit i of x is set, XOR v into z
+    if ((x[i >>> 3] & (1 << (7 - (i & 7)))) !== 0) {
+      for (let j = 0; j < 16; j++) z[j] ^= v[j]
+    }
+
+    // Check if LSB of v is set (for reduction)
+    const lsbSet = (v[15] & 1) !== 0
+
+    // Right-shift v by 1
+    for (let j = 15; j > 0; j--) {
+      v[j] = ((v[j] >>> 1) | ((v[j - 1] & 1) << 7)) & 0xff
+    }
+    v[0] = v[0] >>> 1
+
+    // If LSB was set, XOR with R (0xe1 << 120)
+    if (lsbSet) {
+      v[0] ^= 0xe1
+    }
+  }
+
+  return z
+}
+
+/**
+ * GHASH function for GCM authentication
+ * @param {Uint8Array} h - Hash key (16 bytes, = SM4_Encrypt(ZERO))
+ * @param {Uint8Array} aad - Additional authenticated data
+ * @param {Uint8Array} ciphertext - Ciphertext
+ * @returns {Uint8Array} - 16-byte GHASH output
+ */
+function ghash(h, aad, ciphertext) {
+  const x = new Uint8Array(16)
+
+  // Process AAD blocks
+  let offset = 0
+  while (offset < aad.length) {
+    const blockSize = Math.min(16, aad.length - offset)
+    for (let i = 0; i < blockSize; i++) x[i] ^= aad[offset + i]
+    offset += blockSize
+    // x = gcmMultiply(x, h) — but only after a full block
+    if (offset >= aad.length && blockSize < 16 && aad.length > 0) {
+      // partial block: pad with zeros (already zero), then multiply
+    }
+    if (blockSize === 16 || offset >= aad.length) {
+      const result = gcmMultiply(x, h)
+      x.set(result)
+    }
+  }
+  // If AAD was empty, multiply zero block once
+  if (aad.length === 0) {
+    const result = gcmMultiply(x, h)
+    x.set(result)
+  }
+
+  // Process ciphertext blocks
+  offset = 0
+  while (offset < ciphertext.length) {
+    const blockSize = Math.min(16, ciphertext.length - offset)
+    for (let i = 0; i < blockSize; i++) x[i] ^= ciphertext[offset + i]
+    offset += blockSize
+    if (blockSize === 16 || offset >= ciphertext.length) {
+      const result = gcmMultiply(x, h)
+      x.set(result)
+    }
+  }
+
+  // Append lengths block: len(A) || len(C) in bits, each 64-bit big-endian
+  const lenBlock = new Uint8Array(16)
+  const aadBits = aad.length * 8
+  const ctBits = ciphertext.length * 8
+  // AAD length (64-bit big-endian, upper 4 bytes are 0 for typical sizes)
+  lenBlock[7] = aadBits & 0xff
+  lenBlock[6] = (aadBits >>> 8) & 0xff
+  lenBlock[5] = (aadBits >>> 16) & 0xff
+  lenBlock[4] = (aadBits >>> 24) & 0xff
+  // Ciphertext length (64-bit big-endian)
+  lenBlock[15] = ctBits & 0xff
+  lenBlock[14] = (ctBits >>> 8) & 0xff
+  lenBlock[13] = (ctBits >>> 16) & 0xff
+  lenBlock[12] = (ctBits >>> 24) & 0xff
+
+  for (let i = 0; i < 16; i++) x[i] ^= lenBlock[i]
+  const result = gcmMultiply(x, h)
+  x.set(result)
+
+  return x
+}
+
+/**
+ * Increment the rightmost 32 bits of a 16-byte counter block
+ */
+function incrementCounter(counter) {
+  const result = new Uint8Array(counter)
+  for (let i = 15; i >= 12; i--) {
+    result[i] = (result[i] + 1) & 0xff
+    if (result[i] !== 0) break
+  }
+  return result
+}
+
+/**
+ * SM4-GCM encryption
+ * @param {string|Uint8Array} plaintext - Data to encrypt
+ * @param {string|Uint8Array} key - 128-bit key (hex string or byte array)
+ * @param {Uint8Array} iv - 12-byte IV
+ * @param {Uint8Array} [aad] - Additional authenticated data
+ * @returns {{ ciphertext: Uint8Array, tag: Uint8Array }}
+ */
+export function gcmEncrypt(plaintext, key, iv, aad = new Uint8Array(0)) {
+  let keyBytes
+  if (isString(key)) {
+    keyBytes = hexToArray(key)
+  } else {
+    keyBytes = [...key]
+  }
+  if (keyBytes.length !== 16) throw new Error('key is invalid')
+
+  let plainBytes
+  if (isString(plaintext)) {
+    plainBytes = utf8ToArray(plaintext)
+  } else {
+    plainBytes = [...plaintext]
+  }
+
+  const ivBytes = iv instanceof Uint8Array ? iv : new Uint8Array(iv)
+  if (ivBytes.length !== 12) throw new Error('GCM IV must be 12 bytes')
+
+  // H = SM4_Encrypt(0^128) — the GCM hash key
+  const zeroBlock = new Array(16).fill(0)
+  const roundKey = new Array(ROUND)
+  sms4KeyExt(keyBytes, roundKey, 1)
+  const hArr = new Array(16)
+  sms4Crypt(zeroBlock, hArr, roundKey)
+  const h = new Uint8Array(hArr)
+
+  // J0 = IV || 0x00000001
+  const j0 = new Uint8Array(16)
+  j0.set(ivBytes)
+  j0[15] = 1
+
+  // CTR encrypt
+  const ciphertext = new Uint8Array(plainBytes.length)
+  let counter = incrementCounter(j0)
+  let offset = 0
+  while (offset < plainBytes.length) {
+    const counterArr = [...counter]
+    const keystream = new Array(16)
+    sms4Crypt(counterArr, keystream, roundKey)
+
+    const blockSize = Math.min(16, plainBytes.length - offset)
+    for (let i = 0; i < blockSize; i++) {
+      ciphertext[offset + i] = plainBytes[offset + i] ^ keystream[i]
+    }
+
+    offset += blockSize
+    counter = incrementCounter(counter)
+  }
+
+  // Tag = GHASH(AAD, CT) XOR SM4_Encrypt(J0)
+  const s = ghash(h, aad instanceof Uint8Array ? aad : new Uint8Array(aad), ciphertext)
+  const encJ0 = new Array(16)
+  sms4Crypt([...j0], encJ0, roundKey)
+  const tag = new Uint8Array(16)
+  for (let i = 0; i < 16; i++) {
+    tag[i] = s[i] ^ encJ0[i]
+  }
+
+  return { ciphertext, tag }
+}
+
+/**
+ * SM4-GCM decryption with tag verification
+ * @param {Uint8Array} ciphertext - Encrypted data
+ * @param {string|Uint8Array} key - 128-bit key
+ * @param {Uint8Array} iv - 12-byte IV
+ * @param {Uint8Array} tag - 16-byte authentication tag
+ * @param {Uint8Array} [aad] - Additional authenticated data
+ * @returns {Uint8Array} - Decrypted plaintext
+ * @throws {Error} If tag verification fails
+ */
+export function gcmDecrypt(ciphertext, key, iv, tag, aad = new Uint8Array(0)) {
+  let keyBytes
+  if (isString(key)) {
+    keyBytes = hexToArray(key)
+  } else {
+    keyBytes = [...key]
+  }
+  if (keyBytes.length !== 16) throw new Error('key is invalid')
+
+  const ivBytes = iv instanceof Uint8Array ? iv : new Uint8Array(iv)
+  if (ivBytes.length !== 12) throw new Error('GCM IV must be 12 bytes')
+
+  const tagBytes = tag instanceof Uint8Array ? tag : new Uint8Array(tag)
+  if (tagBytes.length !== 16) throw new Error('GCM tag must be 16 bytes')
+
+  // H = SM4_Encrypt(0^128)
+  const zeroBlock = new Array(16).fill(0)
+  const roundKey = new Array(ROUND)
+  sms4KeyExt(keyBytes, roundKey, 1)
+  const hArr = new Array(16)
+  sms4Crypt(zeroBlock, hArr, roundKey)
+  const h = new Uint8Array(hArr)
+
+  // J0 = IV || 0x00000001
+  const j0 = new Uint8Array(16)
+  j0.set(ivBytes)
+  j0[15] = 1
+
+  // Verify tag: expectedTag = GHASH(AAD, CT) XOR SM4_Encrypt(J0)
+  const ctBytes = ciphertext instanceof Uint8Array ? ciphertext : new Uint8Array(ciphertext)
+  const s = ghash(h, aad instanceof Uint8Array ? aad : new Uint8Array(aad), ctBytes)
+  const encJ0 = new Array(16)
+  sms4Crypt([...j0], encJ0, roundKey)
+  const expectedTag = new Uint8Array(16)
+  for (let i = 0; i < 16; i++) {
+    expectedTag[i] = s[i] ^ encJ0[i]
+  }
+
+  // Constant-time tag comparison
+  let tagMatch = 0
+  for (let i = 0; i < 16; i++) {
+    tagMatch |= tagBytes[i] ^ expectedTag[i]
+  }
+  if (tagMatch !== 0) {
+    throw new Error('GCM authentication tag verification failed')
+  }
+
+  // CTR decrypt
+  const plaintext = new Uint8Array(ctBytes.length)
+  let counter = incrementCounter(j0)
+  let offset = 0
+  while (offset < ctBytes.length) {
+    const counterArr = [...counter]
+    const keystream = new Array(16)
+    sms4Crypt(counterArr, keystream, roundKey)
+
+    const blockSize = Math.min(16, ctBytes.length - offset)
+    for (let i = 0; i < blockSize; i++) {
+      plaintext[offset + i] = ctBytes[offset + i] ^ keystream[i]
+    }
+
+    offset += blockSize
+    counter = incrementCounter(counter)
+  }
+
+  return plaintext
+}
+
+// ============== End GCM ==============
+
 /**
  * output: 'string' | 'array'
  * input: 'hex' | 'utf8'
