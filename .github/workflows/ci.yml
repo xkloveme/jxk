@@ -25,7 +25,7 @@ jobs:
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        run: npm install pnpm -g && pnpm install
+        run: npm install pnpm -g && pnpm approve-builds esbuild simple-git-hooks && pnpm install
 
 
       # 打包为 docs

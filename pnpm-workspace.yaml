@@ -3,3 +3,7 @@ packages:
   - '.'
   # playground 目录
   - 'playground'
+
+onlyBuiltDependencies:
+  - esbuild
+  - simple-git-hooks

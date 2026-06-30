@@ -17,7 +17,7 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: npm install pnpm -g && pnpm install
+        run: npm install pnpm -g && pnpm approve-builds esbuild simple-git-hooks && pnpm install
 
       - name: Build
         run: pnpm build
